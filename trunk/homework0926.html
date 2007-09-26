@@ -13,10 +13,7 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 
 <script type="text/javascript" language="javascript">
 <!--//--><![CDATA[//><!--
-function filexp(msg) {
-	document.write(msg + "<br />");
-}
-function fileks(msg) {
+function file(msg) {
 	document.write(msg + "<br />");
 }
 
@@ -35,12 +32,12 @@ zhengzmianm:"团员",
 qualifications:"高中？",
 school:"未名中学"}
 
-filexp("姓名：" + yanpo.name);
-filexp("年龄：" + yanpo.age.year + "年" + yanpo.age.month + "月");
-filexp("身高：" + yanpo.standing.val + yanpo.standing.units );
-filexp("学历：" + yanpo.qualifications);
-filexp("毕业学校：" + yanpo.school);
-filexp("政治面貌：" + yanpo.zhengzmianm);
+file("姓名：" + yanpo.name);
+file("年龄：" + yanpo.age.year + "年" + yanpo.age.month + "月");
+file("身高：" + yanpo.standing.val + yanpo.standing.units );
+file("学历：" + yanpo.qualifications);
+file("毕业学校：" + yanpo.school);
+file("政治面貌：" + yanpo.zhengzmianm);
 document.write("<br />");
 
 //meiyi资料
@@ -57,12 +54,12 @@ meiyi.zhengzmianm = "团员";
 meiyi.qualifications = "初中";
 meiyi.school = "横道河子铁路中学";
 
-fileks("姓名：" + meiyi.name);
-fileks("年龄：" + meiyi.age.year + "年" + meiyi.age.month + "月");
-fileks("身高：" + meiyi.standing.val + meiyi.standing.units );
-fileks("学历：" + meiyi.qualifications);
-fileks("毕业学校：" + meiyi.school);
-fileks("政治面貌：" + meiyi.zhengzmianm);
+file("姓名：" + meiyi.name);
+file("年龄：" + meiyi.age.year + "年" + meiyi.age.month + "月");
+file("身高：" + meiyi.standing.val + meiyi.standing.units );
+file("学历：" + meiyi.qualifications);
+file("毕业学校：" + meiyi.school);
+file("政治面貌：" + meiyi.zhengzmianm);
 
 //打印
 two(meiyi.standing.val + meiyi.standing.units);
