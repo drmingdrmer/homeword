@@ -16,22 +16,34 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 function filexp(msg) {
 	document.write(msg + "<br />");
 }
+function fileks(msg) {
+	document.write(msg + "<br />");
+}
+
+function two(b) {
+	document.write ("<br />")
+	document.write ("身高：" + b )
+	
+}
+
+//yanpo资料
 var yanpo = {
-	name:"张炎泼",
-	age:{year:1981,month:7},
-	standing:{val:182,units:"cm"},
-	zhengzmianm:"团员",
-	qualifications:"高中？",
-	school:"未名中学"}
+name:"张炎泼",
+age:{year:1981,month:7},
+standing:{val:182,units:"cm"},
+zhengzmianm:"团员",
+qualifications:"高中？",
+school:"未名中学"}
 
-	filexp("姓名：" + yanpo.name);
-	filexp("年龄：" + yanpo.age.year + "年" + yanpo.age.month + "月");
-	filexp("身高：" + yanpo.standing.val + yanpo.standing.units );
-	filexp("学历：" + yanpo.qualifications);
-	filexp("毕业学校：" + yanpo.school);
-	filexp("政治面貌：" + yanpo.zhengzmianm);
+filexp("姓名：" + yanpo.name);
+filexp("年龄：" + yanpo.age.year + "年" + yanpo.age.month + "月");
+filexp("身高：" + yanpo.standing.val + yanpo.standing.units );
+filexp("学历：" + yanpo.qualifications);
+filexp("毕业学校：" + yanpo.school);
+filexp("政治面貌：" + yanpo.zhengzmianm);
+document.write("<br />");
 
-
+//meiyi资料
 var meiyi = {};
 meiyi.age = {};
 meiyi.standing = {};
@@ -45,11 +57,6 @@ meiyi.zhengzmianm = "团员";
 meiyi.qualifications = "初中";
 meiyi.school = "横道河子铁路中学";
 
-
-function fileks(msg) {
-	document.write(msg + "<br />");
-}
-
 fileks("姓名：" + meiyi.name);
 fileks("年龄：" + meiyi.age.year + "年" + meiyi.age.month + "月");
 fileks("身高：" + meiyi.standing.val + meiyi.standing.units );
@@ -57,12 +64,9 @@ fileks("学历：" + meiyi.qualifications);
 fileks("毕业学校：" + meiyi.school);
 fileks("政治面貌：" + meiyi.zhengzmianm);
 
-function two(b) {
-	document.write ("<br />")
-	document.write ("身高：" + b )
-	
-}
-two(meiyi.standing.val + meiyi.standing.units)
+//打印
+two(meiyi.standing.val + meiyi.standing.units);
+
 //--><!]]>
 </script>
 <br />
