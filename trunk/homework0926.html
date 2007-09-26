@@ -36,8 +36,8 @@ document.write("<br />");
 
 //meiyi资料
 var meiyi = {};
-meiyi.age = {};
-meiyi.standing = {};
+	meiyi.age = {};
+	meiyi.standing = {};
 
 meiyi.name = "刘梅怡";
 meiyi.age.year = 1982;
@@ -57,19 +57,21 @@ file("政治面貌：" + meiyi.zhengzmianm);
 
 //打印
 function two(all) {
-	name = name;
-	age = age;
-	age.year = age.year;
-	age.month = age.month;
-	standing = standing;
-	standing.val = standing.val;
-	standing.units = standing.units;
-	zhengzmianm = zhengzmianm;
-	qualifications = qualifications;
-	school = school;
+	var all = {};
+		all.age = {};
+		all.standing = {};
+
+	name =all. name;
+	age.year = all.age.year;
+	age.month = all.age.month;
+	standing.val = all.standing.val;
+	standing.units = all.standing.units;
+	zhengzmianm = all.zhengzmianm;
+	qualifications = all.qualifications;
+	school = all.school;
 }
 
-two(meiyi)
+two()
 
 //--><!]]>
 </script>
