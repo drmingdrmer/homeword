@@ -17,11 +17,6 @@ function file(msg) {
 	document.write(msg + "<br />");
 }
 
-function two(meiyi) {
-	document.write ("<br />")
-	document.write ("身高：" + meiyi )
-	
-}
 //yanpo资料
 var yanpo = {
 name:"张炎泼",
@@ -61,7 +56,11 @@ file("毕业学校：" + meiyi.school);
 file("政治面貌：" + meiyi.zhengzmianm);
 
 //打印
-two(meiyi.standing.val + meiyi.standing.units);
+function two(meiyi) {
+	document.write(file);
+
+}
+two();
 
 //--><!]]>
 </script>
@@ -75,6 +74,6 @@ two(meiyi.standing.val + meiyi.standing.units);
 格式是身高：123 cm <br />
 只打印一个人的身高 <br />
 输入的参数是1个人的对象。打印这个人的身高。 <br />
-
-1个人的对象。。
+传进来的是对象。从对象的属性里面取想要的东西。<br />
+由two从参数的属性中找出自己想要的数据。
 </body></html>
