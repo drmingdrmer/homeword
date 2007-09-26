@@ -1,0 +1,80 @@
+<html><head>
+<title>关键字</title>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+<meta name="keywords" content="关键字1,关键字2,关键字3,">
+<meta name="description" content="页面说明">
+<style type="text/css">
+td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
+table,td,img,div,span,form{border: none;margin:0;padding:0;}
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript" language="javascript">
+<!--//--><![CDATA[//><!--
+function filexp(msg) {
+	document.write(msg + "<br />");
+}
+var yanpo = {
+	name:"张炎泼",
+	age:{year:1981,month:7},
+	standing:{val:182,units:"cm"},
+	zhengzmianm:"团员",
+	qualifications:"高中？",
+	school:"未名中学"}
+
+	filexp("姓名：" + yanpo.name);
+	filexp("年龄：" + yanpo.age.year + "年" + yanpo.age.month + "月");
+	filexp("身高：" + yanpo.standing.val + yanpo.standing.units );
+	filexp("学历：" + yanpo.qualifications);
+	filexp("毕业学校：" + yanpo.school);
+	filexp("政治面貌：" + yanpo.zhengzmianm);
+
+
+var meiyi = {};
+meiyi.age = {};
+meiyi.standing = {};
+
+meiyi.name = "刘梅怡";
+meiyi.age.year = 1982;
+meiyi.age.month = 4;
+meiyi.standing.val = 163;
+meiyi.standing.units = "cm";
+meiyi.zhengzmianm = "团员";
+meiyi.qualifications = "初中";
+meiyi.school = "横道河子铁路中学";
+
+
+function fileks(msg) {
+	document.write(msg + "<br />");
+}
+
+fileks("姓名：" + meiyi.name);
+fileks("年龄：" + meiyi.age.year + "年" + meiyi.age.month + "月");
+fileks("身高：" + meiyi.standing.val + meiyi.standing.units );
+fileks("学历：" + meiyi.qualifications);
+fileks("毕业学校：" + meiyi.school);
+fileks("政治面貌：" + meiyi.zhengzmianm);
+
+function two(b) {
+	document.write ("<br />")
+	document.write ("身高：" + b )
+	
+}
+two(meiyi.standing.val + meiyi.standing.units)
+//--><!]]>
+</script>
+<br />
+<br />
+<br />
+
+写个函数。。<br /> 
+函数接受1个参数，是meiyi对象或俺的对象。 <br />
+然后按1定格式打印出身高。 <br />
+格式是身高：123 cm <br />
+只打印一个人的身高 <br />
+输入的参数是1个人的对象。打印这个人的身高。 <br />
+
+1个人的对象。。
+</body></html>
