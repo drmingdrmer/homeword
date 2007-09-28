@@ -24,7 +24,11 @@ age:{year:1981,month:7},
 standing:{val:182,units:"cm"},
 zhengzmianm:"团员",
 qualifications:"高中？",
-school:"未名中学"}
+school:"未名中学",
+printName:fuc1,
+printHeight:fuc2,
+printAll:fuc3
+}
 
 file("姓名：" + yanpo.name);
 file("年龄：" + yanpo.age.year + "年" + yanpo.age.month + "月");
@@ -47,6 +51,9 @@ meiyi.standing.units = "cm";
 meiyi.zhengzmianm = "团员";
 meiyi.qualifications = "初中";
 meiyi.school = "横道河子铁路中学";
+meiyi.printName = fuc1;
+meiyi.printHeight = fuc2;
+meiyi.printAll = fuc3;
 
 file("姓名：" + meiyi.name);
 file("年龄：" + meiyi.age.year + "年" + meiyi.age.month + "月");
@@ -74,12 +81,18 @@ function fuc3(x) {
 //这里缺少1个参数。。函数的功能是把传递进来的东西打印出来，不是打印已存在的对象。
 fuc3(meiyi)
 
+
+
+yanpo.printName
+yanpo.printHeight
+yanpo.printAll
 //--><!]]>
 </script>
 <br />
 <br />
 <br />
-
+然后给meiyi和yanbo都加上3个方法，名字分别为<br />
+printName,printHeight,printAll，分别对应那3个函数。<br />
 
 建立3个函数，每个函数只接受1个参数，是1个人的对象。3个函数的功能分别如下：<br />
 1，输出‘名字：xxx’<br />
