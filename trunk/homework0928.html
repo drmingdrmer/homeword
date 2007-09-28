@@ -36,6 +36,7 @@ file("身高：" + yanpo.standing.val + yanpo.standing.units );
 file("学历：" + yanpo.qualifications);
 file("毕业学校：" + yanpo.school);
 file("政治面貌：" + yanpo.zhengzmianm);
+
 document.write("<br />");
 
 //meiyi资料
@@ -66,6 +67,7 @@ file("政治面貌：" + meiyi.zhengzmianm);
 function fuc1(x) {
 	document.write("<br />");
 	document.write("名字："　+ x.name);
+
 	}
 //打印参数名取x。
 function fuc2(x) {
@@ -80,6 +82,10 @@ function fuc3(x) {
 	}
 //这里缺少1个参数。。函数的功能是把传递进来的东西打印出来，不是打印已存在的对象。
 fuc3(meiyi)
+document.write("<br />")
+
+meiyi.printAll (yanpo);
+yanpo.printAll (meiyi);
 //--><!]]>
 </script>
 <br />
@@ -87,6 +93,8 @@ fuc3(meiyi)
 <br />
 然后给meiyi和yanbo都加上3个方法，名字分别为<br />
 printName,printHeight,printAll，分别对应那3个函数。<br />
+用meiyi的方法打印yanbo，再用yanbo的方法打印meiyi<br />
+
 
 建立3个函数，每个函数只接受1个参数，是1个人的对象。3个函数的功能分别如下：<br />
 1，输出‘名字：xxx’<br />
