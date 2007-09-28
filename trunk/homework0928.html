@@ -77,8 +77,8 @@ function fuc2() {
 	}
 //打印参数名取x。
 function fuc3() {
-	this.pringName();
-	this.pringHeight();
+	this.printName();
+	this.printHeight();
 	}
 //这里缺少1个参数。。函数的功能是把传递进来的东西打印出来，不是打印已存在的对象。
 document.write("<br />")
@@ -101,7 +101,19 @@ fuc3里的调用改成this.pringName()和this.pringHeight()<br />
 如果直接调用fuc1的话，是直接调用函数，而不是调用对象的方法，所以就找木到this了。
 <br />
 
-
+Katsu  [深蓝色落叶] 说:<br />
+现在在<br />
+meiyi.printAll();<br />
+yanpo.printAll();<br />
+这里<br />
+meiyi.printAll（yanpo）;<br />
+yanpo.printAll（meiyi）;<br />
+就控制不了<br />
+XP 说：<br />
+因为用了this。<br />
+方法可以知道自己正在为哪个对象服务。<br />
+也就是说，对象的方法定义的功能可以独立于对象的数据存在了。<br />
+同1个函数可以为很多个对象提供功能了<br /><br />
 
 建立3个函数，每个函数只接受1个参数，是1个人的对象。3个函数的功能分别如下：<br />
 1，输出‘名字：xxx’<br />
