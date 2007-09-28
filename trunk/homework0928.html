@@ -77,14 +77,14 @@ function fuc2() {
 	}
 //打印参数名取x。
 function fuc3() {
-	fuc1()
-	fuc2()
+	this.pringName();
+	this.pringHeight();
 	}
 //这里缺少1个参数。。函数的功能是把传递进来的东西打印出来，不是打印已存在的对象。
 document.write("<br />")
 
-meiyi.printAll ();
-yanpo.printAll ();
+meiyi.printAll();
+yanpo.printAll();
 //--><!]]>
 </script>
 <br />
@@ -96,6 +96,10 @@ printName,printHeight,printAll，分别对应那3个函数。<br />
 fuc1,fuc2,fuc3里，用this代替参数。然后参数就不需要了。<br />
 <br />
 替换后meiyi.printAll()应该能打印出meiyi的信息，yanbo的方法能打印出yanbo的信息<br />
+this是直接在函数里用的。不用声明。也不能出现在参数列表里。<br />
+fuc3里的调用改成this.pringName()和this.pringHeight()<br />
+如果直接调用fuc1的话，是直接调用函数，而不是调用对象的方法，所以就找木到this了。
+<br />
 
 
 
