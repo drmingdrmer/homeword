@@ -64,28 +64,27 @@ file("毕业学校：" + meiyi.school);
 file("政治面貌：" + meiyi.zhengzmianm);
 
 //打印参数名取x。
-function fuc1(this) {
+function fuc1() {
 	document.write("<br />");
-	document.write("名字："　+ x.name);
+	document.write("名字："　+ this.name);
 
 	}
 //打印参数名取x。
-function fuc2(this) {
+function fuc2() {
 	document.write("<br />");
-	document.write("身高："　+ x.standing.val);
-	document.write(x.standing.units);
+	document.write("身高："　+ this.standing.val);
+	document.write(this.standing.units);
 	}
 //打印参数名取x。
-function fuc3(this) {
-	fuc1(x)
-	fuc2(x)
+function fuc3() {
+	fuc1()
+	fuc2()
 	}
 //这里缺少1个参数。。函数的功能是把传递进来的东西打印出来，不是打印已存在的对象。
-fuc3()
 document.write("<br />")
 
-meiyi.printAll (this);
-yanpo.printAll (this);
+meiyi.printAll ();
+yanpo.printAll ();
 //--><!]]>
 </script>
 <br />
@@ -95,7 +94,7 @@ yanpo.printAll (this);
 printName,printHeight,printAll，分别对应那3个函数。<br />
 用meiyi的方法打印yanbo，再用yanbo的方法打印meiyi<br />
 fuc1,fuc2,fuc3里，用this代替参数。然后参数就不需要了。<br />
-84行 fuc3(meiyi)去掉。<br />
+<br />
 替换后meiyi.printAll()应该能打印出meiyi的信息，yanbo的方法能打印出yanbo的信息<br />
 
 
