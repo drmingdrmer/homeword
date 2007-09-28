@@ -55,23 +55,23 @@ file("学历：" + meiyi.qualifications);
 file("毕业学校：" + meiyi.school);
 file("政治面貌：" + meiyi.zhengzmianm);
 
-//打印
+//打印参数名取x。
 function fuc1(meiyi) {
 	document.write("<br />");
 	document.write("名字："　+ meiyi.name);
 	}
-
+//打印参数名取x。
 function fuc2(yanpo) {
 	document.write("<br />");
 	document.write("身高："　+ yanpo.standing.val);
 	document.write(yanpo.standing.units);
 	}
-
+//打印参数名取x。
 function fuc3(all) {
 	fuc1(meiyi)
 	fuc2(yanpo)
 	}
-
+//这里缺少1个参数。。函数的功能是把传递进来的东西打印出来，不是打印已存在的对象。
 fuc3()
 
 //--><!]]>
