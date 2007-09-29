@@ -31,31 +31,25 @@ function fun(chang,kuan,gao) {
 }
 
 function funcA(fuA) {
-	if (this.d ) {
+	fun();
 	alert("不能构成一个三角形");
-	}else{
 	document.write("a=" + this.a);
-	}
 }
 function funcB(fuB) {
-	if (this.d) {
+	fun();
 	alert("不能构成一个三角形");
-	}else{
-	document.write("b=" + this.b)
-	}
+	document.write("b=" + this.b);
 }
 function funcC(fuC) {
-	if (this.d) {
+	fun();
 	alert("不能构成一个三角形");
-	}else{
-	document.write("c=" + this.c)
-	}
+	document.write("c=" + this.c);
 }
 tri.a1(1);
 document.write("<br />");
-tri.b1(3);
+tri.b1(2);
 document.write("<br />");
-tri.c1(1);
+tri.c1(3);
 
 
 //--><!]]>
