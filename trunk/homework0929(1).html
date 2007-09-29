@@ -1,5 +1,4 @@
 <html><head>
-    
 <title>关键字</title>
 <meta http-equiv="Content-type" content="text/html; charset=gb2312">
 <meta name="keywords" content="关键字1,关键字2,关键字3,">
@@ -35,34 +34,39 @@ function funcA(fuA) {
 	if (fun(fuA,this.b,this.c)) {
 	alert("不能构成一个三角形");
 	}else{
-    this.a = fuA;
-  }
+	document.write("a=" + this.a);
+	this.a = fuA;
+	}
+
 }
 function funcB(fuB) {
 	if (fun(this.a,fuB,this.c)) {
 	alert("不能构成一个三角形");
 	}else{
-    this.b = fuB;
-  }
+	document.write("b=" + this.b);
+	this.b = fuB;
+	}
 }
 function funcC(fuC) {
 	if (fun(this.a,this.b,fuC)) {
 	alert("不能构成一个三角形");
 	}else{
-    this.c = fuC;
-  }
+	document.write("c=" + this.c);
+	this.c = fuC;
+	}
 }
 
 tri.a1(2);
 document.write("<br />");
-tri.b1(2);
+tri.a1(2);
 document.write("<br />");
-tri.c1(2);
+tri.a1(2);
 
 
 //--><!]]>
 </script>
-
+<br />
+你调用了函数，也传了值进去。但函数还没有把传递过去的值附给对象的属性。
 <br />
 设计1个三角形的对象。<br />
 保存三角形的3边长作为数据。<br />
