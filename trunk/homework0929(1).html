@@ -34,8 +34,8 @@ function funcA(fuA) {
 	if (fun(fuA,this.b,this.c)) {
 	alert("不能构成一个三角形");
 	}else{
-	document.write("a=" + this.a);
 	this.a = fuA;
+	document.write("a=" + this.a);
 	}
 
 }
@@ -43,22 +43,22 @@ function funcB(fuB) {
 	if (fun(this.a,fuB,this.c)) {
 	alert("不能构成一个三角形");
 	}else{
-	document.write("b=" + this.b);
 	this.b = fuB;
+	document.write("b=" + this.b);
 	}
 }
 function funcC(fuC) {
 	if (fun(this.a,this.b,fuC)) {
 	alert("不能构成一个三角形");
 	}else{
-	document.write("c=" + this.c);
 	this.c = fuC;
+	document.write("c=" + this.c);
 	}
 }
 
 tri.a1(2);
 document.write("<br />");
-tri.a1(2);
+tri.a1(5);
 document.write("<br />");
 tri.a1(2);
 
