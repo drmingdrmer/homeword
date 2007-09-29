@@ -18,25 +18,32 @@ var tri = {
 	b:1,
 	c:1,
 	a1:funcA,
-	a2:funcB,
-	a3:funcC
+	b1:funcB,
+	c1:funcC,
+	d:fun
 }
+function fun() {
+	this.a + this.b < this.c;
+	this.a + this.c < this.b;
+	this.b + this.c < this.a
+}
+
 function funcA(chang) {
-	if (chang+this.b<this.c) {
+	if (this.d ) {
 	alert("不能构成一个三角形");
 	}else{
 	document.write("a=" + this.a)
 	}
 }
 function funcB(kuan) {
-	if (this.a+this.c<kuan) {
+	if (this.d) {
 	alert("不能构成一个三角形");
 	}else{
 	document.write("b=" + this.b)
 	}
 }
 function funcC(gao) {
-	if (this.b+gao<this.a) {
+	if (this.d) {
 	alert("不能构成一个三角形");
 	}else{
 	document.write("c=" + this.c)
@@ -45,9 +52,10 @@ function funcC(gao) {
 
 tri.a1();
 document.write("<br />");
-tri.a2();
+tri.b1();
 document.write("<br />");
-tri.a3();
+tri.c1();
+
 
 //--><!]]>
 </script>
