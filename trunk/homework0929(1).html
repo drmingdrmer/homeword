@@ -21,25 +21,25 @@ var tri = {
 	a2:funcB,
 	a3:funcC
 }
-function funcA() {
-	if (this.a+this.b<this.c) {
+function funcA(cha) {
+	if (cha+this.b<this.c) {
 	alert("不能构成一个三角形");
 	}else{
-	alert("a=" + this.a)
+	document.write("a=" + this.a)
 	}
 }
-function funcB() {
-	if (this.a+this.c<this.b) {
+function funcB(kuan) {
+	if (kuan+this.c<this.b) {
 	alert("不能构成一个三角形");
 	}else{
-	alert("b=" + this.b)
+	document.write("b=" + this.b)
 	}
 }
-function funcC() {
-	if (this.b+this.c<this.a) {
+function funcC(gao) {
+	if (gao+this.c<this.a) {
 	alert("不能构成一个三角形");
 	}else{
-	alert("c=" + this.c)
+	document.write("c=" + this.c)
 	}
 }
 
@@ -65,5 +65,8 @@ tri.a3();
 设置a，b或c的长度时，进行如下检查：<br />
 如果其中2边长度和小于另外1个边，则这3个边长不能构成一个三角形。这时不修改对象内的数据，并弹出alert告诉用户出错。<br />
 否则设置边长到对象里。<br />
-再提供1个对象打印三角形的信息，包括各边长和周长。
+再提供1个对象打印三角形的信息，包括各边长和周长。<br />
+funcABC的功能是设置abc的值，所以应该有1个参数。<br />
+判断给出的参数和余下的2边是否能满足3角形条件，然后再alert或设置参数的值到对象内。<br />
+要判断的不是现在的3边，是新传递来的参数和其他2边
 </body></html>
