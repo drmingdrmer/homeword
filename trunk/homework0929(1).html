@@ -13,10 +13,23 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 
 <script type="text/javascript" language="javascript">
 <!--//--><![CDATA[//><!--
-
-
+var tri = {
+	a:1,
+	b:1,
+	c:1
+}
+function func() {
+	if (a+b<c || a+c<b || b+c<a) {
+	alert("不能构成一个三角形");
+	}else{
+	document.write(a);
+	document.write(b);
+	document.write(c);
+	}
+}
 //--><!]]>
 </script>
+
 <br />
 设计1个三角形的对象。<br />
 保存三角形的3边长作为数据。<br />
@@ -29,5 +42,6 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 初始3个边长都是1.<br />
 设置a，b或c的长度时，进行如下检查：<br />
 如果其中2边长度和小于另外1个边，则这3个边长不能构成一个三角形。这时不修改对象内的数据，并弹出alert告诉用户出错。<br />
-否则设置边长到对象里。
+否则设置边长到对象里。<br />
+再提供1个对象打印三角形的信息，包括各边长和周长。
 </body></html>
