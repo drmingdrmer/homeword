@@ -16,17 +16,39 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 var tri = {
 	a:1,
 	b:1,
-	c:1
+	c:1,
+	a1:funcA,
+	a2:funcB,
+	a3:funcC
 }
-function func() {
-	if (a+b<c || a+c<b || b+c<a) {
+function funcA() {
+	if (this.a+this.b<this.c) {
 	alert("不能构成一个三角形");
 	}else{
-	document.write(a);
-	document.write(b);
-	document.write(c);
+	alert("a=" + this.a)
 	}
 }
+function funcB() {
+	if (this.a+this.c<this.b) {
+	alert("不能构成一个三角形");
+	}else{
+	alert("b=" + this.b)
+	}
+}
+function funcC() {
+	if (this.b+this.c<this.a) {
+	alert("不能构成一个三角形");
+	}else{
+	alert("c=" + this.c)
+	}
+}
+
+tri.a1();
+document.write("<br />");
+tri.a2();
+document.write("<br />");
+tri.a3();
+
 //--><!]]>
 </script>
 
