@@ -15,14 +15,19 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 <!--//--><![CDATA[//><!--
 var sanjiao = {
 	size:4,
-	symbols:"->"
+	symbols:"->",
+	printAll:fuc
 	}
-for ( var i=0; i<sanjiao.size; i++) {
-	for ( var j=1; j<=(i+1); j++){
-		document.write (sanjiao.symbols);
+function fuc() {
+	for ( var i=0; i<sanjiao.size; i++) {
+		for ( var j=1; j<=(i+1); j++){
+			document.write (sanjiao.symbols);
+		}
+		document.write ("<br />");
 	}
-	document.write ("<br />");
 }
+sanjiao.printAll();
+
 //--><!]]>
 </script>
 <br />
@@ -40,4 +45,7 @@ for ( var i=0; i<sanjiao.size; i++) {
 ->-><br />
 ->->-><br />
 ->->->-><br />
+<br />
+打印的那个for循环要定义成对象的方法。。<br />
+定义在方法里面啊。然后调用方法就打印了。。。<br />
 </body></html>
