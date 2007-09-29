@@ -1,4 +1,5 @@
 <html><head>
+    
 <title>关键字</title>
 <meta http-equiv="Content-type" content="text/html; charset=gb2312">
 <meta name="keywords" content="关键字1,关键字2,关键字3,">
@@ -34,19 +35,22 @@ function funcA(fuA) {
 	if (fun(fuA,this.b,this.c)) {
 	alert("不能构成一个三角形");
 	}else{
-	document.write("a=" + this.a);}
+    this.a = fuA;
+  }
 }
 function funcB(fuB) {
 	if (fun(this.a,fuB,this.c)) {
 	alert("不能构成一个三角形");
 	}else{
-	document.write("b=" + this.b);}
+    this.b = fuB;
+  }
 }
 function funcC(fuC) {
 	if (fun(this.a,this.b,fuC)) {
 	alert("不能构成一个三角形");
 	}else{
-	document.write("c=" + this.c);}
+    this.c = fuC;
+  }
 }
 
 tri.a1(2);
