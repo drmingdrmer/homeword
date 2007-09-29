@@ -22,39 +22,40 @@ var tri = {
 	c1:funcC,
 	d:fun
 }
-function fun() {
-	chang + kuan < gao;
-	chang + gao < kuan;
-	kuan + gao < chang
+function fun(chang,kuan,gao) {
+	if (chang + kuan < gao || chang + gao < kuan || kuan + gao < chang )
+	{return false; 
+	}else{
+	 return true;
+	}
 }
 
-function funcA(chang) {
+function funcA(fuA) {
 	if (this.d ) {
 	alert("不能构成一个三角形");
 	}else{
-	document.write("a=" + this.a)
+	document.write("a=" + this.a);
 	}
 }
-function funcB(kuan) {
+function funcB(fuB) {
 	if (this.d) {
 	alert("不能构成一个三角形");
 	}else{
 	document.write("b=" + this.b)
 	}
 }
-function funcC(gao) {
+function funcC(fuC) {
 	if (this.d) {
 	alert("不能构成一个三角形");
 	}else{
 	document.write("c=" + this.c)
 	}
 }
-
-tri.a1();
+tri.a1(1);
 document.write("<br />");
-tri.b1();
+tri.b1(1);
 document.write("<br />");
-tri.c1();
+tri.c1(1);
 
 
 //--><!]]>
@@ -76,5 +77,10 @@ tri.c1();
 再提供1个对象打印三角形的信息，包括各边长和周长。<br />
 funcABC的功能是设置abc的值，所以应该有1个参数。<br />
 判断给出的参数和余下的2边是否能满足3角形条件，然后再alert或设置参数的值到对象内。<br />
-要判断的不是现在的3边，是新传递来的参数和其他2边
+要判断的不是现在的3边，是新传递来的参数和其他2边<br />
+譬如<br />
+funcA(){return 3;}<br />
+var s = funcA();<br />
+这样s就是3了。
+
 </body></html>
