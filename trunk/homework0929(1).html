@@ -21,22 +21,22 @@ var tri = {
 	a2:funcB,
 	a3:funcC
 }
-function funcA(cha) {
-	if (cha+this.b<this.c) {
+function funcA(chang) {
+	if (chang+this.b<this.c) {
 	alert("不能构成一个三角形");
 	}else{
 	document.write("a=" + this.a)
 	}
 }
 function funcB(kuan) {
-	if (kuan+this.c<this.b) {
+	if (this.a+this.c<kuan) {
 	alert("不能构成一个三角形");
 	}else{
 	document.write("b=" + this.b)
 	}
 }
 function funcC(gao) {
-	if (gao+this.c<this.a) {
+	if (this.b+gao<this.a) {
 	alert("不能构成一个三角形");
 	}else{
 	document.write("c=" + this.c)
