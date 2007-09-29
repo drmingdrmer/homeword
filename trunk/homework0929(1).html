@@ -31,19 +31,22 @@ function fun(chang,kuan,gao) {
 }
 
 function funcA(fuA) {
-	fun(fuA,this.b,this.c);
+	if (fun(fuA,this.b,this.c)) {
 	alert("不能构成一个三角形");
-	document.write("a=" + this.a);
+	}else{
+	document.write("a=" + this.a);}
 }
 function funcB(fuB) {
-	fun(this.a,fuB,this.c);
+	if (fun(this.a,fuB,this.c)) {
 	alert("不能构成一个三角形");
-	document.write("b=" + this.b);
+	}else{
+	document.write("b=" + this.b);}
 }
 function funcC(fuC) {
-	fun(this.a,this.b,fuC);
+	if (fun(this.a,this.b,fuC)) {
 	alert("不能构成一个三角形");
-	document.write("c=" + this.c);
+	}else{
+	document.write("c=" + this.c);}
 }
 tri.a1();
 document.write("<br />");
