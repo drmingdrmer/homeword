@@ -31,12 +31,9 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 // document.write (this.color);
 // document.write("<br />");
 //
-
-
     function fa(){
       return 3;
     }
-
     document.write(fa());
     //相当于 document.write(3);
     //因为这个函数只返回了3
@@ -44,11 +41,9 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
     function fb(i){
       return i*2;
     }
-
     document.write(fb(1));
     //相当于 document.write(2);
     //因为计算的结果是2
-
     document.write(fb(3));
     //相当于 document.write(6);
     //这里都是将函数调用的结果返回到它被调用的地方，return的功能就是这样的，
@@ -69,5 +64,22 @@ function fruit(name, size, color){<br />
 var apple = fruit("apple", 20, "red");<br />
 这时，<br />
 apple.name是"apple", apple.size是20，apple.color是"red"<br />
+
+你看到那3个相当于了吧？<br />
+那实际上是函数调用返回后生成的1个中间步骤。<br />
+函数调用的部分会被替换成它的返回值，然后再继续执行。<br />
+
+再详细1点,这样：<br />
+document.write(fb(1));<br />
+遇到fb(1)，首先是函数调用，传递1个参数1<br />
+这时这句的执行会先暂停。<br />
+跳转到fb函数内部。<br />
+在函数内部相当于执行了这样1段代码：<br />
+var i=1;<br />
+return i*2;<br />
+这段执行结束之后，函数fb的调用结束。<br />
+返回到document.write(...这里。然后把返回回来的值放到这里，代替刚才的函数调用fb(1)这部分。<br />
+变成document.write(2);
+
 
 </body></html>
