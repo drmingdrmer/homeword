@@ -35,10 +35,7 @@ document.write("<br />");
 document.write(apple.showColor);
 
 /*
-1.建立1个函数，用来创建水果对象。<br />
-接受3个参数，名字，大小，颜色。<br />
-将这3个参数的值保存在对象的属性中。<br />
-函数结束后返回这个对象。<br />
+
 */
 
 
@@ -61,13 +58,18 @@ document.write(apple.showColor);
     document.write(fb(3));
 	document.write("<br />");
     //相当于 document.write(6);
-    //这里都是将函数调用的结果返回到它被调用的地方，return的功能就是这样的，*/
+    //这里都是将函数调用的结果返回到它被调用的地方，return的功能就是这样的
 
 //--><!]]>
 </script>
 
 <br />
-<br />
+1.建立1个函数，用来创建水果对象
+接受3个参数，名字，大小，颜色。<br />
+将这3个参数的值保存在对象的属性中。<br />
+函数结束后返回这个对象。<br />
+
+br />
 如：<br />
 function fruit(name, size, color){<br />
 ....<br />
@@ -77,21 +79,32 @@ var apple = fruit("apple", 20, "red");<br />
 这时，<br />
 apple.name是"apple", apple.size是20，apple.color是"red"<br />
 
-你看到那3个相当于了吧？<br />
-那实际上是函数调用返回后生成的1个中间步骤。<br />
-函数调用的部分会被替换成它的返回值，然后再继续执行。<br />
+<pre>
+2.将返回对象的属性按照题目要求改成对应的名字。
+  返回的对象增加1个方法disp，用来打印水果的信息。
 
-再详细1点,这样：<br />
-document.write(fb(1));<br />
-遇到fb(1)，首先是函数调用，传递1个参数1<br />
-这时这句的执行会先暂停。<br />
-跳转到fb函数内部。<br />
-在函数内部相当于执行了这样1段代码：<br />
-var i=1;<br />
-return i*2;<br />
-这段执行结束之后，函数fb的调用结束。<br />
-返回到document.write(...这里。然后把返回回来的值放到这里，代替刚才的函数调用fb(1)这部分。<br />
-变成document.write(2);
+3.fruit函数对输入的数值进行检查，如果名字不是apple，orange，banana之一，则直接返回。不创建对象。
+  如果尺寸小于5，直接返回。
+  如果颜色是'black'，直接返回。
+</pre>
 
+
+<p style="display:none;">
+  你看到那3个相当于了吧？<br />
+  那实际上是函数调用返回后生成的1个中间步骤。<br />
+  函数调用的部分会被替换成它的返回值，然后再继续执行。<br />
+
+  再详细1点,这样：<br />
+  document.write(fb(1));<br />
+  遇到fb(1)，首先是函数调用，传递1个参数1<br />
+  这时这句的执行会先暂停。<br />
+  跳转到fb函数内部。<br />
+  在函数内部相当于执行了这样1段代码：<br />
+  var i=1;<br />
+  return i*2;<br />
+  这段执行结束之后，函数fb的调用结束。<br />
+  返回到document.write(...这里。然后把返回回来的值放到这里，代替刚才的函数调用fb(1)这部分。<br />
+  变成document.write(2);
+</p>
 
 </body></html>
