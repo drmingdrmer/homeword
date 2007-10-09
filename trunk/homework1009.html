@@ -15,12 +15,12 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 <script type="text/javascript" language="javascript">
 <!--//--><![CDATA[//><!--
 
-var shuig = {
+/*var shuig = {
 	showName:"apple",
 	showSize:20,
 	showColor:"red",
 	disp:fruit
-}
+}*/
 
 function fruit(name,size,color){
 	return {
@@ -31,6 +31,7 @@ function fruit(name,size,color){
 		};
 }
 
+var shuig = fruit("apple",20,"red")
 document.write(shuig.showName);
 document.write("<br />");
 document.write(shuig.showSize);
@@ -39,6 +40,7 @@ document.write(shuig.showColor);
 document.write("<br />");
 /*document.write(shuig.disp);
 document.write("<br />");*/
+shuig.disp();
 
 //--><!]]>
 </script>
