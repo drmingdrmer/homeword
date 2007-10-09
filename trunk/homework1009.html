@@ -1,0 +1,55 @@
+<html><head>
+<title>关键字</title>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+<meta name="keywords" content="关键字1,关键字2,关键字3,">
+<meta name="description" content="页面说明">
+<style type="text/css">
+td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
+table,td,img,div,span,form{border: none;margin:0;padding:0;}
+
+</style>
+</head>
+<body>
+
+
+<script type="text/javascript" language="javascript">
+<!--//--><![CDATA[//><!--
+
+var shuig = {
+	showName:"apple",
+	showSize:20,
+	showColor:"red",
+	disp:fruit
+}
+
+function fruit(name,size,color){
+	return {
+		showName:name,
+		showSize:size,
+		showColor:color,
+		disp:fruit
+		};
+}
+
+document.write(shuig.showName);
+document.write("<br />");
+document.write(shuig.showSize);
+document.write("<br />");
+document.write(shuig.showColor);
+document.write("<br />");
+/*document.write(shuig.disp);
+document.write("<br />");*/
+
+//--><!]]>
+</script>
+
+<pre>
+2.将返回对象的属性按照题目要求改成对应的名字。
+  返回的对象增加1个方法disp，用来打印水果的信息。
+
+3.fruit函数对输入的数值进行检查，如果名字不是apple，orange，banana之一，则直接返回。不创建对象。
+  如果尺寸小于5，直接返回。
+  如果颜色是'black'，直接返回。
+</pre>
+
+</body></html>
