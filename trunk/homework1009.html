@@ -38,7 +38,11 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 	};
 }*/
 function fruita (){
-
+	document.write(shuig.showName);
+	document.write("<br />");
+	document.write(shuig.showSize);
+	document.write("<br />");
+	document.write(shuig.showColor);
 }
 
 function fruit(name,size,color){
@@ -52,26 +56,12 @@ function fruit(name,size,color){
 	};
 }
 var shuig = fruit("apple",20,"red")
-document.write(shuig.showName);
+
 document.write("<br />");
-document.write(shuig.showSize);
+fruita();
 document.write("<br />");
-document.write(shuig.showColor);
-document.write("<br />");
-document.write(shuig.disp);
 
 
-/*function fruit(name,size,color){
-	
-	if (name != "apple","orange","banana" || size < 5 || color="black") {
-	return {}
-	}else{
-	return {
-		showName:name,
-		showSize:size,
-		showColor:color
-	}
-}*/
 
 
 //--><!]]>
