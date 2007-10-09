@@ -14,23 +14,35 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 
 <script type="text/javascript" language="javascript">
 <!--//--><![CDATA[//><!--
+/*
 var apple = {
 	showName:"apple",
 	showSize:20,
 	showColor:"red"
 }
+*/
 
 
 function fruit(name,size,color){
 	return {showName:name,showSize:size,showColor:color};
 }
 
+var apple = fruit ("apple",20,"red");
 
 document.write(apple.showName);
 document.write("<br />");
 document.write(apple.showSize);
 document.write("<br />");
 document.write(apple.showColor);
+
+/*
+1.建立1个函数，用来创建水果对象。<br />
+接受3个参数，名字，大小，颜色。<br />
+将这3个参数的值保存在对象的属性中。<br />
+函数结束后返回这个对象。<br />
+
+
+*/
 
 
 /*    function fa(){
@@ -58,11 +70,6 @@ document.write(apple.showColor);
 </script>
 
 <br />
-<br />
-1.建立1个函数，用来创建水果对象。<br />
-接受3个参数，名字，大小，颜色。<br />
-将这3个参数的值保存在对象的属性中。<br />
-函数结束后返回这个对象。<br />
 <br />
 如：<br />
 function fruit(name, size, color){<br />
