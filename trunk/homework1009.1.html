@@ -14,7 +14,6 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 
 <script type="text/javascript" language="javascript">
 
-
 /*var shuig = {
 	showName:"apple",
 	showSize:20,
@@ -22,22 +21,8 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 	disp:fruit
 }*/
 
-/*function fruit(name,size,color){
-	return {
-		showName:name,
-		showSize:size,
-		showColor:color,
-		Disp:function(){
-			var str = '';
-			for(var pro in shuig){
-				if(pro == "Disp"){continue;}
-				str += (shuig[pro] + "<br />"); 
-			}
-			return str;
-		}
-	};
-}*/
 function fruita (){
+	
 //	document.write(this.showName);
 //	document.write("<br />");
 //	document.write(this.showSize);
@@ -76,11 +61,6 @@ document.write("<br />---------<br />");
 </script>
 
 <pre>
-2.返回的对象增加1个方法disp，用来打印水果的信息。
-
-3.fruit函数对输入的数值进行检查，如果名字不是apple，orange，banana之一，则直接返回。不创建对象。
-  如果尺寸小于5，直接返回。
-  如果颜色是'black'，直接返回。
 
 把disp方法改1下，返回1个能表示出这个水果所有信息的字符串,不需要直接由disp方法打印了。
 然后重新测试这个方法。
