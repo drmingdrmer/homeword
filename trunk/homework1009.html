@@ -10,18 +10,56 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 </style>
 </head>
 <body>
-
-
 <script type="text/javascript" language="javascript">
-
-
 /*var shuig = {
 	showName:"apple",
 	showSize:20,
 	showColor:"red",
 	disp:fruit
 }*/
+function fruita (){
+	document.write(this.showName);
+	document.write("<br />");
+	document.write(this.showSize);
+	document.write("<br />");
+	document.write(this.showColor);
+}
 
+function fruit(name,size,color){
+	if ( !name == "apple" && !name == "orange" && !name == "banana" && size < 5 && color == "black") {
+	return {}
+	else {
+		showName:name,
+		showSize:size,
+		showColor:color,
+		disp:fruita
+		}
+	}
+}
+var shuig = fruit("apple",20,"red");
+var shuig1 = fruit("orange",30,"orange");
+var shuig2 = fruit("banana",10,"yellow");
+
+document.write("<br />");//新加的方法，不是函数，测试的时候要用对象名.方法名的形式来测试。
+shuig.disp();//fruita（disp）可以作为多个对象的方法，建立多个水果对象，对测试每个对象中的disp方法是否正确执行
+document.write("<br />---------<br />");
+shuig1.disp();
+document.write("<br />---------<br />");
+shuig2.disp();
+document.write("<br />---------<br />")
+//--><!]]>
+</script>
+
+<pre>
+2.返回的对象增加1个方法disp，用来打印水果的信息。
+
+3.fruit函数对输入的数值进行检查，如果名字不是apple，orange，banana之一，则直接返回。不创建对象。
+  如果尺寸小于5，直接返回。
+  如果颜色是'black'，直接返回。
+
+</pre>
+
+<div style="display:none;">
 /*function fruit(name,size,color){
 	return {
 		showName:name,
@@ -37,52 +75,5 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 		}
 	};
 }*/
-function fruita (){
-//	document.write(this.showName);
-//	document.write("<br />");
-//	document.write(this.showSize);
-//	document.write("<br />");
-//	document.write(this.showColor);
-}
-
-function fruit(name,size,color){
-//if (name != "apple","orange","banana" && size < 5 && color = "black") {
-	return {
-	//else{
-		showName:name,
-		showSize:size,
-		showColor:color,
-		disp:fruita
-	};
-}
-var shuig = fruit("apple",20,"red");
-var shuig1 = fruit("orange",30,"orange");
-var shuig2 = fruit("banana",10,"yellow");
-
-document.write("<br />");
-//新加的方法，不是函数，测试的时候要用对象名.方法名的形式来测试。
-//fruita（disp）可以作为多个对象的方法，建立多个水果对象，对测试每个对象中的disp方法是否正确执行。
-shuig.disp();
-document.write("<br />---------<br />");
-shuig1.disp();
-document.write("<br />---------<br />");
-shuig2.disp();
-document.write("<br />---------<br />");
-
-
-
-
-//--><!]]>
-</script>
-
-<pre>
-2.返回的对象增加1个方法disp，用来打印水果的信息。
-
-3.fruit函数对输入的数值进行检查，如果名字不是apple，orange，banana之一，则直接返回。不创建对象。
-  如果尺寸小于5，直接返回。
-  如果颜色是'black'，直接返回。
-
-</pre>
-
-
+</div>
 </body></html>
