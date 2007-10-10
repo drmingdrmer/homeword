@@ -27,13 +27,12 @@ function fruita (){
 
 function fruit(name,size,color){
 	if ( name != "apple" && name != "orange" && name != "banana" || size < 5 || color == "black") {
-		return {};
-	else {
+		return;
+	}else return{
 		showName:name,
 		showSize:size,
 		showColor:color,
 		disp:fruita
-		}
 	}
 }
 
