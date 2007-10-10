@@ -26,15 +26,8 @@ function fruita (){
 }
 
 function fruit(name,size,color){
-/*
-name != "apple"  t
-name != "orange" t
-name != "banana" t
-size < 5 t
-color == "black" t
-*/
-	if ( name != "apple" || name != "orange" || name != "banana" || size < 5 || color == "black") {
-		return {}
+	if ( name != "apple" && name != "orange" && name != "banana" || size < 5 || color == "black") {
+		return {};
 	else {
 		showName:name,
 		showSize:size,
@@ -43,6 +36,7 @@ color == "black" t
 		}
 	}
 }
+
 var shuig = fruit("apple",20,"red");
 var shuig1 = fruit("orange",30,"orange");
 var shuig2 = fruit("banana",10,"yellow");
