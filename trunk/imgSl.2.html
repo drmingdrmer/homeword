@@ -12,7 +12,7 @@
       }
       #slide {
         position : relative;
-        border : 1px solid #000;
+        border   : 1px solid #000;
         width    : 695px;
       }
       #image {
@@ -21,7 +21,7 @@
         height   : 155px;
         overflow : hidden;
       }
-      #image img{ 
+      #image a{ 
         position : absolute;
       }
 
@@ -94,7 +94,9 @@
         btnHolder.style.top = $("image").style.height;
 
         var html = "", ptn = "<a href='javascript:dispImg(NUM-1);' >NUM</a>";
-        var imms = $("image").getElementsByTagName("img");
+        /* var imms = $("image").getElementsByTagName("img"); */
+        var imms = $("image").getElementsByTagName("a");
+
         for (var i=0; i<imms.length; ++i){
           var e = imms[i];
           imgs.push(e);
@@ -120,7 +122,7 @@
         }, 50);
         lastImg && (btnHolder.childNodes[lastImg.idx].className = "");
         btnHolder.childNodes[img.idx].className = "selected";
-        titHolder.innerHTML = img.alt || "";
+        titHolder.innerHTML = img.getElementsByTagName("img")[0].alt || "";
         lastImg = img;
       }
     </script>
@@ -128,14 +130,14 @@
   <body>
     <div id="slide">
       <div id="image">
-        <img alt="image Title 1" src="Sunset.jpg" />
-        <img alt="image Title 2" src="Water lilies.jpg" />
-        <img alt="image Title 3" src="Winter.jpg" />
-        <img alt="image Title 4" src="Blue hills.jpg" />
-        <img alt="image Title 1" src="Sunset.jpg" />
-        <img alt="image Title 2" src="Water lilies.jpg" />
-        <img alt="image Title 3" src="Winter.jpg" />
-        <img alt="image Title 4" src="Blue hills.jpg" />
+        <a href="#" ><img alt="image Title 1" src="Sunset.jpg" /></a>
+        <a href="#" ><img alt="image Title 2" src="Water lilies.jpg" /></a>
+        <a href="#" ><img alt="image Title 3" src="Winter.jpg" /></a>
+        <a href="#" ><img alt="image Title 4" src="Blue hills.jpg" /></a>
+        <a href="#" ><img alt="image Title 1" src="Sunset.jpg" /></a>
+        <a href="#" ><img alt="image Title 2" src="Water lilies.jpg" /></a>
+        <a href="#" ><img alt="image Title 3" src="Winter.jpg" /></a>
+        <a href="#" ><img alt="image Title 4" src="Blue hills.jpg" /></a>
       </div>
       <div id="buttonHolder"></div>
       <div id="titleArea">xx</div>
