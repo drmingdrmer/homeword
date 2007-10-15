@@ -16,7 +16,6 @@ function fruita (){
 	var a1 = this.showName + this.showSize + this.showSize;
 	return a1;
 }
-
 function fruit(name,size,color){
 	if ( name != "apple" && name != "orange" && name != "banana" || size < 5 || color == "black") {
 		return ;
@@ -27,28 +26,27 @@ function fruit(name,size,color){
 		disp:fruita
 	}
 }
-
 var shuig = fruit("apple",20,"red");
-var shuig1 = fruit("orange",30,"orange");
-var shuig2 = fruit("banana",10,"yellow");
 
 
-document.write();
+function mix(shuig){
+	var newName = this.showName + "banana";
+	    newSize = this.showSize + 30;
+	    newColor = this.showColor + "yellow"
 
-function mix (){
-//名字相加
-
-//大小相加合并
-
-//颜色合并
+	var a2 = newName + newSize + newColor;
 }
+
+
+//var allSg = mix(this.showName + "banana",this.showSize + 30,this.showColor + "yellow")
+
 </script>
 
 
 <pre>
 把disp方法改1下，返回1个能表示出这个水果所有信息的字符串,不需要直接由disp方法打印了。
 然后重新测试这个方法。
-因为disp不再亲自打印了，需要在外面document.write1下了。。
+因为disp不再亲自打印了，需要在外面document.write 1下了。。
 
 再写1个方法，名叫mix。
 接受1个参数，是另外1个水果的对象的引用。
