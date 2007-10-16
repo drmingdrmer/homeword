@@ -20,14 +20,19 @@ function fruita (){
 //function replaceName_xp(oth){
 //	this.showName = oth.showName;
 	//传递进来的水果对象的名称，赋给当前对象的名字
-//}
+	//}
 function mix_xp(my){
 	var a2 = this.showName + my.showName;
 	var a3 = this.showSize + my.showSize;
 	var a4 = this.showColor + my.showColor;
 	var a5 = a2 + a3 + a4;
+	//合并后的属性值保存在当前对象里面
+	this.showName = a2;
+	this.showSize = a3;
+	this.showColor = a4;
 	return a5;
 }
+	
 
 function fruit(name,size,color){
 	if ( name != "apple" && name != "orange" && name != "banana" || size < 5 || color == "black") {
@@ -42,20 +47,18 @@ function fruit(name,size,color){
 		//replaceName:replaceName_xp
 	}
 }
-
 var shuig = fruit("apple",20,"red");
 var shuig1 = fruit("banana",30,"yellow");
-
 /*var other = fruit("banana",10,"yellow");
 shuig.setName("xp");
 document.write (shuig.showName);
 document.write ("<br />================<br />");
 shuig.replaceName(other);
 document.write(shuig.showName);*/
-
 var hh = shuig.mix(shuig1);
-
 document.write (hh);
+document.write("<br />");
+document.write(shuig.showName);
 </script>
 <pre>
 再写1个方法，名叫mix。
