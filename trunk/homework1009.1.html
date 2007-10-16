@@ -6,16 +6,29 @@
 <style type="text/css">
 td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
 table,td,img,div,span,form{border: none;margin:0;padding:0;}
-
 </style>
 </head>
 <body>
 <script type="text/javascript" language="javascript">
-
 function fruita (){
 	var a1 = this.showName + this.showSize + this.showSize;
 	return a1;
 }
+//function setName_xp(my){
+//	this.showName = my;
+//}
+//function replaceName_xp(oth){
+//	this.showName = oth.showName;
+	//传递进来的水果对象的名称，赋给当前对象的名字
+//}
+function mix_xp(my){
+	var a2 = this.showName + my.showName;
+	var a3 = this.showSize + my.showSize;
+	var a4 = this.showColor + my.showColor;
+	var a5 = a2 + a3 + a4;
+	return a5;
+}
+
 function fruit(name,size,color){
 	if ( name != "apple" && name != "orange" && name != "banana" || size < 5 || color == "black") {
 		return ;
@@ -23,25 +36,38 @@ function fruit(name,size,color){
 		showName:name,
 		showSize:size,
 		showColor:color,
-		disp:fruita
+		disp:fruita,
+		mix:mix_xp
+		//setName:setName_xp,
+		//replaceName:replaceName_xp
 	}
 }
+
 var shuig = fruit("apple",20,"red");
+var shuig1 = fruit("banana",30,"yellow");
 
+/*var other = fruit("banana",10,"yellow");
+shuig.setName("xp");
+document.write (shuig.showName);
+document.write ("<br />================<br />");
+shuig.replaceName(other);
+document.write(shuig.showName);*/
 
-function mix(shuig){
-	var newName:this.showName + "banana",
-		newSize:this.showSize + 30
-		newColor:this.showColor + "yellow"
-}
+var hh = shuig.mix(shuig1);
 
-// var shuigAll = this.newName + this.newSize + this.newColor
+document.write (hh);
+</script>
+<pre>
+再写1个方法，名叫mix。
+接受1个参数，是另外1个水果的对象的引用。
+mix方法将传递进来的水果的名字与当前水果的名字合并成1个字符串。
+大小相加合并。
+颜色合并成1个字符串。
+最后返回1个字符串，表示这个新合成的水果的信息。
+以上是mix方法的功能。。
+</pre>
 
-//var allSg = mix(this.showName + "banana",this.showSize + 30,this.showColor + "yellow")
-
-// document.write ()
-//
-/*
+<div style="display:none;">
 var s1 = {
   showName : "abc", 
   showSize:30, 
@@ -60,22 +86,5 @@ s1.mix(s2);*/
 // s1.showname = "abc123"
 // s1.showSize = 40
 // s1.showcolor="redblue"
-</script>
-
-
-<pre>
-把disp方法改1下，返回1个能表示出这个水果所有信息的字符串,不需要直接由disp方法打印了。
-然后重新测试这个方法。
-因为disp不再亲自打印了，需要在外面document.write 1下了。。
-
-再写1个方法，名叫mix。
-接受1个参数，是另外1个水果的对象的引用。
-mix方法将传递进来的水果的名字与当前水果的名字合并成1个字符串。
-大小相加合并。
-颜色合并成1个字符串。
-最后返回1个字符串，表示这个新合成的水果的信息。
-以上是mix方法的功能。。
-</pre>
-
-
+</div>
 </body></html>
