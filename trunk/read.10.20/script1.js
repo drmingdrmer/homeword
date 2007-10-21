@@ -57,7 +57,7 @@ window.AnchorCommand = Class.define(
         var cmdStr = this.cmdPattern.replace(/\{\$i(\w+)\}/, function (a, b){
             return cmd[b];
           });
-        this.url.anchor[cmdStr] = null;		/* add command to url as param name without value */
+        this.url.anchor[cmdStr] = null;	/* add command to url as param name without value */
       }
     }, 
 
@@ -126,6 +126,7 @@ window.AnchorCommand = Class.define(
     }
   );
 
+
   window.each = function (ar, insp){
     var r = [];
     for(var i=0;i<ar.length;i++){
@@ -143,3 +144,14 @@ window.AnchorCommand = Class.define(
     }
   }
 
+/*
+xp 说:
+第1个函数看完后在它前面加注释，写出它的功能描述
+解释里面每个对象，属性，变量的作用。
+
+
+xp 说:
+
+最后2个也是函数。
+中间那个大的可以先留到最后
+*/
