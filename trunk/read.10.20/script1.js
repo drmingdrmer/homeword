@@ -1,11 +1,20 @@
+ //定义一个参数为base的loadCSS方法 
 window.loadCSS = function (base) {
-  var version = window.scope.config.resourceVersion;
-  version += "_" + window.scope.config.cssVer;
-  version = "?" + version;
-  var cssSrc = base + "css/default.template.css" + version;
-  var customSrc = base + "css/1.5.css" + version;
-  document.write('<link id="defaultCSS" rel="stylesheet" type="text/css" href="' + cssSrc + '" />');
-  document.write('<link id="customCSS" rel="stylesheet" type="text/css" href="' + customSrc + '" />');
+	//定义一个变量version，并赋值为属性是scope.config.resourceVersion的window对象
+	var version = window.scope.config.resourceVersion;
+	//将变量version与属性为scope.config.cssVer的对象相加，并将和赋给变量version
+		version += "_" + window.scope.config.cssVer;
+	//给变量version 赋值为“？”加上变量本身的值
+		version = "?" + version;
+	
+	//定义一个变量cssSrc,并赋值base参数传过来的值+""字符串的内容+变量version的值
+	var cssSrc = base + "css/default.template.css" + version;
+	//定义一个变量customSrc,并赋值base参数传过来的值+""字符串的内容+变量version的值
+	var customSrc = base + "css/1.5.css" + version;
+	//打印参数为cssSrc的css样式地址
+	document.write('<link id="defaultCSS" rel="stylesheet" type="text/css" href="' + cssSrc + '" />');
+	//打印参数为customSrc的css样式地址
+	document.write('<link id="customCSS" rel="stylesheet" type="text/css" href="' + customSrc + '" />');
 }
 
 
