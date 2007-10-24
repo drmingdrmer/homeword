@@ -6,7 +6,6 @@ window.loadCSS = function (base) {
 		version += "_" + window.scope.config.cssVer;
 	//给变量version 赋值为“？”加上变量本身的值
 		version = "?" + version;
-	
 	//定义一个变量cssSrc,并赋值base参数传过来的值+""字符串的内容+变量version的值
 	var cssSrc = base + "css/default.template.css" + version;
 	//定义一个变量customSrc,并赋值base参数传过来的值+""字符串的内容+变量version的值
