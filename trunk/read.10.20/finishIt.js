@@ -2,7 +2,7 @@
 //也就是给用到的对象，属性建立初始值。
 
 
-var x = {
+var window = {
 	scope:{contfig:{resourceVersion:styleCss}},
 	}
 
