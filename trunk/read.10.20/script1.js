@@ -17,10 +17,10 @@ window.loadCSS = function (base) {
 }
 
 
-
+//define方法的调用返回的结果，赋给anchorCommand属性
 window.AnchorCommand = Class.define(
-  function (win) {
-    win = win || window.scope || window;
+  function (win) { //逆名函数
+//	win = win || window.scope || window;
     this.init();
     this.win = win;
     this.setUrl(win.location.href);
@@ -95,71 +95,88 @@ window.AnchorCommand = Class.define(
         }
       },
 
-      clearCommand : function (name){
-        if (this.commands[name])
-          delete this.commands[name];
-      }, 
-
-      clearAllCommands : function (){
-        this.commands = {};
-      },
-
-      refreshUrl : function (){
-        this.win.location.hash = this.url.getHashStr(true);
-      }, 
-
-      runCommands : function () {
-        for (var i in this.commands){
-          var cmd = this.commands[i];
-          if (this.executor[i]){
-            try {
-              this.executor[i].apply(null, cmd.param);
-              this.clearCommand(i);
-              this.refreshUrl();
-            } catch (err) {
-              confirm("error occur when call comand : " + i + "\n error : " + err);
-            }
-          }
-        }
-      },
-
-      setExecutor : function (cmdName, func) {
-        this.executor[cmdName] = func;
-      }, 
-
-      getExecutor : function (cmdName){
-        return this.executor[cmdName];
-      }
+	clearCommand : function (name){
+	if (this.commands[name])
+	  delete this.commands[name];
+	}, 
+	
+	clearAllCommands : function (){
+	this.commands = {};
+	},
+	
+	refreshUrl : function (){
+	this.win.location.hash = this.url.getHashStr(true);
+	}, 
+	
+	runCommands : function () {
+	for (var i in this.commands){
+	  var cmd = this.commands[i];
+	  if (this.executor[i]){
+		try {
+		  this.executor[i].apply(null, cmd.param);
+		  this.clearCommand(i);
+		  this.refreshUrl();
+		} catch (err) {
+		  confirm("error occur when call comand : " + i + "\n error : " + err);
+		}
+	  }
+	}
+	},
+	
+	setExecutor : function (cmdName, func) {
+	this.executor[cmdName] = func;
+	}, 
+	
+	getExecutor : function (cmdName){
+	return this.executor[cmdName];
+	}
 
     }
   );
 
 
+//定义一个window的each方法,参数为ar和insp
   window.each = function (ar, insp){
+//定义一个变量r赋值为[]
     var r = [];
+//for 循环 循环条件 i=0, i<ar对象length的值
     for(var i=0;i<ar.length;i++){
-      var x = insp(ar[i],i);
+//循环内容 定义一个变量x,赋值为函数insp.
+      var x = insp(i);
+//判断 如果x 不等于空，执行r的push方法.
       if (x != null) r.push(x);
     }
+//如果x等于空，将r变量返回.
     return r;
   }
 
-  response = function (id, txt){
-    var entity = this.requestTable;
-    if (entity){
-      var doc = $Xml.Parser.fromString(txt);
-      entity.option.onComplete(txt, doc);
-    }
-  }
+
+//
+var response = function (id, txt){
+//定义一个变量entity赋值为 某对象的requestTable属性
+	var entity = this.requestTable;
+//判断 entity 
+	if (entity){
+//定义一个变量doc赋值为$Xml.Parser.fromString （txt）
+		var doc = $Xml.Parser.fromString(txt);
+//
+		entity.option.onComplete(txt, doc);
+	}
+}
+
+var q = {
+	xp : response
+};
+q.xp();
+var f = q.xp
 
 /*
-xp 说:
 第1个函数看完后在它前面加注释，写出它的功能描述
 解释里面每个对象，属性，变量的作用。
 
-
-xp 说:
-
 最后2个也是函数。
 中间那个大的可以先留到最后
+
+
+一个函数可以做为另外一个函数的方法
 */
