@@ -43,11 +43,11 @@ window.AnchorCommand = Class.define(
     },
 
     storeCommand : function (cmd){//storeCommand 方法赋值为参数是cmd的函数
-      this.commands[cmd.cmdName] = cmd;//介句看不懂是啥意思。。大概应该是给 commands属性赋值＝＝＝[]这里面不知道是什么意思
+      this.commands[cmd.cmdName] = cmd;//介句看不懂是啥意思。。大概应该是给 commands属性赋值======[]这里面不知道是什么意思
     },
 
     setUrl : function (url) { //setUrl方法赋值为参数是url的函数
-      this.url = new URL(url);//url属性赋值为 参数为url的URL方法＝＝＝＝new.....是做什么用的？？？
+      this.url = new URL(url);//url属性赋值为 参数为url的URL方法======new.....是做什么用的？？？
       this.parseAnchorCommands();//调用parseAnchorCommands方法
     },
 
@@ -55,63 +55,66 @@ window.AnchorCommand = Class.define(
       return this.url;
     },
 
-/*这一段很模糊*/
+/*这一段很模糊 开始*/
     serializeCmdToUrl : function (){//serializeCmdToUrl 方法赋值
       for (var i in this.commands){//for in 循环 commands属性
         var tmp = this.commands[i];//给变量tmp赋值 commands数组？＝＝commands是数组吗？
         var cmd = { //定义cmd对象
-          cmdName : tmp.cmdName,//对象属性cmdName 值为属性是cmdName的对象tmp＝＝＝＝
-          param   : tmp.param.join(",")//对象属性param 值为tmp对象的属性的join方法，join方法值为,＝＝＝＝
+          cmdName : tmp.cmdName,//对象属性cmdName 值为属性是cmdName的对象tmp======
+          param   : tmp.param.join(",")//对象属性param 值为tmp对象的属性的join方法，join方法值为,======
         };
-		//
+		/*定义一个变量cmdStr 赋值为方法是replace的属性为cmdPattern的对象，replace方法有两个参数，
+		第一个/\{\$i(\w+)\}/看不懂是什么，第二个是一个参数为a ,b 的函数*/
         var cmdStr = this.cmdPattern.replace(/\{\$i(\w+)\}/, function (a, b){
-            return cmd[b];
+            return cmd[b]; //返回值cmd[b]
           });
         this.url.anchor[cmdStr] = null;	/* add command to url as param name without value */
       }
     }, 
 
-    getUrlStr : function (){
-      this.serializeCmdToUrl();
-      var str = this.getUrlObject().toStr();
-      this.setUrl(str);
-      return str;
+
+    getUrlStr : function (){ //getUrlStr方法赋值
+      this.serializeCmdToUrl();//调用serializeCmdToUrl方法
+      var str = this.getUrlObject().toStr();//定义一个str变量 赋值为toStr方法的getUrlObjiect方法的对象
+      this.setUrl(str);//调用setUrl方法赋值为str变量
+      return str;//返回str变量的值
     },
 
-    parseAnchorCommands : function () {
-      if (!this.url) return;
-      var anchors = this.url.anchor;
+    parseAnchorCommands : function () {//parseAnchorCommands 方法赋值
+      if (!this.url) return;//如果不是url属性 返回
+      var anchors = this.url.anchor;// 定义anchors变量，赋值为属性anchors的url属性的对象
 
-      for (var i in anchors){
-        if (i.indexOf("cmd:") == 0){
-          var cmdStr = i.substr(4);
-          if (cmdStr == "") continue;
+      for (var i in anchors){ //anchors循环
+        if (i.indexOf("cmd:") == 0){ //如果i的参数为'cmd:'的indexOf方法值为0
+          var cmdStr = i.substr(4);//变量cmdStr 赋值为值是4的substr方法
+          if (cmdStr == "") continue;//如果cmdStr 值为空 continue停止当前循环
 
-          var cmd = cmdStr.split("(");
-            var cmdName = cmd[0];
-            var cmdParam = cmd[1].substr(0, cmd[1].length-1).split(",");
-            this.setCommand(cmdName, cmdParam);
+          var cmd = cmdStr.split("(");//变量cmd赋值为 参数是（的方法的cmdStr属性
+            var cmdName = cmd[0];//cmdName变量 赋值为cmd[0]=====这里是不是一个数组？
+            var cmdParam = cmd[1].substr(0, cmd[1].length-1).split(",");//cmdParam变量赋值为参数是,的split方法的，参数为0, cmd[1].length-1的substr方法的cmd[1]属性的一个对象
+            this.setCommand(cmdName, cmdParam);//调用参数为cmdName, cmdParam的setCommand方法
 
-            delete anchors[i];
+            delete anchors[i];//删除变量anchors的所有内容？？？=====================
           }
         }
       },
 
-	clearCommand : function (name){
-	if (this.commands[name])
-	  delete this.commands[name];
+
+	clearCommand : function (name){ //给 clearCommand 方法赋值为参数是name的函数
+	if (this.commands[name]) //如果满足this.commands[name]的条件
+	  delete this.commands[name];//删除this.commands[name]的所有内容？？？？==============
 	}, 
 	
-	clearAllCommands : function (){
-	this.commands = {};
+	clearAllCommands : function (){//给 clearAllCommands 方法赋值
+	this.commands = {};//调用commands属性
 	},
 	
-	refreshUrl : function (){
-	this.win.location.hash = this.url.getHashStr(true);
+	refreshUrl : function (){//给 refreshUrl 方法赋值
+	this.win.location.hash = this.url.getHashStr(true);//给hash属性是location属性，location是win属性的对象赋值为参数为true的getHashStr方法的url属性的对象
 	}, 
 	
-	runCommands : function () {
-	for (var i in this.commands){
+	runCommands : function () { //给 runcommands 方法赋值
+	for (var i in this.commands){//
 	  var cmd = this.commands[i];
 	  if (this.executor[i]){
 		try {
@@ -135,7 +138,7 @@ window.AnchorCommand = Class.define(
 
     }
   );
-
+/*模糊结束*/
 
 //定义一个window的each方法,参数为ar和insp
   window.each = function (ar, insp){
