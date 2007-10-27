@@ -19,49 +19,51 @@ window.loadCSS = function (base) {
 
 //define方法的调用返回的结果，赋给anchorCommand属性
 window.AnchorCommand = Class.define(
-  function (win) { //逆名函数
+  function (win) { // diefine方法的属生一，一个逆名函数
 //	win = win || window.scope || window;
-    this.init();
-    this.win = win;
-    this.setUrl(win.location.href);
+    this.init();//调用init方法
+    this.win = win;//给win属性赋值为win
+    this.setUrl(win.location.href);//调用setUrl方法，参数为属性为href的location属性的win对象
   },
-  null, {
+  null, {//diefine方法的属性二
 
-    init : function (win) {
-      this.commands = {};
-      this.executor = {};
-      this.win = null;
-      this.url = null;
-      this.cmdPattern = "cmd:{$cmdName}({$param})";
+    init : function (win) { //给init方法赋值为参数是win的函数
+      this.commands = {};//给commands属性赋值
+      this.executor = {};//给executor属性赋值
+      this.win = null;//给win属性赋值为null
+      this.url = null;//给url属性赋值null
+      this.cmdPattern = "cmd:{$cmdName}({$param})";//给cmdPattern属性赋值为一个字符串
     },
 
-    setCommand : function (cmd, params){
-      this.storeCommand({
-          cmdName : cmd,
-          param : params
+    setCommand : function (cmd, params){ //给setCommand方法赋值为参数是cmd, params的函数
+      this.storeCommand({//给 storeCommand方法传参数
+          cmdName : cmd,//cmdName属性值为setCommand方法的参数 cmd
+          param : params//param属性值为setCommand方法的参数 params
         });
     },
 
-    storeCommand : function (cmd){
-      this.commands[cmd.cmdName] = cmd;
+    storeCommand : function (cmd){//storeCommand 方法赋值为参数是cmd的函数
+      this.commands[cmd.cmdName] = cmd;//介句看不懂是啥意思。。大概应该是给 commands属性赋值＝＝＝[]这里面不知道是什么意思
     },
 
-    setUrl : function (url) {
-      this.url = new URL(url);
-      this.parseAnchorCommands();
+    setUrl : function (url) { //setUrl方法赋值为参数是url的函数
+      this.url = new URL(url);//url属性赋值为 参数为url的URL方法＝＝＝＝new.....是做什么用的？？？
+      this.parseAnchorCommands();//调用parseAnchorCommands方法
     },
 
-    getUrlObject : function (){
+    getUrlObject : function (){//getUrlObject方法赋值为返回url属性的值
       return this.url;
     },
 
-    serializeCmdToUrl : function (){
-      for (var i in this.commands){
-        var tmp = this.commands[i];
-        var cmd = {
-          cmdName : tmp.cmdName,
-          param   : tmp.param.join(",")
+/*这一段很模糊*/
+    serializeCmdToUrl : function (){//serializeCmdToUrl 方法赋值
+      for (var i in this.commands){//for in 循环 commands属性
+        var tmp = this.commands[i];//给变量tmp赋值 commands数组？＝＝commands是数组吗？
+        var cmd = { //定义cmd对象
+          cmdName : tmp.cmdName,//对象属性cmdName 值为属性是cmdName的对象tmp＝＝＝＝
+          param   : tmp.param.join(",")//对象属性param 值为tmp对象的属性的join方法，join方法值为,＝＝＝＝
         };
+		//
         var cmdStr = this.cmdPattern.replace(/\{\$i(\w+)\}/, function (a, b){
             return cmd[b];
           });
