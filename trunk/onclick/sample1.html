@@ -1,16 +1,51 @@
 <!doctype   html   public   "-//W3C//DTD   HTML   4.0   Transitional//EN">  
-<html>  
-  <head>  
-    <title>   New   Document   </title>  
-  </head>  
-  <body   bgcolor="#FFFFFF">  
-    <script>
-      document.onclick   =   doit;  
-      function   doit()  
-      {  
-        alert("OK");  
-      }   
-    </script>
+<html>
+<head>
+<title> New Document</title>
+</head>
+<body bgcolor="#FFFFFF">
+	<script>
+		document.onclick = doit;//调用doit本身
+		function doit()
+		{
+		alert("OK");
+		}
+	</script>
+
+
+
+<!--	<SCRIPT LANGUAGE="JScript">
+	function CookieGroup()
+	{
+	txtOutput.value = window.event.srcElement.value;
+	}
+	</SCRIPT>
+
+ Controls are grouped by giving them the same NAME but unique IDs. -->
+<!--<P>Grouped Radio Buttons<BR>
+<INPUT TYPE=radio NAME=rdoTest ID=Cookies VALUE="accept_cookies" CHECKED
+onclick="CookieGroup()"><BR>
+<INPUT TYPE=radio NAME=rdoTest ID=NoCookies VALUE="refuse_cookies"
+onclick="CookieGroup()"><BR>
+<P>Ungrouped Radio Button<BR>
+<INPUT TYPE=radio NAME=rdoTest1 VALUE="chocolate-chip_cookies"
+onclick="CookieGroup()"><BR>
+<P>Value of control on which the onclick event has fired<BR>
+<TEXTAREA NAME=txtOutput STYLE="width:250"></TEXTAREA>-->
+
+
+<!--
+<SCRIPT>
+function fnGetId(){
+// Returns the first DIV element in the collection.
+var oVDiv=document.getElementById("oDiv1");
+}
+</SCRIPT>
+<DIV ID="oDiv1">Div #1</DIV>
+<DIV ID="oDiv2">Div #2</DIV>
+<DIV ID="oDiv3">Div #3</DIV>
+<INPUT TYPE="button" VALUE="Get Names" onclick="fnGetId()">
+-->
   </body>  
 </html>  
 
