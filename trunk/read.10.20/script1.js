@@ -78,7 +78,17 @@ window.AnchorCommand = Class.define(
 
     getUrlStr : function (){ //getUrlStr方法赋值
       this.serializeCmdToUrl();//调用serializeCmdToUrl方法
-      var str = this.getUrlObject().toStr();//定义一个str变量 赋值为toStr方法的getUrlObjiect方法的对象
+      var str = this.getUrlObject().toStr();//定义一个str变量 getUrlObject方法调用后返回的那个对象的方法
+
+/*
+var x = this.getUrlObject();
+var y = x.toStr();
+var str = y;
+执行的过程和上面这个是1样的。
+*/
+
+
+
       this.setUrl(str);//调用setUrl方法赋值为str变量
       return str;//返回str变量的值
     },
