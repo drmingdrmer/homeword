@@ -24,16 +24,26 @@ function listMenu() {
 	for ( var i=0; i<9; i++) {
 	var Menu = document.getElementById("Menu" + i);
 	}
+	document.getElementById("Menu0").className="selected"
 }
 //--><!]]>
 </script>
-
+<!--
+方法1被调用，就返回1个东西。后面再跟.XXX取属性的语法跟那个方法本身1点关系都没了。
+byId返回的是个dom节点。
+classname是节点的属性。
+document.getElementById.xxx这样是取byId方法的属性。
+document.getElementById().xxx这样是取返回的对象的属性。
+【document.getElementById()】.xxx
+方法调用返回后，方括号里会变成1个dom节点。
+相当于dom节点.xxx
+-->
 
 <div class="menuStyle">
-	<ul><li id="Menu0" onclick="" class="selectd">标签一</li>
-		<li id="Menu1" onclick="">标签二</li>
-		<li id="Menu2" onclick="">标签三</li>
-		<li id="Menu3" onclick="">标签四</li>
+	<ul><li id="Menu0" onclick="listMenu()" class="selectd">标签一</li>
+		<li id="Menu1" onclick="listMenu()">标签二</li>
+		<li id="Menu2" onclick="listMenu()">标签三</li>
+		<li id="Menu3" onclick="listMenu()">标签四</li>
 	</ul>
 </div>
 
