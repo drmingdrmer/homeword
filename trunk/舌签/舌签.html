@@ -10,7 +10,7 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 .menuStyle ul { background:#069; line-height:25px; height:25px; width:300px; margin:0;}
 .menuStyle li { border:#666 1px solid; border-bottom:none; width:50px; text-align:center; background:#fff; cursor:pointer; line-height:25px; float:left; margin-right:4px;}
 .menuStyle li.selectd { background:#ff0;}
-.Cont { border:1px solid #666; width:300px; clear:both;}
+.Cont { border:1px solid #666; width:300px; clear:both; padding:1em;}
 </style>
 </head>
 <body>
@@ -21,7 +21,7 @@ function listMenu(num,con) {
 	for ( var i=0; i<4; i++) {
 	document.getElementById("Menu" + i).className = "";
 	document.getElementById("cont" + i).style.display = "none";
-}
+	}
 	document.getElementById("Menu" + num).className="selectd";
 	document.getElementById("cont" + con).style.display="block";
 
@@ -64,7 +64,7 @@ document.getElementById().xxx这样是取返回的对象的属性。
 	<ul><li id="Menu0" onclick="listMenu(0,0)" class="selectd">标签一</li>
 		<li id="Menu1" onclick="listMenu(1,1)">标签二</li>
 		<li id="Menu2" onclick="listMenu(2,2)">标签三</li>
-		<li id="Menu3"  onclick="listMenu(3,3)">标签四</li>
+		<li id="Menu3" onclick="listMenu(3,3)">标签四</li>
 	</ul>
 </div>
 
