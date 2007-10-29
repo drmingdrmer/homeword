@@ -10,6 +10,7 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 .menuStyle ul { background:#069; line-height:25px;}
 .menuStyle li { border:#666 1px solid; border-bottom:none; width:50px; text-align:center; background:#fff; cursor:pointer; line-height:25px; float:left; margin-right:4px;}
 .menuStyle li.selectd { background:#ff0;}
+.Cont { border:1px solid #666; width:300px; clear:both;}
 </style>
 </head>
 <body>
@@ -29,12 +30,33 @@ function listMenu() {
 
 
 <div class="menuStyle">
-	<ul><li id="Menu0" class="selectd">标签一</li>
-		<li id="Menu1">标签二</li>
-		<li id="Menu2">标签三</li>
-		<li id="Menu3">标签四</li>
+	<ul><li id="Menu0" onclick="" class="selectd">标签一</li>
+		<li id="Menu1" onclick="">标签二</li>
+		<li id="Menu2" onclick="">标签三</li>
+		<li id="Menu3" onclick="">标签四</li>
 	</ul>
 </div>
+
+<!--1 begin-->
+<div class="Cont" id="cont1">
+1
+</div>
+<!--1 end-->
+<!--2 begin-->
+<div class="Cont" id="cont2" style="display:none;">
+2
+</div>
+<!--2 end-->
+<!--3 begin-->
+<div class="Cont" id="cont3" style="display:none;">
+3
+</div>
+<!--3 end-->
+<!--4 begin-->
+<div class="Cont" id="cont4" style="display:none;">
+4
+</div>
+<!--4 end-->
 
 
 </body></html>
