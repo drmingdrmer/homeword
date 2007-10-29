@@ -7,7 +7,7 @@
 td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
 table,td,img,div,span,form{border: none;margin:0;padding:0;}
 
-.menuStyle ul { background:#069; line-height:25px;}
+.menuStyle ul { background:#069; line-height:25px; height:25px; width:300px; margin:0;}
 .menuStyle li { border:#666 1px solid; border-bottom:none; width:50px; text-align:center; background:#fff; cursor:pointer; line-height:25px; float:left; margin-right:4px;}
 .menuStyle li.selectd { background:#ff0;}
 .Cont { border:1px solid #666; width:300px; clear:both;}
@@ -22,8 +22,6 @@ function listMenu(num,con) {
 	var Menu = document.getElementById("Menu" + i);
 	var cont = document.getElementById("cont" + i);
 	}
-	document.getElementById("Menu" + num).className="selected";
-	document.getElementById("cont" + con).style.display="block";
 	document.getElementById("Menu0").className="";
 	document.getElementById("cont0").style.display="none";
 	document.getElementById("Menu1").className="";
@@ -32,6 +30,9 @@ function listMenu(num,con) {
 	document.getElementById("cont2").style.display="none";
 	document.getElementById("Menu3").className="";
 	document.getElementById("cont3").style.display="none";
+	
+	document.getElementById("Menu" + num).className="selectd";
+	document.getElementById("cont" + con).style.display="block";
 }
 //--><!]]>
 </script>
