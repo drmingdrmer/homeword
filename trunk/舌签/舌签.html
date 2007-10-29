@@ -18,10 +18,15 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 <script type="text/javascript" language="javascript">
 <!--//--><![CDATA[//><!--
 function listMenu(num,con) {
-	for ( var i=0; i<9; i++) {
-	var Menu = document.getElementById("Menu" + i);
-	var cont = document.getElementById("cont" + i);
-	}
+	for ( var i=0; i<4; i++) {
+	document.getElementById("Menu" + i).className = "";
+	document.getElementById("cont" + i).style.display = "none";
+}
+	document.getElementById("Menu" + num).className="selectd";
+	document.getElementById("cont" + con).style.display="block";
+
+
+	/*function listMenu(num,con) {
 	document.getElementById("Menu0").className="";
 	document.getElementById("cont0").style.display="none";
 	document.getElementById("Menu1").className="";
@@ -32,7 +37,9 @@ function listMenu(num,con) {
 	document.getElementById("cont3").style.display="none";
 	
 	document.getElementById("Menu" + num).className="selectd";
-	document.getElementById("cont" + con).style.display="block";
+	document.getElementById("cont" + con).style.display="block";*/
+
+
 }
 //--><!]]>
 </script>
