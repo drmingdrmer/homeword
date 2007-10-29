@@ -17,14 +17,13 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 
 <script type="text/javascript" language="javascript">
 <!--//--><![CDATA[//><!--
-
-
-
 function listMenu() {
 	for ( var i=0; i<9; i++) {
 	var Menu = document.getElementById("Menu" + i);
+	var cont = document.getElementById("cont" + i);
+	document.getElementById("menu").className="selected";
+	document.getElementById("cont").style.display="block";
 	}
-	document.getElementById("Menu0").className="selected"
 }
 //--><!]]>
 </script>
@@ -39,11 +38,12 @@ document.getElementById().xxx这样是取返回的对象的属性。
 相当于dom节点.xxx
 -->
 
+
 <div class="menuStyle">
 	<ul><li id="Menu0" onclick="listMenu()" class="selectd">标签一</li>
 		<li id="Menu1" onclick="listMenu()">标签二</li>
 		<li id="Menu2" onclick="listMenu()">标签三</li>
-		<li id="Menu3" onclick="listMenu()">标签四</li>
+		<li id="Menu3"  onclick="listMenu()">标签四</li>
 	</ul>
 </div>
 
