@@ -24,9 +24,17 @@ function listMenu(num) {
 		var MenuSlc = document.getElementById("Menu" + num);
 		var contSlc = document.getElementById("cont" + num);
 
-		if (!Menu.className == ""){ MenuSlc.className ="selectd"}
-		if (!cont.style.display == "none") { contSlc.style.display="block"}
+		if (Menu || cont){ 
+			Menu.className = ""
+			cont.style.display = "none"
+		}else{
+			MenuSlc.className ="selectd"
+			contSlc.style.display="block"
 		}
+	}
+
+
+
 }
 
 //这样可以在1个循环里完成这2个工作，用if判断如果循环到参数指定的那组，另外处理。
