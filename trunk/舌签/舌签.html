@@ -21,14 +21,15 @@ function listMenu(num) {
 	for ( var i=0; i<4; i++) {
 		var Menu = document.getElementById("Menu" + i);
 		var cont = document.getElementById("cont" + i);
-		Menu.className = "";
-		cont.style.display = "none";
-		}
 		var MenuSlc = document.getElementById("Menu" + num);
 		var contSlc = document.getElementById("cont" + num);
-		MenuSlc.className="selectd";
-		contSlc.style.display="block"
+		if (Menu.className = "") {MenuSlc.className ="selectd";}
+		if (cont.style.display = "none") {contSlc.style.display="block"}
+	}
 }
+
+//这样可以在1个循环里完成这2个工作，用if判断如果循环到参数指定的那组，另外处理。
+//这个优化在代码数量上没啥作用，但可以减少1次对dom节点的属性设置
 
 //--><!]]>
 </script>
