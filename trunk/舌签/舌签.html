@@ -17,26 +17,27 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 
 <script type="text/javascript" language="javascript">
 <!--//--><![CDATA[//><!--
-function listMenu(num,con) {
+function listMenu(num) {
 	for ( var i=0; i<4; i++) {
 		var Menu = document.getElementById("Menu" + i);
 		var cont = document.getElementById("cont" + i);
 		Menu.className = "";
 		cont.style.display = "none";
 		}
-
-	document.getElementById("Menu" + num).className="selectd";
-	document.getElementById("cont" + con).style.display="block"
+		var MenuSlc = document.getElementById("Menu" + num);
+		var contSlc = document.getElementById("cont" + num);
+		MenuSlc.className="selectd";
+		contSlc.style.display="block"
 }
 
 //--><!]]>
 </script>
 
 <div class="menuStyle">
-	<ul><li id="Menu0" onclick="listMenu(0,0)" class="selectd">标签一</li>
-		<li id="Menu1" onclick="listMenu(1,1)">标签二</li>
-		<li id="Menu2" onclick="listMenu(2,2)">标签三</li>
-		<li id="Menu3" onclick="listMenu(3,3)">标签四</li>
+	<ul><li id="Menu0" onclick="listMenu(0)" class="selectd">标签一</li>
+		<li id="Menu1" onclick="listMenu(1)">标签二</li>
+		<li id="Menu2" onclick="listMenu(2)">标签三</li>
+		<li id="Menu3" onclick="listMenu(3)">标签四</li>
 	</ul>
 </div>
 
