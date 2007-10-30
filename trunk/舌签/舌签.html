@@ -19,46 +19,18 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 <!--//--><![CDATA[//><!--
 function listMenu(num,con) {
 	for ( var i=0; i<4; i++) {
-	document.getElementById("Menu" + i).className = "";
-	document.getElementById("cont" + i).style.display = "none";
-	}
+		var Menu = document.getElementById("Menu" + i);
+		var cont = document.getElementById("cont" + i);
+		Menu.className = "";
+		cont.style.display = "none";
+		}
+
 	document.getElementById("Menu" + num).className="selectd";
-	document.getElementById("cont" + con).style.display="block";
-
-
-	/*function listMenu(num,con) {
-	document.getElementById("Menu0").className="";
-	document.getElementById("cont0").style.display="none";
-	document.getElementById("Menu1").className="";
-	document.getElementById("cont1").style.display="none";
-	document.getElementById("Menu2").className="";
-	document.getElementById("cont2").style.display="none";
-	document.getElementById("Menu3").className="";
-	document.getElementById("cont3").style.display="none";
-	
-	document.getElementById("Menu" + num).className="selectd";
-	document.getElementById("cont" + con).style.display="block";*/
-
-
+	document.getElementById("cont" + con).style.display="block"
 }
+
 //--><!]]>
 </script>
-<!--
-方法1被调用，就返回1个东西。后面再跟.XXX取属性的语法跟那个方法本身1点关系都没了。
-byId返回的是个dom节点。
-classname是节点的属性。
-document.getElementById.xxx这样是取byId方法的属性。
-document.getElementById().xxx这样是取返回的对象的属性。
-【document.getElementById()】.xxx
-方法调用返回后，方括号里会变成1个dom节点。
-相当于dom节点.xxx
-
-
-就是比如点击menu1就显增cont1内容，这个意思。
-显示当前的菜单和内容
-隐藏其他的菜单和内容。
--->
-
 
 <div class="menuStyle">
 	<ul><li id="Menu0" onclick="listMenu(0,0)" class="selectd">标签一</li>
@@ -88,6 +60,50 @@ document.getElementById().xxx这样是取返回的对象的属性。
 3
 </div>
 <!--3 end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+方法1被调用，就返回1个东西。后面再跟.XXX取属性的语法跟那个方法本身1点关系都没了。
+byId返回的是个dom节点。
+classname是节点的属性。
+document.getElementById.xxx这样是取byId方法的属性。
+document.getElementById().xxx这样是取返回的对象的属性。
+【document.getElementById()】.xxx
+方法调用返回后，方括号里会变成1个dom节点。
+相当于dom节点.xxx
+
+
+就是比如点击menu1就显增cont1内容，这个意思。
+显示当前的菜单和内容
+隐藏其他的菜单和内容。
+-->
 
 
 </body></html>
