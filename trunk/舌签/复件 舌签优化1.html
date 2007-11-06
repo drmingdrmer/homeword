@@ -30,11 +30,9 @@ function listMenu(num) {
 	for (var i=0; i<4; i++) {
 		var Menu = $("Menu" + i);
 		var Cont = $("cont" + i);
-		var MenuSlec = $("Menu" + num);
-		var contSlec = $("cont" + num);
 		if (i == num) {
-			MenuSlec.className = "selectd";
-			contSlec.style.display = "block";
+			Menu.className = "selectd";
+			cont.style.display = "block";
 		}else{
 			Menu.className = "";
 			Cont.style.display = "none";
