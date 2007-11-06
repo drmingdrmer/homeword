@@ -18,26 +18,25 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 <script type="text/javascript" language="javascript">
 <!--//--><![CDATA[//><!--
 
+var Menu;
+
 function $(id) {
 	return document.getElementById(id);
 }
 
 function listMenu(num) {
 	for ( var i=0; i<4; i++) {
-		var Menu = $("Menu" + i);
-		var cont = $("cont" + i);
-		var MenuSlc = $("Menu" + num);
-		var contSlc = $("cont" + num);
-
-		if (i == num) {
-			MenuSlc.className="selectd";
-			contSlc.style.display="block";
-		} else {
-			Menu.className="";
-			cont.style.display="none";
+		if (Menu = $("Menu" + i)) {Menu.className="";}
+		if (Menu = $("cont" + i)) {Menu.style.display="none";}
 		}
-	}
+		if (Menu = $("Menu" + num)) {Menu.className="selectd";}
+		if (Menu = $("cont" + num)) {Menu.style.display="block";}
 }
+
+//当点击标签的时候，onclick事件触发listMenu函数。
+//判断当前所触发的标签的id，是当前所触发的标签，调用样式selectd，相对应内容id所在的容显状态为块状。其它的隐藏。
+
+
 
 //这个优化在代码数量上没啥作用，但可以减少1次对dom节点的属性设置
 //如果循环变量指定的dom节点和onclick触发的dom节点一致时
