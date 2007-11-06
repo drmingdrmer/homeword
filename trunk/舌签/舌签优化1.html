@@ -18,16 +18,16 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 <script type="text/javascript" language="javascript">
 <!--//--><![CDATA[//><!--
 
-function getEle(name,ord) {
-	document.getElementById(name,ord)
+function $(id) {
+	return document.getElementById(id);
 }
 
 function listMenu(num) {
 	for ( var i=0; i<4; i++) {
-		var Menu = document.getElementById("Menu" + i);
-		var cont = document.getElementById("cont" + i);
-		var MenuSlc = document.getElementById("Menu" + num);
-		var contSlc = document.getElementById("cont" + num);
+		var Menu = $("Menu" + i);
+		var cont = $("cont" + i);
+		var MenuSlc = $("Menu" + num);
+		var contSlc = $("cont" + num);
 
 		if (i == num) {
 			MenuSlc.className="selectd";
