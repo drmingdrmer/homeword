@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+<!--
+td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
+table,td,img,div,span,form{border: none;margin:0;padding:0;}
+
+ul,li { list-style:none;}
+.menuStyle ul { background:#069; line-height:25px; height:25px; width:300px; margin:0;}
+.menuStyle li { border:#666 1px solid; border-bottom:none; width:50px; text-align:center; background:#fff; cursor:pointer; line-height:25px; float:left; margin-right:4px;}
+.menuStyle li.selectd { background:#ff0;}
+.Cont { border:1px solid #666; width:300px; clear:both; padding:1em;}
+
+</style>
+<title>无标题文档</title>
+</head>
+<!--舌签 start-->
+<script language="javascript" type="text/javascript">
+<!--//--><![CDATA[//><!--
+function $(id){
+	return document.getElementById(id);
+}
+
+function Show_Sub(id_num,num){ //舌签功能
+	for(var i = 0;i <= 9;i++){
+		var Menu = $("S_Menu_" + id_num + i);
+		var Cont = $("S_Cont_" + id_num + i);
+		
+		if (i == num) {
+			$("S_Menu_" + id_num + i).className = "selectd"
+			$("S_Cont_" + id_num + i).style.display = "block"
+		}else{
+			$("S_Menu_" + id_num + num).className = ""
+			$("S_Cont_" + id_num + num).style.display = "none"
+		}
+			
+	}
+}
+	
+
+
+/*		if($("S_Menu_" + id_num + i)){$("S_Menu_" + id_num + i).className = '';}
+		if($("S_Cont_" + id_num + i)){$("S_Cont_" + id_num + i).style.display = 'none';}
+	}
+	if($("S_Menu_" + id_num + num)){$("S_Menu_" + id_num + num).className = 'selectd';}
+	if($("S_Cont_" + id_num + num)){$("S_Cont_" + id_num + num).style.display = 'block';}
+}*/
+
+/*function GetObj(objName){
+	if(document.getElementById){
+		return eval('document.getElementById("' + objName + '")');
+	}else{
+		return eval('document.all.' + objName);
+	}
+}*/
+//--><!]]>
+</script> 
+<!--舌签 end-->
+<body>
+<ul class="menuStyle">
+	<li id="S_Menu_21" onClick="Show_Sub(2,1)" class="selectd">中低档</li>
+	<li id="S_Menu_22" onClick="Show_Sub(2,2)">中高档</li>
+	<li id="S_Menu_23" onClick="Show_Sub(2,3)">超高档</li>
+</ul>								
+
+<!-- 日 begin -->
+<div class="Cont" id="S_Cont_21">
+	1
+</div>
+<!-- 日 end -->
+<!-- 周 begin -->
+<div class="Cont" id="S_Cont_22" style="display:none">
+	2
+</div>
+<!-- 周 end -->
+<!-- 月 begin -->
+<div class="Cont" id="S_Cont_23" style="display:none">
+	3
+</div>
+<!-- 月 end -->
+
+
+
+<ul class="menuStyle">
+	<li id="S_Menu_11" class="selectd" onClick="Show_Sub(1,1)">中低档</li>
+	<li id="S_Menu_12" onClick="Show_Sub(1,2)">中高档</li>
+	<li id="S_Menu_13" onClick="Show_Sub(1,3)">超高档</li>
+</ul>								
+
+<!-- 日 begin -->
+<div class="Cont" id="S_Cont_11">
+	1
+</div>
+<!-- 日 end -->
+<!-- 周 begin -->
+<div class="Cont" id="S_Cont_12" style="display:none">
+	2
+</div>
+<!-- 周 end -->
+<!-- 月 begin -->
+<div class="Cont" id="S_Cont_13" style="display:none">
+	3
+</div>
+<!-- 月 end -->
+</body>
+</html>
