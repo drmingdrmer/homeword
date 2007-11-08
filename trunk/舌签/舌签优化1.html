@@ -26,11 +26,11 @@ function $(id) {
 
 function listMenu(num) {
 	for ( var i=0; i<4; i++) {
-		if (Menu = $("Menu" + i)) {Menu.className="";}
-		if (Menu = $("cont" + i)) {Menu.style.display="none";}
+		if (Menu = $("Menu" + i)) { Menu.className=""; }
+		if (Menu = $("cont" + i)) { Menu.style.display="none"; }
 		}
-		if (Menu = $("Menu" + num)) {Menu.className="selectd";}
-		if (Menu = $("cont" + num)) {Menu.style.display="block";}
+		if (Menu = $("Menu" + num)) { Menu.className="selectd"; }
+		if (Menu = $("cont" + num)) { Menu.style.display="block"; }
 }
 
 //当点击标签的时候，onclick事件触发listMenu函数。

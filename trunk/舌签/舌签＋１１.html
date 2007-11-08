@@ -27,13 +27,15 @@ function Show_Sub(id_num,num){ //ÉàÇ©¹¦ÄÜ
 	for(var i = 0;i <= 9;i++){
 		var Menu = $("S_Menu_" + id_num + i);
 		var Cont = $("S_Cont_" + id_num + i);
+		var MenuSelc = $("S_Menu_" + id_num + num);
+		var ContSelc = $("S_Cont_" + id_num + num);
 		
 		if (i == num) {
 			Menu.className = "selectd"
 			Cont.style.display = "block"
 		}else{
-			$("S_Menu_" + id_num + num).className = ""
-			$("S_Cont_" + id_num + num).style.display = "none"
+			MenuSelc.className = ""
+			ContSelc.style.display = "none"
 		}
 			
 	}
