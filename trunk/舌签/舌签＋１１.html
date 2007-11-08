@@ -12,7 +12,7 @@ ul,li { list-style:none;}
 .menuStyle li { border:#666 1px solid; border-bottom:none; width:50px; text-align:center; background:#fff; cursor:pointer; line-height:25px; float:left; margin-right:4px;}
 .menuStyle li.selectd { background:#ff0;}
 .Cont { border:1px solid #666; width:300px; clear:both; padding:1em;}
-
+-->
 </style>
 <title>无标题文档</title>
 </head>
@@ -24,61 +24,41 @@ function $(id){
 }
 
 function Show_Sub(id_num,num){ //舌签功能
-	for(var i = 0;i <= 9;i++){
+	for(var i = 0; i<3; i++){
 		var Menu = $("S_Menu_" + id_num + i);
 		var Cont = $("S_Cont_" + id_num + i);
-		var MenuSelc = $("S_Menu_" + id_num + num);
-		var ContSelc = $("S_Cont_" + id_num + num);
-		
 		if (i == num) {
 			Menu.className = "selectd"
 			Cont.style.display = "block"
 		}else{
-			MenuSelc.className = ""
-			ContSelc.style.display = "none"
+			Menu.className = ""
+			Cont.style.display = "none"
 		}
-			
 	}
 }
-	
 
-
-/*		if($("S_Menu_" + id_num + i)){$("S_Menu_" + id_num + i).className = '';}
-		if($("S_Cont_" + id_num + i)){$("S_Cont_" + id_num + i).style.display = 'none';}
-	}
-	if($("S_Menu_" + id_num + num)){$("S_Menu_" + id_num + num).className = 'selectd';}
-	if($("S_Cont_" + id_num + num)){$("S_Cont_" + id_num + num).style.display = 'block';}
-}*/
-
-/*function GetObj(objName){
-	if(document.getElementById){
-		return eval('document.getElementById("' + objName + '")');
-	}else{
-		return eval('document.all.' + objName);
-	}
-}*/
 //--><!]]>
 </script> 
 <!--舌签 end-->
 <body>
 <ul class="menuStyle">
-	<li id="S_Menu_21" onClick="Show_Sub(2,1)" class="selectd">中低档</li>
-	<li id="S_Menu_22" onClick="Show_Sub(2,2)">中高档</li>
-	<li id="S_Menu_23" onClick="Show_Sub(2,3)">超高档</li>
-</ul>								
+	<li id="S_Menu_a0" onClick="Show_Sub('a',0)" class="selectd">中低档</li>
+	<li id="S_Menu_a1" onClick="Show_Sub('a',1)">中高档</li>
+	<li id="S_Menu_a2" onClick="Show_Sub('a',2)">超高档</li>
+</ul>
 
 <!-- 日 begin -->
-<div class="Cont" id="S_Cont_21">
+<div class="Cont" id="S_Cont_a0">
 	1
 </div>
 <!-- 日 end -->
 <!-- 周 begin -->
-<div class="Cont" id="S_Cont_22" style="display:none">
+<div class="Cont" id="S_Cont_a1" style="display:none">
 	2
 </div>
 <!-- 周 end -->
 <!-- 月 begin -->
-<div class="Cont" id="S_Cont_23" style="display:none">
+<div class="Cont" id="S_Cont_a2" style="display:none">
 	3
 </div>
 <!-- 月 end -->
@@ -86,23 +66,23 @@ function Show_Sub(id_num,num){ //舌签功能
 
 
 <ul class="menuStyle">
-	<li id="S_Menu_11" class="selectd" onClick="Show_Sub(1,1)">中低档</li>
-	<li id="S_Menu_12" onClick="Show_Sub(1,2)">中高档</li>
-	<li id="S_Menu_13" onClick="Show_Sub(1,3)">超高档</li>
+	<li id="S_Menu_b0" class="selectd" onClick="Show_Sub('b',0)">中低档</li>
+	<li id="S_Menu_b1" onClick="Show_Sub('b',1)">中高档</li>
+	<li id="S_Menu_b2" onClick="Show_Sub('b',2)">超高档</li>
 </ul>								
 
 <!-- 日 begin -->
-<div class="Cont" id="S_Cont_11">
+<div class="Cont" id="S_Cont_b0">
 	1
 </div>
 <!-- 日 end -->
 <!-- 周 begin -->
-<div class="Cont" id="S_Cont_12" style="display:none">
+<div class="Cont" id="S_Cont_b1" style="display:none">
 	2
 </div>
 <!-- 周 end -->
 <!-- 月 begin -->
-<div class="Cont" id="S_Cont_13" style="display:none">
+<div class="Cont" id="S_Cont_b2" style="display:none">
 	3
 </div>
 <!-- 月 end -->
