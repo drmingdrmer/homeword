@@ -21,12 +21,12 @@ ul,li { list-style:none;}
 function $(id){
 	return document.getElementById(id);
 }
-var my = 1;
+window.my = 1;
 
 function Show_Sub(num) {
 	
-	var Menu = $("Menu" + my);
-	var Cont = $("Cont" + my);
+	var Menu = $("Menu" + window.my);
+	var Cont = $("Cont" + window.my);
 	Menu.className = "";
 	Cont.style.display = "none";
 	
@@ -35,7 +35,7 @@ function Show_Sub(num) {
 	Menu.className = "selectd";
 	Cont.style.display = "block";
 	
-	my = num;
+	window.my = num;
 }
 
 //--><!]]>
