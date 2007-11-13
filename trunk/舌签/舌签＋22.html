@@ -18,29 +18,39 @@ ul,li { list-style:none;}
 </head>
 <script language="javascript" type="text/javascript">
 <!--//--><![CDATA[//><!--
+/*
+意思是最开始的时候没有window.my这个变量，需要用到的时候，再给它初始化
+要用if、else判断是否存在window.my，没有的话给它设置1个值，让程序可以运行起来。
+判断1个对象的属性存在就用 xx.yy == undefined就可以
+如果等于它就是没有。不等于它就是有。。
+
+*/
+
 function $(id){
 	return document.getElementById(id);
 }
-window.my = 1;
 
-function Show_Sub(num) {
-	
+function Show_Sub(num) {	
+	if ( window.my == undefined ) {
+		var Menu = $("Menu" + num);
+		var Cont = $("Cont" + num);
+		Menu.className = "";
+		Cont.style.display = "none";
+	}else{
+	window.my = 1;
 	var Menu = $("Menu" + window.my);
 	var Cont = $("Cont" + window.my);
-	Menu.className = "";
-	Cont.style.display = "none";
-	
-	var Menu = $("Menu" + num);
-	var Cont = $("Cont" + num);
 	Menu.className = "selectd";
 	Cont.style.display = "block";
-	
-	window.my = num;
+	}
+		
 }
+
 
 //--><!]]>
 </script> 
 <body>
+
 <ul class="menuStyle">
 	<li id="Menu1" onClick="Show_Sub(1)" class="selectd">中低档</li>
 	<li id="Menu2" onClick="Show_Sub(2)">中高档</li>
