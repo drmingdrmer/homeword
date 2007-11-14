@@ -31,20 +31,19 @@ ul,li { list-style:none;}
 取得ul节点后，作为普通对象使用。可以添加属性。
 
 为不同的舌签组记录不同的历史。
+
+
+你用name传进来的值可以找到对应的ul。
+
 */
 
 function $(id){
 	return document.getElementById(id);
 }
-	
-function Show_Sub(name,num) {
-	
-	//判断当前触发的li节点是存在于id值是什么的ul节点上
-	
 
-	//判断window.my属性是否存在，并初值化该属性值
+function Show_Sub(name,num) {
+
 	if (window.my == undefined) { window.my = 1; }
-	
 
 	var Menu = $("Menu" + name + window.my);
 	var Cont = $("Cont" + name + window.my);
@@ -56,7 +55,6 @@ function Show_Sub(name,num) {
 	Menu.className = "selectd";
 	Cont.style.display = "block";
 
-	
 	window.my = num;
 	
 }
