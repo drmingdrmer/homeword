@@ -51,19 +51,19 @@ function Show_Sub(name,num) {
 		m = myb;
 	}
 
-	//隐藏上次点的舌签组
+	//隐藏上次点击的舌签组
 	var Menu = $("Menu" + name + m);
 	var Cont = $("Cont" + name + m);
 	Menu.className = "";
 	Cont.style.display = "none";
 
-	//现实当前的
+	//显示当前的
 	var Menu = $("Menu" + name + num);
 	var Cont = $("Cont" + name + num);
 	Menu.className = "selectd";
 	Cont.style.display = "block";
 
-	//纪录当前点的赊欠组的编号
+	//纪录当前点的舌签组的编号
 	if ( name == "a") {
 		window.mya = num;
 	}
