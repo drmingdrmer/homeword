@@ -38,21 +38,18 @@ ul,li { list-style:none;}
 function $(id){
 	return document.getElementById(id);
 }
-
 function Show_Sub(name,num) {
-
 	if (window.myb == undefined) { window.myb = 1; }
 	if (window.mya == undefined) { window.mya = 1; }
 	
-	//定义一个不同的变量，记录另一组舌签的历史记录。
 	//根据name不同的值，选择不同的变量
-		if ( name == "a" ) {
-			//选择变量mya
-			m = mya;
-		}
-		if ( name == "b" ) {
-			m = myb;
-		}
+	if ( name == "a" ) {
+		//选择变量mya
+		m = mya;
+	}
+	if ( name == "b" ) {
+		m = myb;
+	}
 
 	//隐藏上次点的舌签组
 	var Menu = $("Menu" + name + m);
@@ -67,26 +64,21 @@ function Show_Sub(name,num) {
 	Cont.style.display = "block";
 
 	//纪录当前点的赊欠组的编号
-		if ( name == "a") {
-			window.mya = num;
-		}
-		if ( name == "b") {
-			window.myb = num;
-		}
-
+	if ( name == "a") {
+		window.mya = num;
+	}
+	if ( name == "b") {
+		window.myb = num;
+	}
 }
-
-
 //--><!]]>
 </script> 
 <body>
-
 <ul id="a" class="menuStyle">
 	<li id="Menua1" onClick="Show_Sub('a',1)" class="selectd">中低档</li>
 	<li id="Menua2" onClick="Show_Sub('a',2)">中高档</li>
 	<li id="Menua3" onClick="Show_Sub('a',3)">超高档</li>
 </ul>
-
 <div class="Cont" id="Conta1">
 	1
 </div>
@@ -103,7 +95,6 @@ function Show_Sub(name,num) {
 	<li id="Menub2" onClick="Show_Sub('b',2)">中高档</li>
 	<li id="Menub3" onClick="Show_Sub('b',3)">超高档</li>
 </ul>
-
 <div class="Cont" id="Contb1">
 	4
 </div>
@@ -113,6 +104,5 @@ function Show_Sub(name,num) {
 <div class="Cont" id="Contb3" style="display:none;">
 	6
 </div>
-
 </body>
 </html>
