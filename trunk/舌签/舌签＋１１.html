@@ -22,9 +22,8 @@ ul,li { list-style:none; margin:0; padding:0;}
 function $(id){
 	return document.getElementById(id);
 }
-
-function Show_Sub(id_num,num){ //ÉàÇ©¹¦ÄÜ
-	for(var i = 0; i<3; i++){
+function Show_Sub(id_num,num){
+	for(var i = 0; i < 3; i++){
 		var Menu = $("S_Menu_" + id_num + i);
 		var Cont = $("S_Cont_" + id_num + i);
 		if (i == num) {

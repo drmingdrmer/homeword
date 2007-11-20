@@ -32,9 +32,7 @@ ul,li { list-style:none;}
 
 为不同的舌签组记录不同的历史。
 
-
 你用name传进来的值可以找到对应的ul。
-
 */
 
 function $(id){
@@ -43,20 +41,39 @@ function $(id){
 
 function Show_Sub(name,num) {
 
-	if (window.my == undefined) { window.my = 1; }
+	if (window.myb == undefined) { window.myb = 1; }
+	if (window.mya == undefined) { window.mya = 1; }
+	
+	//定义一个不同的变量，记录另一组舌签的历史记录。
+	//根据name不同的值，选择不同的变量
+		if ( name == "a" ) {
+			//选择变量mya
+			m = mya;
+		}
+		if ( name == "b" ) {
+			m = myb;
+		}
 
-	var Menu = $("Menu" + name + window.my);
-	var Cont = $("Cont" + name + window.my);
+	//隐藏上次点的舌签组
+	var Menu = $("Menu" + name + m);
+	var Cont = $("Cont" + name + m);
 	Menu.className = "";
 	Cont.style.display = "none";
 
+	//现实当前的
 	var Menu = $("Menu" + name + num);
 	var Cont = $("Cont" + name + num);
 	Menu.className = "selectd";
 	Cont.style.display = "block";
 
-	window.my = num;
-	
+	//纪录当前点的赊欠组的编号
+		if ( name == "a") {
+			window.mya = num;
+		}
+		if ( name == "b") {
+			window.myb = num;
+		}
+
 }
 
 
