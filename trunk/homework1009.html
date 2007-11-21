@@ -17,7 +17,7 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 	showColor:"red",
 	disp:fruit
 }*/
-function fruita (){
+function display (){
 	document.write(this.showName);
 	document.write("<br />");
 	document.write(this.showSize);
@@ -27,17 +27,19 @@ function fruita (){
 
 function fruit(name,size,color){
 	if ( name != "apple" && name != "orange" && name != "banana" || size < 5 || color == "black") {
-		return ;
-	}else return{
-		showName:name,
-		showSize:size,
-		showColor:color,
-		disp:fruita
+		return null;
+	} else {
+		return {
+			showName	: name,
+			showSize	: size,
+			showColor	: color,
+			disp		: display
+		};
 	}
 }
 
-var shuig = fruit("apple",20,"red");
-var shuig1 = fruit("orange",30,"orange");
+var shuig  = fruit("apple",20,"red");
+var shuig1 = fruit("orange",20,"orange");
 var shuig2 = fruit("banana",10,"yellow");
 
 document.write("<br />");//新加的方法，不是函数，测试的时候要用对象名.方法名的形式来测试。
@@ -47,7 +49,6 @@ shuig1.disp();
 document.write("<br />---------<br />");
 shuig2.disp();
 document.write("<br />---------<br />")
-//--><!]]>
 </script>
 
 <pre>
