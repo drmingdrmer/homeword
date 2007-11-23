@@ -18,56 +18,26 @@ ul,li { list-style:none;}
 </head>
 <script language="javascript" type="text/javascript">
 <!--//--><![CDATA[//><!--
-/*
-意思是最开始的时候没有window.my这个变量，需要用到的时候，再给它初始化
-要用if、else判断是否存在window.my，没有的话给它设置1个值，让程序可以运行起来。
-判断1个对象的属性存在就用 xx.yy == undefined就可以
-如果等于它就是没有。不等于它就是有。。
-使用的方式都是1样的。唯一不同的是在需要的时候再初始化它。
-
-现在要为每个不同的舌签点击记录不同的点击历史，
-
-就把点击的历史 记录在id和a或b的ul上。
-取得ul节点后，作为普通对象使用。可以添加属性。
-
-为不同的舌签组记录不同的历史。
-
-你用name传进来的值可以找到对应的ul。
-*/
-
 function $(id){
 	return document.getElementById(id);
 }
 
-
-
 function Show_Sub(name,num) {
 
-	//定义一个变量，给变量赋初值
-	
+	//找到舌签组所对应的UL节点
+	var my;
+	my = $(name);
 
-	//定义一个函数，用来定义ul节点的id
+	//定义一个不同对象的共用属性 last     没用的东西
 
-
-	//根据name不同的值，选择不同的id
-
-
-
-	if (window.mya == undefined) { window.mya = 1; }
-	if (window.myb == undefined) { window.myb = 1; }
-	
-	//根据name不同的值，选择不同的变量
-	if ( name == "a" ) {
-		//选择变量mya
-		m = mya;
-	}
-	if ( name == "b" ) {
-		m = myb;
+	//如果对象里没有这个属性的值的话，需要对它进行初始化。
+	if ( my.last == undefined ) {
+		my.last = 1;
 	}
 
-	//隐藏上次点击的舌签组
-	var Menu = $("Menu" + name + m);
-	var Cont = $("Cont" + name + m);
+	//隐藏上次点击的舌签
+	var Menu = $("Menu" + name + my.last);
+	var Cont = $("Cont" + name + my.last);
 	Menu.className = "";
 	Cont.style.display = "none";
 
@@ -77,13 +47,10 @@ function Show_Sub(name,num) {
 	Menu.className = "selectd";
 	Cont.style.display = "block";
 
-	//纪录当前点的舌签组的编号
-	if ( name == "a") {
-		window.mya = num;
-	}
-	if ( name == "b") {
-		window.myb = num;
-	}
+	//纪录当前点击的舌签的编号
+	//先找是哪一个舌签组，然后再确定历史点击的LI节点
+	my.last = num;
+
 }
 //--><!]]>
 </script> 
