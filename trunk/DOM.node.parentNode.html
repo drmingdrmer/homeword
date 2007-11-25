@@ -37,10 +37,10 @@ function $(id) {
 
 function check(name) {
 
-	//
-	$(name).onclick = "";
+	//onclick触发的dome节点
+	$(name).onclick = name;
 
-	alert (name);
+	alert ($(name));
 }
 
 
