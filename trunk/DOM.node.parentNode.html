@@ -34,22 +34,28 @@ function $(id) {
 
 //定义一个函数，点击DOM节点时，显示所点击DOM节点的ID
 
-
 check.onclick = check;
 
 function check(name) {
 	var myA = $(name);
-	alert (name);
+	alert ("A");
 }
+
+
+
+
 
 //--><!]]>
 </script> 
 
 <body>
-<div id="A" onclick="check('A')" class="className">
+<div id="A" class="className">
 	sdgsgd
 </div>
+
+
 <pre>
+
 给html中的1些节点加上事件，点击时alert出被点到的节点的id
 
 
