@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+<!--
+td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
+table,td,img,div,span,form{border: none;margin:0;padding:0;}
+
+
+.className { background:#000; padding:5px 0;}
+.className ul.bg01 { background:#069; line-height:25px; height:25px; width:300px;}
+-->
+</style>
+<title>无标题文档</title>
+</head>
+
+
+<script language="javascript" type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//当鼠标触发div节点时，执行$函数，取div的A
+
+function $(name){
+	
+	var myA = document.getElementById(name);
+	
+	alert (myA);
+}
+
+
+
+//--><!]]>
+</script> 
+
+<body>
+<div id="A" onClick="$(A)" class="className">
+	<ul class="bg01">
+		<li>dd</li>
+	</ul>
+</div>
+<pre>
+给html中的1些节点加上事件，点击时alert出被点到的节点的id
+
+
+
+
+
+
+
+
+
+
+
+
+给html中的1些节点加上事件，点击时alert出被点到的节点的id，classname，name
+给html中的1些节点加上事件，点击时alert出被点到的节点的父节点的id，classname，name
+取父节点的方法：ulNode.parentNode，其中ulNode是假设是ul节点, parentNode属性代表div节点
+<pre>
+
+
+
+</body>
+</html>
