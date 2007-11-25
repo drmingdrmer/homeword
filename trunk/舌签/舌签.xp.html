@@ -16,16 +16,6 @@ ul,li { list-style:none; margin:0; padding:0;}
 </style>
 <title>无标题文档</title>
 </head>
-
-
-
-
-
-
-
-
-
-
 <script language="javascript" type="text/javascript">
 <!--//--><![CDATA[//><!--
 function $(id){
@@ -43,19 +33,18 @@ function Show_Sub(num){
 	var menu = $("Menu" + num);
 	var cont = $("Cont" + num);
 	menu.className = "selectd";
-	cont.style.display = "block";	
+	cont.style.display = "block";
 
 	my = num;
-	
-	
+
+	alert (my);
+
 }
+//随便选几个节点加事件？
+//点中时alert出被点的那个节点的id。。。
 
 //--><!]]>
 </script> 
-
-
-
-
 <body>
 <ul class="menuStyle">
 	<li id="Menu0" onClick="Show_Sub(0)" class="selectd">中低档</li>
