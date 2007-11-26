@@ -25,8 +25,8 @@ li { color:#fff; padding-left:10px;}
 
 //取父节点的方法：ulNode.parentNode，其中ulNode是假设是ul节点, parentNode属性代表div节点
 //添加1个onclick方法后，用户的点击就会调用这个方法了。
-//然后这个题目的意思。。。实际上是让那个事件处理函数自己去找id。。。不用传参数了。。
-//就是说。。这个作业里的事件处理函数不接受参数。
+//让事件处理函数自己去找id。。。不用传参数。。
+//这里的事件处理函数不接受参数。
 //getElementById返回的是节点对象
 
 
@@ -37,15 +37,12 @@ function $(id) {
 }
 
 //添加onclick方法
-$(name).onclick = check;
+$("A").onclick = check;
 
 //被点击的dom节点要显示出的内容
-function check(name) {
-	var myA = $(name);
-	alert (myA);	
+function check() {
+	alert (this.id)
 }
-
-
 
 //--><!]]>
 </script>
