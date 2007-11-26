@@ -15,7 +15,10 @@ li { color:#fff; padding-left:10px;}
 </style>
 <title>无标题文档</title>
 </head>
-
+<body>
+<div id="A" class="className">
+	sdgsgd
+</div>
 
 <script language="javascript" type="text/javascript">
 <!--//--><![CDATA[//><!--
@@ -33,39 +36,28 @@ function $(id) {
 	return document.getElementById (id);
 }
 
-//定义一个函数，点击DOM节点时，显示所点击DOM节点的ID
+//添加onclick方法
+$(name).onclick = check;
 
+//被点击的dom节点要显示出的内容
 function check(name) {
-
-	//onclick触发的dome节点
-	$(name).onclick = name;
-
-	alert ($(name));
+	var myA = $(name);
+	alert (myA);	
 }
+
 
 
 //--><!]]>
 </script>
 
-<body>
-<div id="A" class="className">
-	sdgsgd
-</div>
-
-
 <pre>
-
 给html中的1些节点加上事件，点击时alert出被点到的节点的id
-
-
-
-
 
 
 
 给html中的1些节点加上事件，点击时alert出被点到的节点的id，classname，name
 给html中的1些节点加上事件，点击时alert出被点到的节点的父节点的id，classname，name
-取父节点的方法：ulNode.parentNode，其中ulNode是假设是ul节点, parentNode属性代表div节点
+取父节点的方法：ulNode.parentNode，其中ulNode是假设是ul节点，parentNode属性代表div节点
 <pre>
 
 
