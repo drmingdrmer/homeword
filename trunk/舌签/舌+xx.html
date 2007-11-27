@@ -56,16 +56,34 @@ function func() {
 	cont.style.display = "none";
 
 	//当前显示的舌签组
-	var menu = $(this.id);
+	var menu = this;//参数是一个id的值,返回给当前节点 返回的是1个参数指定的id的dom节点。
 	var cont = $("Cont" + this.id);
 	menu.className = "selectd";
 	cont.style.display = "block";
 
 	//记录刚刚点击过节点的id
 	my = this.id
+
+	//记录历史点击的时候也可以不记录id，直接将当前节点记录下来用的时候会更方便。
+	//还有个问题是在for循环那里，$接受的参数是字符串类型的。注意类型转换。虽然在这里直接用数字也能得到正确结果。
 }
 //--><!]]>
 </script> 
+
+
+<pre>
+$(this.id) == this
+$是从id取节点。xxx.id是从节点取id。
+刚好是相反。。。
+2个都用刚好都抵销了。。
+相当于啥也没做。
+</pre>
+this.id是取dom节点上的id
+
+$()返回1个参数指定的id的dom节点。
+
+函数不要说返回给返回给的。函数的定义中没有定义返回给谁。<br />
+函数只定义返回什么东西,返回到哪是调用它的代码决定的。
 
 </body>
 </html>
