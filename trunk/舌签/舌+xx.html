@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+<!--
+td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
+table,td,img,div,span,form{border: none;margin:0;padding:0;}
+
+ul,li { list-style:none;}
+.menuStyle ul { background:#069; line-height:25px; height:25px; width:300px; margin:0;}
+.menuStyle li { border:#666 1px solid; border-bottom:none; width:50px; text-align:center; background:#fff; cursor:pointer; line-height:25px; float:left; margin-right:4px;}
+.menuStyle li.selectd { background:#ff0;}
+.Cont { border:1px solid #666; width:300px; clear:both; padding:1em;}
+-->
+</style>
+<title>无标题文档</title>
+</head>
+<body>
+<ul id="a" class="menuStyle">
+	<li id="1" class="selectd">中低档</li>
+	<li id="2">中高档</li>
+	<li id="3">超高档</li>
+</ul>
+<div class="Cont" id="Cont1">
+	1
+</div>
+<div class="Cont" id="Cont2" style="display:none;">
+	2
+</div>
+<div class="Cont" id="Cont3" style="display:none;">
+	3
+</div>
+<script language="javascript" type="text/javascript">
+<!--//--><![CDATA[//><!--
+function $(id){
+	return document.getElementById(id);
+}
+
+//添加onclick方法
+
+for (var i=1; i<=3; i++) {
+	$(i).onclick = Show_Sub;
+}
+
+
+//被点击的dom节点要显示出的内容
+
+function Show_Sub() {	
+
+
+	var my;
+	my = this.id
+
+	//历史点击的舌签组
+	var Menu = $(my);
+	var Cont = $("Cont" +my);
+	Menu.className = "";
+	Cont.style.display = "none";
+
+	//当前显示的舌签组
+	var Menu = $(this.id);
+	var Cont = $("Cont" + this.id);
+	Menu.className = "selectd";
+	Cont.style.display = "block";
+
+	
+}
+
+//--><!]]>
+</script> 
+
+</body>
+</html>
