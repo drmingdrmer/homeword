@@ -37,35 +37,34 @@ function $(id){
 	return document.getElementById(id);
 }
 
-//添加onclick方法
-
-for (var i=1; i<=3; i++) {
-	$(i).onclick = Show_Sub;
+//定义onclick方法,onclik后执行func函数
+for ( var i=1; i<=3; i++) {
+	$(i).onclick = func
 }
 
-
-//被点击的dom节点要显示出的内容
-
-function Show_Sub() {	
-
-
+function func() {
+		
+	//记录刚刚点击过节点的id
 	var my;
 	my = this.id
 
-	//历史点击的舌签组
-	var Menu = $(my);
-	var Cont = $("Cont" +my);
-	Menu.className = "";
-	Cont.style.display = "none";
+	//点击过的舌签组
+	var menu = $(my);
+	var cont = $("Cont" + my);
+	menu.className = "";
+	cont.style.display = "none";
 
 	//当前显示的舌签组
-	var Menu = $(this.id);
-	var Cont = $("Cont" + this.id);
-	Menu.className = "selectd";
-	Cont.style.display = "block";
+	var menu = $(this.id);
+	var cont = $("Cont" + this.id);
+	menu.className = "selectd";
+	cont.style.display = "block";
 
 	
+
 }
+
+
 
 //--><!]]>
 </script> 
