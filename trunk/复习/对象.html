@@ -27,6 +27,7 @@ var girl = {
 	printHeight	: funcB,
 	printAll	: funcC
 	}
+
 infor ("姓名：" + girl.name);
 infor ("身高：" + girl.stand + "cm");
 infor ("日期：" + girl.birth.year + "年" + girl.birth.moth + "月" +  girl.birth.date + "日" );
@@ -34,7 +35,9 @@ infor ("地点：" + girl.address);
 infor ("星座：" + girl.star + "座");
 infor ("血型：" + girl.blood + "型");
 infor ("自述：" + girl.say);
+
 infor ("<br />=========================================<br />");
+
 var boy = {
 	name	:"xp",
 	stand	:182,
@@ -47,6 +50,7 @@ var boy = {
 	printHeight	: funcB,
 	printAll	: funcC
 	}
+
 infor ("姓名：" + boy.name);
 infor ("身高：" + boy.stand + "cm");
 infor ("日期：" + boy.birth.year + "年" + boy.birth.moth + "月" +  boy.birth.date + "日" );
@@ -56,6 +60,7 @@ infor ("血型：" + boy.blood + "型");
 infor ("自述：" + boy.say);
 
 infor ("<br />=========================================<br />");
+
 function both(both) {
 	infor ("姓名：" + both.name);
 	infor ("身高：" + both.stand + "cm");
@@ -69,7 +74,6 @@ function both(both) {
 both(girl);
 
 infor ("<br />=========================================<br />");
-
 
 function funcA() {
 	infor (this.name);
