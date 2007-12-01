@@ -1,0 +1,121 @@
+<html><head>
+<title>关键字</title>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+<meta name="keywords" content="关键字1,关键字2,关键字3,">
+<meta name="description" content="页面说明">
+<style type="text/css">
+td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
+table,td,img,div,span,form{border: none;margin:0;padding:0;}
+
+ul,li { list-style:none;}
+.menuStyle ul { background:#069; line-height:25px; height:25px; width:300px; margin:0;}
+.menuStyle li { border:#666 1px solid; border-bottom:none; width:50px; text-align:center; background:#fff; cursor:pointer; line-height:25px; float:left; margin-right:4px;}
+.menuStyle li.selectd { background:#ff0;}
+.Cont { border:1px solid #666; width:300px; clear:both; padding:1em;}
+</style>
+</head>
+<body>
+
+<script type="text/javascript" language="javascript">
+<!--//--><![CDATA[//><!--
+
+function $(id) {
+	return document.getElementById(id);
+}
+
+function listMenu(num) {
+	for ( var i=0; i<4; i++)	{
+		var Menu = $("Menu" + i);
+		var cont = $("cont" + i);		
+		if (i == num) {
+			Menu.className = "selectd"
+			cont.style.display = "block"
+		}else{
+			Menu.className = ""
+			cont.style.display = "none"
+		}
+	}
+}
+
+//--><!]]>
+</script>
+
+<div class="menuStyle">
+	<ul><li id="Menu0" onMouseOver="listMenu(0)" class="selectd">标签一</li>
+		<li id="Menu1" onMouseOver="listMenu(1)">标签二</li>
+		<li id="Menu2" onMouseOver="listMenu(2)">标签三</li>
+		<li id="Menu3" onMouseOver="listMenu(3)">标签四</li>
+	</ul>
+</div>
+
+<!--0 begin-->
+<div class="Cont" id="cont0">
+0
+</div>
+<!--0 end-->
+<!--1 begin-->
+<div class="Cont" id="cont1" style="display:none;">
+1
+</div>
+<!--1 end-->
+<!--2 begin-->
+<div class="Cont" id="cont2" style="display:none;">
+2
+</div>
+<!--2 end-->
+<!--3 begin-->
+<div class="Cont" id="cont3" style="display:none;">
+3
+</div>
+<!--3 end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+方法1被调用，就返回1个东西。后面再跟.XXX取属性的语法跟那个方法本身1点关系都没了。
+byId返回的是个dom节点。
+classname是节点的属性。
+document.getElementById.xxx这样是取byId方法的属性。
+document.getElementById().xxx这样是取返回的对象的属性。
+【document.getElementById()】.xxx
+方法调用返回后，方括号里会变成1个dom节点。
+相当于dom节点.xxx
+
+
+就是比如点击menu1就显增cont1内容，这个意思。
+显示当前的菜单和内容
+隐藏其他的菜单和内容。
+
+
+如果那2个东西完全1样，并且当其中1个变化，另1个也随之变化的话就可以当作完全1样的可以合并了
+
+-->
+
+
+</body></html>
