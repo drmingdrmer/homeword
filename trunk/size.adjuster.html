@@ -31,12 +31,10 @@ function my () {
 	divsize.style.height = parseInt(heightsize) + 20 + "px";
 
 
-	//判断div 的高　宽
-
-
-
-	
-
+	//判断div 的高 宽
+	if ( widthsize > 400 ) {
+		divsize.style.width = 250;
+	}
 
 
 }
@@ -53,6 +51,7 @@ function my () {
 </div>
 <p id="instru">
 	当点击按钮的时候，把id为bound的div的高和宽增加20px。<br />
+
 	如果div的高增大到400以上，就则将div的高减少到250<br />
 	如果div的宽增大到370以上，就则将div的宽减少到270<br />
 </p>
