@@ -1,22 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-  <head>
-    <style>
-      div { border:1px solid #000; }
-      #bound{ position:absolute; width:300px; height:300px; }
-      #button{ position:absolute; bottom:0px; right:0px; }
-      #instru{ white-space:pre; position:absolute; bottom:0px; left:0px; }
-    </style>
-  </head>
-  <body>
-    <div id="bound">
-      <input id="button" type="button" value="-->" />
-    </div>
+<html><head>
+<title>¹Ø¼ü×Ö_À¸Ä¿_ÆµµÀ_ĞÂÀËÍø</title>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+<meta name="keywords" content="¹Ø¼ü×Ö1,¹Ø¼ü×Ö2,¹Ø¼ü×Ö3,">
+<meta name="description" content="Ò³ÃæËµÃ÷">
+<style type="text/css">
+td,p,li,input,select,div,span {font-size:12px;}
+table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 
-    <div id="instru">
-      å†™1æ®µjsï¼Œå½“ç‚¹å‡»æŒ‰é’®çš„æ—¶å€™ï¼ŒæŠŠidä¸ºboundçš„divçš„é«˜å’Œå®½å¢åŠ 20pxã€‚
-      å¦‚æœdivçš„é«˜å¢å¤§åˆ°400ä»¥ä¸Šï¼Œå°±åˆ™å°†divçš„é«˜å‡å°‘åˆ°250
-      å¦‚æœdivçš„å®½å¢å¤§åˆ°370ä»¥ä¸Šï¼Œå°±åˆ™å°†divçš„å®½å‡å°‘åˆ°270
-      </div>
-  </body>
-</html>
+#bound{ position:absolute;}
+#bound { border:1px solid #000; }
+#button{ position:absolute; bottom:0px; right:0px; }
+#instru{ position:absolute; bottom:0px; left:0px; }
+</style>
+</head>
+<body>
+<script type="text/javaScript" language="JavaScript">
+<!--
+
+function my () {
+
+	//ÕÒµ½Òª½øĞĞ²Ù×÷µÄdivµÄid
+	var divsize = document.getElementById ("bound");
+
+	//»ñÈ¡divÔ­ÓĞµÄ¿í¸ßÖµ
+	var widthsize = divsize.style.width;
+	var heightsize = divsize.style.height;
+
+	//¸ødiv ¿í¸ßÖµ¡¡¼Ó20px	
+	divsize.style.width = parseInt(widthsize) + 20 + "px";
+	divsize.style.height = parseInt(heightsize) + 20 + "px";
+
+	//¸øÆä¸ß¿íÔö¼Ó20px
+	
+
+
+
+}
+
+
+//
+
+
+-->
+</script>
+
+<div id="bound" style=" width:300px; height:300px; ">
+  <input id="button" type="button" onClick="my()" value="-->" />
+</div>
+<p id="instru">
+	µ±µã»÷°´Å¥µÄÊ±ºò£¬°ÑidÎªboundµÄdivµÄ¸ßºÍ¿íÔö¼Ó20px¡£<br />
+	Èç¹ûdivµÄ¸ßÔö´óµ½400ÒÔÉÏ£¬¾ÍÔò½«divµÄ¸ß¼õÉÙµ½250<br />
+	Èç¹ûdivµÄ¿íÔö´óµ½370ÒÔÉÏ£¬¾ÍÔò½«divµÄ¿í¼õÉÙµ½270<br />
+</p>
+</body></html>
