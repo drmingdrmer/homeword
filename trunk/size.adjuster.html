@@ -27,13 +27,17 @@ function my () {
 	//找到要进行操作的div的id
 	var divsize = document.getElementById ("bound");
 
-	//获取div原有的宽高值 　　　 这里是取div宽高的值　
+	//获取div原有的宽高值 　这里是取div宽高的值　
 	var widthsize = divsize.style.width;
 	var heightsize = divsize.style.height;
 
 	//给div 宽高值　加20px  　//parseInt()将字符串转换成数字类型
 	//判断div 的高 宽
-	if (parseInt(widthsize) >=  400 && parseInt(heightsize) >= 370  ) {
+
+	var numw = parseInt(widthsize);
+	var numh = parseInt(heightsize);
+
+	if ( numw >=  400 && numh >= 370 ) {
 
 	//这里是给节点重新赋值
 		divsize.style.width = 250 + "px";
@@ -44,8 +48,8 @@ function my () {
 
 
 	//设置新的高宽给节点
-	divsize.style.width = parseInt(widthsize) + 20 + "px";
-	divsize.style.height = parseInt(heightsize) + 20 + "px";
+		divsize.style.width = numw + 20 + "px";
+		divsize.style.height = numh + 20 + "px";
 
 	}
 	
@@ -56,6 +60,8 @@ function my () {
 //实际上只需要设置1次就够了。
 //计算完后给它设置1个最终的值。
 //不需要设置完之后，再检查，再设置。
+//设置css属性会比较耗时。尽量减少这些操作。
+//先把算好的结果保存在变量里，最后给它设置。
 
 
 //这时应该直接给divsize.style.width赋值。
