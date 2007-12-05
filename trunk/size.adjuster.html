@@ -32,23 +32,40 @@ function my () {
 	var heightsize = divsize.style.height;
 
 	//给div 宽高值　加20px  　//parseInt()将字符串转换成数字类型
-
-	//这里是要改变节点宽高属性的值
-	widthsize = parseInt(widthsize) + 20 + "px";
-	heightsize = parseInt(heightsize) + 20 + "px";
-
-
 	//判断div 的高 宽
 	if (parseInt(widthsize) >=  400 && parseInt(heightsize) >= 370  ) {
+
 	//这里是给节点重新赋值
-		divsize.style.width = "250px";
-		divsize.style.height = "270px";
+		divsize.style.width = 250;
+		divsize.style.height = 270;
+
+
+	}else {
+
+
+	//设置新的高宽给节点
+	divsize.style.width = parseInt(widthsize) + 20 + "px";
+	divsize.style.height = parseInt(heightsize) + 20 + "px";
+
 	}
+	
 
 }
 
+//这个函数里有时会给div设置2次高、宽。
+//实际上只需要设置1次就够了。
+//计算完后给它设置1个最终的值。
+//不需要设置完之后，再检查，再设置。
 
-//
+
+//这时应该直接给divsize.style.width赋值。
+//我是感觉这里不对哦
+//widthsize只是保存了style.width的值。并不能代替所有对它的操作。
+//变量里保存style.width可以简化后面读的操作。但写的时候必须用style.width这样。
+//widthsize和style.width实际上是2个变量了。修改1个另1个不会发生变化。
+//要修改style.width，不能通过修改widthsize来完成。
+//必须直接修改style.widthz
+
 
 
 -->
