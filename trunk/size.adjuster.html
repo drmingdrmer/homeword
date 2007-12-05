@@ -27,21 +27,23 @@ function my () {
 	//找到要进行操作的div的id
 	var divsize = document.getElementById ("bound");
 
-	//获取div原有的宽高值
+	//获取div原有的宽高值 　　　 这里是取div宽高的值　
 	var widthsize = divsize.style.width;
 	var heightsize = divsize.style.height;
 
 	//给div 宽高值　加20px  　//parseInt()将字符串转换成数字类型
-	divsize.style.width = parseInt(widthsize) + 20 + "px";
-	divsize.style.height = parseInt(heightsize) + 20 + "px";
+
+	//这里是要改变节点宽高属性的值
+	widthsize = parseInt(widthsize) + 20 + "px";
+	heightsize = parseInt(heightsize) + 20 + "px";
 
 
 	//判断div 的高 宽
 	if (parseInt(widthsize) >=  400 && parseInt(heightsize) >= 370  ) {
+	//这里是给节点重新赋值
 		divsize.style.width = "250px";
 		divsize.style.height = "270px";
 	}
-
 
 }
 
