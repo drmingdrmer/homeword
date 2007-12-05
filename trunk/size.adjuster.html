@@ -1,70 +1,72 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>关键字_栏目_频道_新浪网</title>
-<meta http-equiv="Content-type" content="text/html; charset=gb2312">
-<meta name="keywords" content="关键字1,关键字2,关键字3,">
-<meta name="description" content="页面说明">
-<style type="text/css">
-td,p,li,input,select,div,span {font-size:12px;}
-table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
+  <head>
+    <title>关键字_栏目_频道_新浪网</title>
+    <meta http-equiv="Content-type" content="text/html; charset=gb2312">
+    <meta name="keywords" content="关键字1,关键字2,关键字3,">
+    <meta name="description" content="页面说明">
+    <style type="text/css">
+      td,p,li,input,select,div,span {font-size:12px;}
+      table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 
-#bound{ position:absolute;}
-#bound { border:1px solid #000; }
-#button{ position:absolute; bottom:0px; right:0px; }
-#instru{ position:absolute; bottom:0px; left:0px; }
-</style>
-</head>
-<body>
-<script type="text/javaScript" language="JavaScript">
-<!--
+      #bound{ position:absolute;}
+      #bound { border:1px solid #000; }
+      #button{ position:absolute; bottom:0px; right:0px; }
+      #instru{ position:absolute; bottom:0px; left:0px; }
+    </style>
+  </head>
+  <body>
+  <script type="text/javaScript" language="JavaScript">
+    <!--
 
-/** 
- * 温馨提示：从style对象中取得的属性是字符串，函数里运算，比较时都需要用数字。
- */
-function my () {
+    /** 
+     * 温馨提示：从style对象中取得的属性是字符串，函数里运算，比较时都需要用数字。
+     */
+    function my () {
 
-	//找到要进行操作的div的id
-	var divsize = document.getElementById ("bound");
+      //找到要进行操作的div的id
+      var divsize = document.getElementById ("bound");
 
-	//获取div原有的宽高值 　这里是取div宽高的值　
-	var widthsize = divsize.style.width;
-	var heightsize = divsize.style.height;
+      //获取div原有的宽高值 　这里是取div宽高的值　
+      var widthsize = divsize.style.width;
+      var heightsize = divsize.style.height;
 
-	//给div 宽高值　加20px  　//parseInt()将字符串转换成数字类型
-	//判断div 的高 宽
+      //给div 宽高值　加20px  　//parseInt()将字符串转换成数字类型
+      //判断div 的高 宽
 
-	var numw = parseInt(widthsize) + 20;
-	var numh = parseInt(heightsize) + 20;
+      var numw = parseInt(widthsize) + 20;
+      var numh = parseInt(heightsize) + 20;
 
-
-	if ( numw >=  400 && numh >= 370 ) {
-
-	//这里是给节点重新赋值
-		divsize.style.width = 250 + "px";
-		divsize.style.height = 270 + "px";
+      if ( numw >=  400 && numh >= 370 ) {
+        numw = 250;
+        numh = 270;
+      }
 
 
-	} else {
+      //设置新的高宽给节点
+      divsize.style.width = numw + "px";
+      divsize.style.height = numh + "px";
+    }
 
-	//设置新的高宽给节点
-		divsize.style.width = numw + "px";
-		divsize.style.height = numh + "px";
+//这个函数里有时会给div设置2次高、宽。
+//实际上只需要设置1次就够了。
+//计算完后给它设置1个最终的值。
+//不需要设置完之后，再检查，再设置。
 
-	}
-	
+//设置css属性会比较耗时。尽量减少这些操作。
+//先把算好的结果保存在变量里，最后给它设置。
 
-}
 
-//可以把运算 和 把运算的结果设置到DOM上  这2个步骤分开。
-//num就负责保存中间的运算结果，最后把num的值设置上去。
+//这时应该直接给divsize.style.width赋值。
+//我是感觉这里不对哦
+//widthsize只是保存了style.width的值。并不能代替所有对它的操作。
+//变量里保存style.width可以简化后面读的操作。但写的时候必须用style.width这样。
+//widthsize和style.width实际上是2个变量了。修改1个另1个不会发生变化。
+//要修改style.width，不能通过修改widthsize来完成。
+//必须直接修改style.widthz
 
-//把num作为保存中间结果的变量。
 
-//最后1步改成将num的值设置到div上。
 
-//中间都是对num的计算。
-//按照这个思路来改1下哈。。
 -->
 </script>
 
@@ -72,9 +74,10 @@ function my () {
   <input id="button" type="button" onClick="my()" value="-->" />
 </div>
 <p id="instru">
-	当点击按钮的时候，把id为bound的div的高和宽增加20px。<br />
+当点击按钮的时候，把id为bound的div的高和宽增加20px。<br />
 
-	如果div的高增大到400以上，就则将div的高减少到250<br />
-	如果div的宽增大到370以上，就则将div的宽减少到270<br />
+如果div的高增大到400以上，就则将div的高减少到250<br />
+如果div的宽增大到370以上，就则将div的宽减少到270<br />
 </p>
 </body></html>
+
