@@ -1,36 +1,96 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <style type="text/css">
-      td,p,li,input,select,div,span {font-size:12px;}
-      table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+<style type="text/css">
+td,p,li,input,select,div,span {font-size:12px;}
+table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 
-      #bound{ position:absolute;}
-      #bound { border:1px solid #000; }
-      #button{ position:absolute; bottom:0px; right:0px; }
-      #instru{ position:absolute; bottom:0px; left:0px; padding:20px; white-space:pre; font-size:14px;}
-    </style>
-  </head>
-  <body>
-    <script type="text/javaScript" language="JavaScript">
-      <!--
-      var n = 5;
+#bound{ position:absolute;}
+#bound { border:1px solid #000; }
+#button{ position:absolute; bottom:0px; right:0px; }
+#instru{ position:absolute; bottom:0px; left:0px; padding:20px; white-space:pre; font-size:14px;}
+</style>
+</head>
+<body>
+<script type="text/javaScript" language="JavaScript">
+<!--
+	var n = 5;
 
-      -->
-    </script>
+//  var a = [ 1,2,3,4,5 ]
+	var a = []
+	for ( var i=1; i<=n; i++ ) {
+		a.push(i);
+	}
+	alert (a)
+//	var b = [ 2,4,6,8,10 ]
+	var b = []
+	for ( i=1; i<=n; i++ ) {
+		var myb = i+1;
+		document.write (myb);	
+	}
+	alert (b);
 
-    <p id="instru">
-      å»ºç«‹ä»¥ä¸‹æ•°ç»„ï¼šæ•°ç»„çš„ä¸ªæ•°æ˜¯nã€‚
-      1, 2, 3, 4, 5....
-      2, 4, 6, 8, 10...
-      "1", "2", "3", "4"
-      {x:1}, {x:2}, {x:3}...
-      "1", "12", "123", "1234"...
+//	var c = [ "1","2","3","4","5" ]
+//	var c = []
+//	for ( i=1; i<=n; i++ ) {
+//		c.push(i);
+//	}
+//	alert (c)
+//
+////	var d = [ {x:1}, {x:2}, {x:3}, {x:4}, {x:5} ]
+//	var d = []
+//	for ( i=1; i<=n; i++ ) {
+//		d.push(i);
+//	}
+//	alert (d)
+//
+////	var e = [ "1","12","123","1234", "12345" ]
+//	var e = []
+//	for ( i=1; i<=n; i++ ) {
+//		e.push(i);
+//	}
+//	alert (e)
 
-      ç„¶åå°†æ‰€æœ‰æ•°ç»„è¿æ¥æˆ1ä¸ªæ•°ç»„ã€‚
+-->
+</script>
+
+<p id="instru">
+
+½¨Á¢ÒÔÏÂÊı×é£ºÊı×éµÄ¸öÊıÊÇn¡£
+
+1,2,3,4,5...
+2,4,6,8,10...
+"1","2","3","4"
+(x1),(x2),(x3)...
+"1","12","123","1234"...
+
+È»ºó½«ËùÓĞÊı×éÁ¬½Ó³ÉÒ»¸öÊı×é¡£
 
 
-    </p>
+ÉùÃ÷Ò»¸öÊı×é
+var x = [ 1,2,3,4,5 ]£¨Öµ¿ÉÒÔÊÇ×Ö·û´®£¬Êı×Ö£¬¶ÔÏó£¬º¯ÊıµÈ£¬Ò²¿ÉÒÔÊÇÊı×é±¾Éí£©
+
+¸øÊı×éÔª»¥¸³Öµ£ºx[0] = "±±¾©"
+
+È¡Êı×éÀïµÄÖµ£ºa=[{x:5},{x:6}];
+ 			 a[0].x = 5;
+			 a[1].x = 6;
+
+
+
+1)ÌØÊâÊôĞÔ
+	arrayObj.length = 2
+
+2)ÌØÊâ·½·¨
+	arrayObj.push(): ÒÔĞÂÔªËØ³öÏÖµÄË³ĞòÌí¼ÓÕâĞ©ÔªËØ
+
+	arrayObj.pop():·µ»ØÊı×éÖĞ×îºóÒ»¸öÔªËØ£¬×îºóÒ»¸öÔªËØ±»É¾³ı
+
+	arrayObj.shift():°ÑÊı×éÖĞµÚÒ»¸öÔªËØ·µ»Øµ½µ÷ÓÃµÄµØ·½£¬µÚÒ»¸öÔªËØ±»É¾³ı
+
+	arrayObj.join(½ÓÊÕÒ»¸ö°²·û´®²ÎÊı):·µ»ØÖµÊÇµÚÒ»¸öÔªËØ¡¡£«¡¡×Ö·û´®¡¡£«¡¡µÚ¶ş¸öÔªËØ¡¡£«¡¡×Ö·û´®¡¡£«¡¡....
+
+</p>
 </body></html>
 
