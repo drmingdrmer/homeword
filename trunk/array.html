@@ -44,7 +44,7 @@ table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
   var e = []
 	for ( i=1; i<=n; i++ ) {
 
-    var mye = "";
+    var mye = my();
 
     /* for ( var j=1; j<=i; j++ ) { */
       /* //记录历史循环内容 */
@@ -53,12 +53,18 @@ table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
     /* } */
 
     /* 在这里添加代码，使mye的值等于1, 12, 123.. */
+	
+	function my () {
+		document.write ("<br />");
+		for ( var j=1; j<=i; j++) {		
+			document.write (j);
+		}
+	}
 
-
-    e.push(mye);
+	alert(mye)
 		
 	}
-	alert(e)
+	
 
 </script>
 
