@@ -22,35 +22,43 @@ table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 	for ( var i=1; i<=n; i++ ) {
 		a.push(i);
 	}
-	alert (a)
+
 //	var b = [ 2,4,6,8,10 ]
 	var b = []
 	for ( i=1; i<=n; i++ ) {
-		var myb = i+1;
-		document.write (myb);	
+		b.push (i*2);	
 	}
-	alert (b);
 
 //	var c = [ "1","2","3","4","5" ]
-//	var c = []
-//	for ( i=1; i<=n; i++ ) {
-//		c.push(i);
-//	}
-//	alert (c)
-//
-////	var d = [ {x:1}, {x:2}, {x:3}, {x:4}, {x:5} ]
-//	var d = []
-//	for ( i=1; i<=n; i++ ) {
-//		d.push(i);
-//	}
-//	alert (d)
-//
-////	var e = [ "1","12","123","1234", "12345" ]
-//	var e = []
-//	for ( i=1; i<=n; i++ ) {
-//		e.push(i);
-//	}
-//	alert (e)
+	var c = []
+	for ( i=1; i<=n; i++ ) {
+		c.push( i + "" );
+	}
+
+//	var d = [ {x:1}, {x:2}, {x:3}, {x:4}, {x:5} ]
+	var d = []
+	for ( i=1; i<=n; i++ ) {		
+		d.push("{x:i}");
+	}
+
+//	var e = [ "1","12","123","1234", "12345" ]
+	var e = []
+	for ( i=1; i<=n; i++ ) {
+
+
+
+		for ( var j=1; j<=i; j++ ) {
+			
+			//记录历史循环内容
+			
+			var mye = j + "";
+			
+			e.push(mye);
+		}
+
+		
+	}
+	alert(e)
 
 -->
 </script>
@@ -80,16 +88,16 @@ var x = [ 1,2,3,4,5 ]（值可以是字符串，数字，对象，函数等，也可以是数组本身）
 
 
 1)特殊属性
-	arrayObj.length = 2
+	arrayObj.length = 2 取长度
 
 2)特殊方法
-	arrayObj.push(): 以新元素出现的顺序添加这些元素
+	arrayObj.push(): 追加新元素
 
 	arrayObj.pop():返回数组中最后一个元素，最后一个元素被删除
 
 	arrayObj.shift():把数组中第一个元素返回到调用的地方，第一个元素被删除
 
-	arrayObj.join(接收一个安符串参数):返回值是第一个元素　＋　字符串　＋　第二个元素　＋　字符串　＋　....
+	arrayObj.join(接收一个字符串参数):返回值是第一个元素　＋　字符串　＋　第二个元素　＋　字符串　＋　....
 
 </p>
 </body></html>
