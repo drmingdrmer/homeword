@@ -41,18 +41,25 @@ table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 	}
 
 //	var e = [ "1","12","123","1234", "12345" ]
-  var e = []
+	var e = []
 	for ( i=1; i<=n; i++ ) {
 
-    var mye = "";
+		 var mye = "";
 
 
-    /* 在这里添加代码，使mye的值等于1, 12, 123.. */
-	
-  e.push(mye);
+		/* 使mye的值等于1, 12, 123.. */
+		for ( var j=1; j<=i; j++) {
+			
+			//记录历史循环的内容
+		
+			mye = mye + j;
+				
+		}
+		
+		e.push(mye);
 	}
 	
-
+alert (e);
 </script>
 
 <p id="instru">
