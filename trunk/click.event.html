@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+    <style type="text/css">
+      td,p,li,input,select,div,span {font-size:12px;}
+      table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
+
+      div{ position:absolute; border:1px solid #000; }
+  </head>
+    </style>
+  <body>
+
+    <div id="my" style=" width:300px; height:300px; ">my </div>
+    <div id="xp" style=" width:300px; height:300px; left:400px;">xp </div>
+    <div id="info" style="width:300px; height:200px;bottom:5px;left:5px;position:absolute;border:1px solid #f00;border-color:lightgrey darkgrey lightgrey darkgrey"> </div>
+
+    <script type="text/javaScript" language="JavaScript">
+      <!--
+      //只能在firefox下运行
+      function $(id){ return document.getElementById(id);}
+
+      function click (event) {
+        //事件处理函数接受1个参数：event对象。
+        //事件处理函数接中使用这个对象得到事件相关的信息
+
+        //鼠标位置：相对屏幕的
+        var x = event.clientX;
+        var y = event.clientY;
+
+        //被点的dom节点
+        var el = event.target;
+
+        $("info").innerHTML = x + " " + y + " id : " + el.id;
+
+
+        if (el.id == "xp") {
+          el.style.left = x-30 + "px";
+          el.style.top  = y-30 + "px";
+        }
+      }
+
+      $("my").onclick=click;
+      $("xp").onclick=click;
+-->
+</script>
+</body></html>
