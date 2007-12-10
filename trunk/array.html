@@ -22,11 +22,18 @@ table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 		a.push(i);
 	}
 
+	var ra = a.join ("*");
+
+	document.write (ra);
+
+
 //	var b = [ 2,4,6,8,10 ]
 	var b = []
 	for ( i=1; i<=n; i++ ) {
 		b.push (i*2);	
 	}
+
+	var rb = b.join ()
 
 //	var c = [ "1","2","3","4","5" ]
 	var c = []
@@ -37,7 +44,7 @@ table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 //	var d = [ {x:1}, {x:2}, {x:3}, {x:4}, {x:5} ]
 	var d = []
 	for ( i=1; i<=n; i++ ) {		
-		d.push("{x:i}");
+		d.push({x:i});
 	}
 
 //	var e = [ "1","12","123","1234", "12345" ]
@@ -50,16 +57,34 @@ table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 		/* 使mye的值等于1, 12, 123.. */
 		for ( var j=1; j<=i; j++) {
 			
-			//记录历史循环的内容
-		
-			mye = mye + j;
-				
+			//记录历史循环的内容		
+			mye = mye + j;		
 		}
 		
 		e.push(mye);
 	}
+
+// 将所有数组连接成一个数组
+	var all = []
 	
-alert (e);
+	for(i=0; i<n; i++){	
+		var my_all_a = a[i];
+		all.push(my_all_a);	
+	}
+
+	for(i=0;i<n; i++){
+		var my_all_b = b[i];
+		all.push(my_all_b);
+	}
+
+	alert(all);
+	
+
+
+
+	
+
+
 </script>
 
 <p id="instru">

@@ -4,42 +4,67 @@
       td,p,li,input,select,div,span {font-size:12px;}
       table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 
-      div{ position:absolute; border:1px solid #000; }
-  </head>
+      div{ position:absolute; border:1px solid #000; background:#ffe;}
+
     </style>
-  <body>
+	
+  </head>
+  <body onload="">
 
-    <div id="my" style=" width:300px; height:300px; ">my </div>
-    <div id="xp" style=" width:300px; height:300px; left:400px;">xp </div>
-    <div id="info" style="width:300px; height:200px;bottom:5px;left:5px;position:absolute;border:1px solid #f00;border-color:lightgrey darkgrey lightgrey darkgrey"> </div>
-
-    <script type="text/javaScript" language="JavaScript">
-      <!--
-      //åªèƒ½åœ¨firefoxä¸‹è¿è¡Œ
-      function $(id){ return document.getElementById(id);}
-
-      function click (event) {
-        //äº‹ä»¶å¤„ç†å‡½æ•°æŽ¥å—1ä¸ªå‚æ•°ï¼ševentå¯¹è±¡ã€‚
-        //äº‹ä»¶å¤„ç†å‡½æ•°æŽ¥ä¸­ä½¿ç”¨è¿™ä¸ªå¯¹è±¡å¾—åˆ°äº‹ä»¶ç›¸å…³çš„ä¿¡æ¯
-
-        //é¼ æ ‡ä½ç½®ï¼šç›¸å¯¹å±å¹•çš„
-        var x = event.clientX;
-        var y = event.clientY;
-
-        //è¢«ç‚¹çš„domèŠ‚ç‚¹
-        var el = event.target;
-
-        $("info").innerHTML = x + " " + y + " id : " + el.id;
+<div id="my" style=" width:300px; height:300px; ">my </div>
+<div id="xp" style=" width:300px; height:300px; left:400px;">xp </div>
+<div id="info" style="width:300px; height:200px; bottom:5px;left:5px;position:absolute;border:1px solid #f00; border-color:lightgrey darkgrey lightgrey darkgrey"> </div>
 
 
-        if (el.id == "xp") {
-          el.style.left = x-30 + "px";
-          el.style.top  = y-30 + "px";
-        }
-      }
+<script type="text/javaScript" language="JavaScript">
+  <!--
+  //Ö»ÄÜÔÚfirefoxÏÂÔËÐÐ
+  function $(id){ return document.getElementById(id);}
 
-      $("my").onclick=click;
-      $("xp").onclick=click;
+  function click (event) {
+	if (event == undefined){
+		event=window.event;
+	}
+
+	//ÊÂ¼þ´¦Àíº¯Êý½ÓÊÜ1¸ö²ÎÊý£ºevent¶ÔÏó¡£
+	//ÊÂ¼þ´¦Àíº¯Êý½ÓÖÐÊ¹ÓÃÕâ¸ö¶ÔÏóµÃµ½ÊÂ¼þÏà¹ØµÄÐÅÏ¢
+
+	//Êó±êÎ»ÖÃ£ºÏà¶ÔÆÁÄ»µÄ  
+	//clientXÉèÖÃ»ò»ñÈ¡Êó±êÖ¸ÕëÎ»ÖÃÏà¶ÔÓÚ´°¿Ú¿Í»§ÇøÓòµÄ x ×ø±ê£¬ÆäÖÐ¿Í»§ÇøÓò²»°üÀ¨´°¿Ú×ÔÉíµÄ¿Ø¼þºÍ¹ö¶¯Ìõ  (clientY)
+	var x = event.clientX;
+	var y = event.clientY;
+
+	//±»µãµÄdom½Úµã
+	var el = event.target;
+	if (el == undefined){
+		el = event.srcElement;
+	}
+
+	//innerHTML ÉèÖÃ»ò»ñÈ¡Î»ÓÚ¶ÔÏóÆðÊ¼ºÍ½áÊø±êÇ©ÄÚµÄ HTML
+
+	$("info").innerHTML = x + " " + y + " id : " + el.id;
+
+
+	if (el.id == "xp") {
+	  el.style.left = x-30 + "px";
+	  el.style.top  = y-30 + "px";
+	}
+  }
+
+//  $("my").onclick=click;
+//  $("xp").onclick=click;
+  $("my").onmousedown = function (){
+	$("info").innerHTML = "down";
+  }
+  $("my").onmouseup = function (){
+	$("info").innerHTML = "up";
+  }
+  $("my").onmousemove = function (event){
+    if (event == undefined){
+		event=window.event;
+	}
+	$("info").innerHTML = event.clientX + "  " + event.clientY;
+  }
 -->
 </script>
 </body></html>
