@@ -7,7 +7,6 @@
 <style type="text/css">
 td,p,li,input,select,div,span {font-size:12px;}
 table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
-
 #my { border:1px solid #c00; background:#Fef; width:200px; height:100px; position:absolute;}
 #xp { border:1px solid #00c; background:#efe; width:200px; height:100px; position:absolute; left:250px;}
 #info { border:1px solid #333; background:#ffe; width:200px; height:100px; position:absolute; bottom:200px;}
@@ -15,9 +14,9 @@ table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 </style>
 </head>
 <body>
-<div id="my"></div>
-<div id="xp"></div>
-<div id="info"></div>
+<div id="my" style="top:0; left:0;"></div>
+<div id="xp" style="top:0; left:250px;"></div>
+<div id="info" style="bottom:200px; left:0;"></div>
 
 
 <script type="text/javaScript" language="JavaScript">
@@ -26,22 +25,40 @@ function $(id) {
 	return document.getElementById(id);
 }
 
-function move(box) {
-	
-	//获取被点击的dom节点
-	var a = box.target;
-	
-	//获取鼠标坐标
+function mv(box){
+
 	var x = box.clientX;
 	var y = box.clientY;
 
+	//移动id为my的div.
+	
+	$("my").style.left = x - downX + "px";
+	$("my").style.top =  y - downY + "px";
 
-	//鼠标点下的时候，获取坐标位置
+}
+
+var downX;
+var downY;
+
+$("my").onmousedown = function (event){
+	
+	//获取鼠标点击时的坐标
+	downX = event.clientX - parseInt($("my").style.left);
+	downY = event.clientY - parseInt($("my").style.top);
+	
+	document.onmousemove = mv;
+};
 
 
-}	
-	$("my").onmousedown = move;
-	$("my").onmouseup = move;
+$("my").onmouseup = function (){
+	document.onmousemove = undefined;
+};
+
+
+
+
+
+
 
 	
 
