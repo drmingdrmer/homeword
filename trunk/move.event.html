@@ -25,24 +25,33 @@ function $(id) {
 	return document.getElementById(id);
 }
 
+
+
+
+
 function mv(box){
 
+	//鼠标的坐标
 	var x = box.clientX;
 	var y = box.clientY;
 
-	//移动id为my的div.
-	
+	//移动id为my的div.  （DOM相对于浏览器的位置）
 	$("my").style.left = x - downX + "px";
 	$("my").style.top =  y - downY + "px";
-
 }
+
+
+//判断当前所选的是哪个DOM节点
+
+
+//当点击某个DOM节点时，取此节点的ID，然后进行移动
 
 var downX;
 var downY;
 
 $("my").onmousedown = function (event){
 	
-	//获取鼠标点击时的坐标
+	//获取点击时鼠标所在DOM中的坐标
 	downX = event.clientX - parseInt($("my").style.left);
 	downY = event.clientY - parseInt($("my").style.top);
 	
@@ -54,13 +63,6 @@ $("my").onmouseup = function (){
 	document.onmousemove = undefined;
 };
 
-
-
-
-
-
-
-	
 
 -->
 </script>
