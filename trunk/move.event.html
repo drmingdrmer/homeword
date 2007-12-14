@@ -16,18 +16,19 @@ table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 <body>
 <div id="my" style="top:0; left:0;"></div>
 <div id="xp" style="top:0; left:250px;"></div>
-<div id="info" style="bottom:200px; left:0;"></div>
+<div id="info" style="top:0; left:500px;"></div>
 
 
 <script type="text/javaScript" language="JavaScript">
 <!--
+
+var downX;
+var downY;
+var oDom;
+
 function $(id) {
 	return document.getElementById(id);
 }
-
-
-
-
 
 function mv(box){
 
@@ -35,34 +36,24 @@ function mv(box){
 	var x = box.clientX;
 	var y = box.clientY;
 
-	//移动id为my的div.  （DOM相对于浏览器的位置）
-	$("my").style.left = x - downX + "px";
-	$("my").style.top =  y - downY + "px";
+	//移动所选择的DOM.  （DOM相对于浏览器的位置）
+	oDom.style.left = x - downX + "px";
+	oDom.style.top =  y - downY + "px";
 }
 
+document.onmousedown = function (event){
+	oDom = event.target;
 
-//判断当前所选的是哪个DOM节点
-
-
-//当点击某个DOM节点时，取此节点的ID，然后进行移动
-
-var downX;
-var downY;
-
-$("my").onmousedown = function (event){
-	
 	//获取点击时鼠标所在DOM中的坐标
-	downX = event.clientX - parseInt($("my").style.left);
-	downY = event.clientY - parseInt($("my").style.top);
-	
+	downX = event.clientX - parseInt(oDom.style.left);
+	downY = event.clientY - parseInt(oDom.style.top);
+
 	document.onmousemove = mv;
 };
 
-
-$("my").onmouseup = function (){
+document.onmouseup = function (){
 	document.onmousemove = undefined;
 };
-
 
 -->
 </script>
