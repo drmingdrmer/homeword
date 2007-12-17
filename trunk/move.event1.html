@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title>关键字_栏目_频道_新浪网</title>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+<meta name="keywords" content="关键字1,关键字2,关键字3,">
+<meta name="description" content="页面说明">
+<style type="text/css">
+td,p,li,input,select,div,span {font-size:12px;}
+table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
+
+#my { border:1px dashed #ccc; position:absolute;}
+
+</style>
+</head>
+<body>
+<div id="my" style="width:0px; height:0px; display:none; top:0; left:0;"></div>
+
+<script type="text/javaScript" language="JavaScript">
+<!--
+function $(id) { return document.getElementById(id); }
+
+var x;
+var y;
+
+
+function move(ev) {
+	
+	//以鼠标点击的坐标为中心　增加div的宽高。
+	var ax = ev.clientX;
+	var ay = ev.clientY;
+
+	$("my").style.width = ax - x + "px";
+	$("my").style.height = ay - y + "px";
+}
+
+
+//鼠标点下，显示dom
+document.onmousedown = function (ev){
+
+	x = ev.clientX;
+	y = ev.clientY;
+	
+	$("my").style.display = "block";
+	$("my").style.width = "0px";
+	$("my").style.height = "0px";
+	$("my").style.top = y + "px";
+	$("my").style.left = x + "px";
+
+	document.onmousemove = move;
+}
+
+
+//鼠标抬起，隐藏dom
+document.onmouseup = function (){
+	$("my").style.display = "none";
+	document.onmousemove = undefined;
+}
+
+
+document.onmousedown({clientX:5,clientY:100,target:document});
+
+-->
+</script>
+
+</body></html>
