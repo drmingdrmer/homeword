@@ -9,11 +9,13 @@ td,p,li,input,select,div,span {font-size:12px;}
 table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 
 #my { border:1px dashed #ccc; position:absolute;}
+#mark_1 { background:#f00; position:absolute;}
 
 </style>
 </head>
 <body>
 <div id="my" style="width:0px; height:0px; display:none; top:0; left:0;"></div>
+<div id="mark_1" style="width:5px; height:5px; top:100px; left:100px;"></div>
 
 <script type="text/javaScript" language="JavaScript">
 <!--
@@ -56,10 +58,8 @@ document.onmouseup = function (){
 	document.onmousemove = undefined;
 }
 
-
-document.onmousedown({clientX:5,clientY:100,target:document});
-
 -->
 </script>
-
+增加功能：
+可以通过鼠标拖拽的选择框选中红点，选中后将红点的颜色变成黑色。
 </body></html>
