@@ -24,9 +24,6 @@ function $(id) { return document.getElementById(id); }
 var x;
 var y;
 
-var m;
-var n;
-
 function move(ev) {
 	
 	//以鼠标点击的坐标为中心　增加div的宽高。
@@ -38,9 +35,13 @@ function move(ev) {
 
 	//拖动区域经过id为mark_1的DOM
 	
-	
+	var m = $("mark_1").style.top;
+	var n = $("mark_1").style.left;
+
+	if (  ) {
 	//mark_1 的颜色变成黑色
 	$("mark_1").style.backgroundColor = '#000';
+	}
 
 }
 
