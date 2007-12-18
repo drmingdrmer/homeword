@@ -9,13 +9,13 @@ td,p,li,input,select,div,span {font-size:12px;}
 table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
 
 #my { border:1px dashed #ccc; position:absolute;}
-#mark_1 { background:#f00; position:absolute;}
+#mark_1 { position:absolute;}
 
 </style>
 </head>
 <body>
 <div id="my" style="width:0px; height:0px; display:none; top:0; left:0;"></div>
-<div id="mark_1" style="width:5px; height:5px; top:100px; left:100px;"></div>
+<div id="mark_1" style="width:5px; height:5px; top:100px; left:100px; background:#f00"></div>
 
 <script type="text/javaScript" language="JavaScript">
 <!--
@@ -24,6 +24,8 @@ function $(id) { return document.getElementById(id); }
 var x;
 var y;
 
+var m;
+var n;
 
 function move(ev) {
 	
@@ -33,7 +35,15 @@ function move(ev) {
 
 	$("my").style.width = ax - x + "px";
 	$("my").style.height = ay - y + "px";
+
+	//拖动区域经过id为mark_1的DOM
+	
+	
+	//mark_1 的颜色变成黑色
+	$("mark_1").style.backgroundColor = '#000';
+
 }
+
 
 
 //鼠标点下，显示dom
@@ -46,7 +56,7 @@ document.onmousedown = function (ev){
 	$("my").style.width = "0px";
 	$("my").style.height = "0px";
 	$("my").style.top = y + "px";
-	$("my").style.left = x + "px";
+	$("my").style.left = x + "px";	
 
 	document.onmousemove = move;
 }
@@ -55,11 +65,11 @@ document.onmousedown = function (ev){
 //鼠标抬起，隐藏dom
 document.onmouseup = function (){
 	$("my").style.display = "none";
+	$("mark_1").style.backgroundColor = '#F00';
 	document.onmousemove = undefined;
 }
 
 -->
 </script>
-增加功能：
-可以通过鼠标拖拽的选择框选中红点，选中后将红点的颜色变成黑色。
+增加功能：可以通过鼠标拖拽的选择框选中红点，选中后将红点的颜色变成黑色。
 </body></html>
