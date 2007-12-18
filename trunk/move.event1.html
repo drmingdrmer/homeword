@@ -36,19 +36,21 @@ function move(ev) {
 
 	//拖动区域经过id为mark_1的DOM
 	
-	var by = parseInt($("mark_1").style.top);
-	var bx = parseInt($("mark_1").style.left);
+	var mTop = parseInt($("mark_1").style.top);
+	var mLeft = parseInt($("mark_1").style.left);
 
-	if ( by < ay && by > y && bx < ax && bx > x ) {
-	//mark_1 的颜色变成黑色
+	var mBottom = mTop + parseInt($("mark_1").style.height);
+	var mRight = mLeft + parseInt($("mark_1").style.width);
+
+
+	if ( y < mTop && mBottom < ay && x < mLeft && mRight < ax ) {
+		//mark_1 的颜色变成黑色	
 		$("mark_1").style.backgroundColor = '#000';
-	}else {
+	} else {
 		$("mark_1").style.backgroundColor = c;
 	}
 
 }
-
-
 
 //鼠标点下，显示dom
 document.onmousedown = function (ev){
@@ -69,7 +71,7 @@ document.onmousedown = function (ev){
 //鼠标抬起，隐藏dom
 document.onmouseup = function (){
 	$("my").style.display = "none";
-	$("mark_1").style.backgroundColor = '#F00';
+	$("mark_1").style.backgroundColor = c;
 	document.onmousemove = undefined;
 }
 
