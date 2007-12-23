@@ -10,33 +10,37 @@
       var arr = [1, 82, 3, 14, 5, 6, 77, 8, 29, 10];
       //声明一个变量,记住最大的数字
       var rem = -10000;
-      
-      for (var i = 0; i < 10; i++) {
-      
+			//声明一个变量记住第二大的数字
+			var remSe = -10000;
+			var num;
+			for (var i = 0; i < 10; i++) {
         //列出数组中的数字
-        var num = arr[i];
-        
-        
+        num = arr[i];
         //比较第一个数字开始到最后一个数字的大小
         if (num > rem) {
           rem = num;
  					var b = i;
-					
         }
-			
-
-        
+				if ( num > remSe && num < rem){
+					
+					remSe = num;
+				
+			}
         //alt-shift-s alt-shift-c      commit
         //alt-shift-s alt-shift-u      update
       }
+			
+			
+			
 			arr.splice (b,1);
 			//alert(rem)
       console.log(rem);
-      console.log(arr)
+      console.log(arr);
+			console.log(remSe);
       
       -->
     </script>
-    <pre>
+<pre>
 建立1个数组，里面有10个数。 
 写1段代码，找出其中最大的1个。
 </pre>
