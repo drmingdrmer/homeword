@@ -13,24 +13,22 @@
 	     //声明一个变量,记住最大的数字
      		var rem = -10000;
      	 	var num;
-				var len = arr.length;
+				var len = my.length;
 				for (var i = 0; i < len; i++) {
 					rem = -10000;
-					for (var j = 0; j < arr.length; j++) {
+					for (var j = 0; j < my.length; j++) {
 						//列出数组中的数字
-						num = arr[j];
+						num = my[j];
 						//比较第一个数字开始到最后一个数字的大小
 						if (num > rem) {
 							rem = num;
 							var b = j;
 						} 
 					}
-					arr.splice(b, 1);
+					my.splice(b, 1);
 				}
 				return;
 			}
-			
-			fun();
 			
 			
 -->
