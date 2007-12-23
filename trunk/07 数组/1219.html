@@ -10,8 +10,6 @@
       var arr = [1, 82, 3, 14, 5, 6, 77, 8, 29, 10];
       //声明一个变量,记住最大的数字
       var rem = -10000;
-			//声明一个变量记住第二大的数字
-			var remSe = -10000;
 			var num;
 			for (var i = 0; i < 10; i++) {
         //列出数组中的数字
@@ -20,24 +18,28 @@
         if (num > rem) {
           rem = num;
  					var b = i;
-        }
-				if ( num > remSe && num < rem){
 					
-					remSe = num;
+        }
 				
-			}
         //alt-shift-s alt-shift-c      commit
         //alt-shift-s alt-shift-u      update
+				
       }
 			
-			
-			
 			arr.splice (b,1);
-			//alert(rem)
-      console.log(rem);
+			
+			console.log(rem);
       console.log(arr);
-			console.log(remSe);
-      
+			
+			for ( i = 0; i < 10; i++) {
+        num = arr[i];
+        if (num > rem) {
+          rem = num;
+ 					b = i;				   
+        }
+      }
+      console.log(rem);
+
       -->
     </script>
 <pre>
