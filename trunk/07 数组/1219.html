@@ -7,40 +7,26 @@
   <body>
     <script language="javascript" type="text/javascript">
       <!--
-      var arr = [1, 82, 3, 14, 5, 6, 77, 8, 29, 10];
+      var arr = [23, 82, 3, 14, 5, 6, 77, 8, 29, 10];
       //声明一个变量,记住最大的数字
       var rem = -10000;
 			var num;
 			for (var i = 0; i < 10; i++) {
-        //列出数组中的数字
-        num = arr[i];
-        //比较第一个数字开始到最后一个数字的大小
-        if (num > rem) {
-          rem = num;
- 					var b = i;
-					
-        }
-				
-        //alt-shift-s alt-shift-c      commit
-        //alt-shift-s alt-shift-u      update
-				
-      }
+				rem = -10000;
+				for (var j = 0; j < 10; j++) {					
+				//列出数组中的数字
+				num = arr[j];
+				//比较第一个数字开始到最后一个数字的大小
+					if (num > rem) {
+						rem = num;
+						var b = j;
+					}
+				}
+				arr.splice(b, 1);
+				document.write (rem);
+				document.write ("<br />")
+			}
 			
-			arr.splice (b,1);
-			
-			console.log(rem);
-      console.log(arr);
-			
-			rem = -10000;
-			for ( i = 0; i < 10; i++) {
-        num = arr[i];
-        if (num > rem) {
-          rem = num;
- 					b = i;				   
-        }
-      }
-      console.log(rem);
-
       -->
     </script>
 <pre>
