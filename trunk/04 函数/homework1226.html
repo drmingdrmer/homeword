@@ -12,27 +12,51 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 <body>
 <script type="text/javascript" language="javascript">
  function fun(num1,num2){
- 	if ( parseInt(num1) > parseInt(num2) ) {
+ 	if ( num1 > num2) {
 			return num1;
 	}else {
 		return num2;
 	}
 }
-var a = fun(98,6);
-var b = fun(7,23);
-var c = fun(7,7);
+//var a = fun(87, 6);
+//var b = fun(7, 23);
+//var c = fun(7, 7);
 
-alert(a);
-alert(b);
-alert(c);
-
-
+//alert(a);
+//alert(b);
+//alert(c);
 </script>
+
+<script type="text/javascript" language="javascript">
+<!--
+ function fun(num3,num4,num5){
+	var arr = [num3,num4,num5];
+ 	for (var i=0; i<arr.length; i++){
+		var my = -10000; 
+		if ( my < arr[i]) {
+				my = arr[i];
+			 return my; 
+ 		}
+	}
+}
+var a = fun(287,6,223);
+var b = fun(28,600,234);
+var c = fun(27,600,1000);
+alert (a);
+alert (b);
+alert (c);
+-->
+</script>  
 
 <pre>
 写个函数
 接受2个参数
 返回较大的1个。
+
+写1个函数。
+接受3个参数。
+返回最大的1个。
+写这个函数的时候要用最优的方法来解决。。
 </pre>
 
 </body></html>
