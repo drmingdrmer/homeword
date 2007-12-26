@@ -31,20 +31,23 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 <!--
  function fun(num3,num4,num5){
 	var arr = [num3,num4,num5];
+	var my = -10000;
  	for (var i=0; i<arr.length; i++){
-		var my = -10000; 
 		if ( my < arr[i]) {
 				my = arr[i];
-			 return my; 
  		}
 	}
+	return my;
 }
-var a = fun(287,6,223);
+var a = fun(287,6,2823);
 var b = fun(28,600,234);
 var c = fun(27,600,1000);
-alert (a);
-alert (b);
-alert (c);
+
+document.write (a);
+document.write ("<br />");
+document.write (b);
+document.write ("<br />");
+document.write (c);
 -->
 </script>  
 
