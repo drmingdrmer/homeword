@@ -13,28 +13,30 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 
 <script type="text/javascript" language="javascript">
 <!--
- function fun(num1,num2){
+ function max(num1,num2){
  	if ( num1 > num2) {
 		return num1;
 	}else {
 		return num2;
 	}
 }
- function funA(num3,num4,num5){
-	var	myA = fun(num3,num4);
-	var myB = fun(myA,num5);
-  
+ function maxof3(num3,num4,num5){
+	var	myA = max(num3,num4);
+	var myB = max(myA,num5);
   return myB;
-	
 }
-var a = funA(287,6,2823);
-var b = funA(6000,6000,6000);
-var c = funA(2700,600,390);
-
+var a = maxof3(287,6,2823);
+var b = maxof3(6000,6000,6000);
+var c = maxof3(2700,600,390);
 
 console.log (a);
 console.log (b);
 console.log (c);
+
+var arr = [10,234,32,299,123,898,7000,10000]
+function maxofArr(max){
+	
+}
 -->
 </script>  
 
@@ -49,7 +51,6 @@ console.log (c);
 写这个函数的时候要用最优的方法来解决。。
 
 
-着两个东西先放着。后面的东西可能要用到前面的fun
 设计1个函数，参数会传进来1个数组。函数返回数组中最大的数。
 
 利用fun来做
