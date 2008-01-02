@@ -13,30 +13,29 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 
 <script type="text/javascript" language="javascript">
 <!--
- function fun(num1,num2,num3){
+ function fun(num1,num2){
  	if ( num1 > num2) {
 		return num1;
 	}else {
 		return num2;
 	}
-
-	var	myA = fun(num1,num2);
-	if ( myA > num3){
+}
+ function funA(num3,num4,num5){
+	var	myA = fun(num3,num4);
+	var myB = fun(myA,num5);
+	if ( myA > myB){
 		return myA;
 	} else{
-		return num3;
+		return myB;
 	}
-
-
-}
-
 	
-var a = fun(287,6,125);
-var b = fun(6000,6000,6000);
-var c = fun(2700,600,399);
+}
+var a = funA(287,6,2823);
+var b = funA(6000,6000,6000);
+var c = funA(2700,600,390);
 
-document.write (a);
-document.write ("<br />");
+
+console.log (a);
 console.log (b);
 console.log (c);
 -->
