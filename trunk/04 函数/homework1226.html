@@ -13,7 +13,7 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 
 <script type="text/javascript" language="javascript">
 <!--
- function max(num1,num2){
+ function Max(num1,num2){
  	if ( num1 > num2) {
 		return num1;
 	}else {
@@ -21,8 +21,8 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 	}
 }
  function maxof3(num3,num4,num5){
-	var	myA = max(num3,num4);
-	var myB = max(myA,num5);
+	var	myA = Max(num3,num4);
+	var myB = Max(myA,num5);
   return myB;
 }
 var a = maxof3(287,6,2823);
@@ -33,10 +33,20 @@ console.log (a);
 console.log (b);
 console.log (c);
 
-var arr = [10,234,32,299,123,898,7000,10000]
-function maxofArr(max){
-	
+
+var arr = [10,234,32,299,123,898,7000,99999]
+var mix = -10000;
+
+function maxofArr(maxArr){	
+	for ( var i = 0; i < maxArr.length; i++) {
+		var myC = Max(mix,maxArr[i]);
+		mix = myC;
+	}
+	return mix;
 }
+
+var d = maxofArr(arr);
+console.log (d);
 -->
 </script>  
 
@@ -52,12 +62,6 @@ function maxofArr(max){
 
 
 设计1个函数，参数会传进来1个数组。函数返回数组中最大的数。
-
-利用fun来做
-
-你把名字改改吧。。完全没有意义的名字。。
-
-
 </pre>
 
 </body></html>
