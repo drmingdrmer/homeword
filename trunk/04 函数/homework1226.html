@@ -38,16 +38,17 @@ var arr1 = [10,234,32,299,123,898,7000,99999]
 var arr2 = [100,100,100]
 var arr3 = [938475,3242,242,44,222211,300]
 var arr4 = [7000,839250]
-var mix = -10000;
 
-function maxofArr(maxArr){	
+
+function maxofArr(maxArr){
+	var mix = -10000;
 	for ( var i = 0; i < maxArr.length; i++) {
 		var myC = Max(mix,maxArr[i]);
 		mix = myC;		
 //	console.log(myC);
-		console.log(i);
-		console.log(mix)
-	}
+//	console.log(i);
+//	console.log(mix);
+	} 
 	return mix;
 }
 
