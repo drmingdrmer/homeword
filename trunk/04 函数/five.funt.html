@@ -54,12 +54,11 @@ console.log (fun4("5","7"));
 document.write ("<br />");
 // 第5个，参数是1个数字，1个字符串，返回1个对象，对象有2个属性
 //名字分别为a和b，a的值是那个数字，b是那个字符串。 
-
 function objPrint(){
 	document.write(this.a);
+	document.write("------------")
 	document.write(this.b);
 }
-
 function fun5(num0,char0){
 	var obj = {
 		a:num0,
@@ -68,7 +67,6 @@ function fun5(num0,char0){
 	}
 	return obj.c();
 }
-
 document.write (fun5(3,"my"));
 console.log (fun5(3,"my"));
 
