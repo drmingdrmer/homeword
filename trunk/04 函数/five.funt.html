@@ -60,6 +60,10 @@ function fun5(num0,char0){
 	}
 	return obj.c();
 }
+function objPrint(){
+	document.write(this.a);
+	document.write(this.b);
+}
 document.write (fun5(3,"my"));
 console.log (fun5(3,"my"));
 //--><!]]>
@@ -67,11 +71,7 @@ console.log (fun5(3,"my"));
 <div id="my">sfsffs</div>
 <pre>
 	
-
-
- 
-			
- 然后每个函数做2个测试，测试结果分别用document.write和console.log打印出来。
+然后每个函数做2个测试，测试结果分别用document.write和console.log打印出来。
 </pre>
 </body></html>
 
