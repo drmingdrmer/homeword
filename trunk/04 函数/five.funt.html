@@ -12,23 +12,21 @@ table,td,img,div,span,form{border: none;margin:0;padding:0;}
 
 </head>
 <body>
-
+<div id="My">fun1</div>
 <script type="text/javascript" language="javascript">
 <!--//--><![CDATA[//><!--
 // 第1个，参数是1个节点的id，返回根据id找到的节点。
 function fun1(id){
 	return document.getElementById(id);
 }
-var domMy = fun1(My);
-document.write(domMy);
-console.log(domMy);
+document.write(fun1("My"));
+console.log(fun1("My"));
 document.write("<br />")
 
 // 第2个，参数是3个数字，返回1个数组，数组的元素是这3个数字。
 function fun2(num1,num2,num3){
 	var arr = [num1,num2,num3];
 	return arr;
-
 }
 	document.write (fun2(4,5,3));
 	console.log (fun2(4,5,3));
@@ -71,9 +69,10 @@ function objPrint(){
 }
 document.write (fun5(3,"my"));
 console.log (fun5(3,"my"));
+
 //--><!]]>
 </script>
-<div id="My">sfsffs</div>
+
 <pre>
 	
 然后每个函数做2个测试，测试结果分别用document.write和console.log打印出来。
