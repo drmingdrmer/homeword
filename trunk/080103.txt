@@ -6,3 +6,4 @@
 
 然后每个函数做2个测试，测试结果分别用document.write和console.log打印出来。
 
+ 

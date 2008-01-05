@@ -16,5 +16,4 @@ var oVDiv=document.getElementById("oDiv1");
 <DIV ID="oDiv3">Div #3</DIV>
 <INPUT TYPE="button" VALUE="Get Names" onclick="fnGetId()">
 
-
-
+ 
