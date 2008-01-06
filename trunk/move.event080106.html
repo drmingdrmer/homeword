@@ -37,7 +37,6 @@ function move(ev) {
 	}else{	
 		$("my").style.height = y - ay + "px";
 		$("my").style.width = x - ax + "px";
-		
 		$("my").style.top = ay + "px";
 		$("my").style.left = ax + "px";
 	}
@@ -55,19 +54,19 @@ function move(ev) {
 
 	//拖动区域经过id为mark_1的DOM
 	
-//	var mTop = parseInt($("mark_1").style.top);
-//	var mLeft = parseInt($("mark_1").style.left);
+	var mTop = parseInt($("mark_1").style.top);
+	var mLeft = parseInt($("mark_1").style.left);
 
-//	var mBottom = mTop + parseInt($("mark_1").style.height);
-//	var mRight = mLeft + parseInt($("mark_1").style.width);
+	var mBottom = mTop + parseInt($("mark_1").style.height);
+	var mRight = mLeft + parseInt($("mark_1").style.width);
 
 
-//	if ( y < mTop && mBottom < ay && x < mLeft && mRight < ax ) {
+	if ( y < mTop && mBottom < ay && x < mLeft && mRight < ax ) {
 		//mark_1 的颜色变成黑色	
-//		$("mark_1").style.backgroundColor = '#000';
-//	} else {
-//		$("mark_1").style.backgroundColor = c;
-//	}
+		$("mark_1").style.backgroundColor = '#000';
+	} else {
+		$("mark_1").style.backgroundColor = c;
+	}
 
 }
 
