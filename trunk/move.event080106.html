@@ -31,31 +31,26 @@ function move(ev) {
 	var ax = ev.clientX;
 	var ay = ev.clientY;
 	
-	if (ay > y && ax > x )
-	{
-	$("my").style.height = ay - y + "px";
-	$("my").style.width = ax - x + "px";
-
+	if (ay > y && ax > x ) {
+		$("my").style.height = ay - y + "px";
+		$("my").style.width = ax - x + "px";
 	}else{	
-
-	$("my").style.height = y - ay + "px";
-	$("my").style.width = x - ax + "px";
-	
-	$("my").style.top = ay + "px";
-	$("my").style.left = ax + "px";
+		$("my").style.height = y - ay + "px";
+		$("my").style.width = x - ax + "px";
+		
+		$("my").style.top = ay + "px";
+		$("my").style.left = ax + "px";
 	}
-	if ( y > ay && ax > x )
-	{
-	$("my").style.height = y - ay + "px";
-	$("my").style.width = ax - x + "px";
-	$("my").style.top = ay + "px";
-	$("my").style.left = x + "px";
-	}else if ( x > ax && ay > y )
-	{
-	$("my").style.width = x - ax + "px";
-	$("my").style.height = ay - y + "px";
-	$("my").style.left = ax + "px";
-	$("my").style.top = y + "px";
+	if ( y > ay && ax > x ) {
+		$("my").style.height = y - ay + "px";
+		$("my").style.width = ax - x + "px";
+		$("my").style.top = ay + "px";
+		$("my").style.left = x + "px";
+	} else if ( x > ax && ay > y ) {
+		$("my").style.width = x - ax + "px";
+		$("my").style.height = ay - y + "px";
+		$("my").style.left = ax + "px";
+		$("my").style.top = y + "px";
 	}
 
 	//拖动区域经过id为mark_1的DOM
