@@ -42,13 +42,17 @@
       c = $("mark_1").style.backgroundColor;
 			function max(xO,xM){
 				if(xO > xM){
-					return xM;
+					return xO;
 				} else {
-					return (xM - xO);
+					return xM;
 				}
 			}
 			function mix(xO,xM){
-				if(xO < xM)
+				if(xO < xM){
+					return xO;
+				}else {
+					return xM;
+				}
 			}
       function move(ev){
         //以鼠标点击的坐标为中心　增加div的宽高。
