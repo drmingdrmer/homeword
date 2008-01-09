@@ -54,8 +54,6 @@
 					return xM;
 				}
 			}
-			
-			
       function move(ev){
         //以鼠标点击的坐标为中心　增加div的宽高。
         var ax = ev.clientX;
@@ -63,7 +61,8 @@
 					var xL = mix (ax,x);
 					var xR = max (ax,x);					
 					var yT = mix (ay,y);
-					var xB = max (ay,y);
+					var yB = max (ay,y);
+					
 					
 					
         //拖动区域经过id为mark_1的DOM
