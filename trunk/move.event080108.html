@@ -40,6 +40,16 @@
       var y;
       var c;
       c = $("mark_1").style.backgroundColor;
+			function max(xO,xM){
+				if(xO > xM){
+					return xM;
+				} else {
+					return (xM - xO);
+				}
+			}
+			function mix(xO,xM){
+				if(xO < xM)
+			}
       function move(ev){
         //以鼠标点击的坐标为中心　增加div的宽高。
         var ax = ev.clientX;
