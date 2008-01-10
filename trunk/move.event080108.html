@@ -21,15 +21,20 @@
           position: absolute;
       }
       
-      #mark_1 {
+      #mark_1,#mark_2,#mark_3,#mark_4 {
           position: absolute;
       }
+
     </style>
   </head>
   <body>
     <div id="my" style="width:0px; height:0px; display:none; top:0; left:0;">
     </div>
     <div id="mark_1" style="width:50px; height:50px; top:100px; left:100px; background:#f00">
+    </div>
+		<div id="mark_2" style="width:50px; height:50px; top:200px; left:200px; background:#ff0">
+    </div>
+		<div id="mark_3" style="width:50px; height:50px; top:300px; left:300px; background:#0ff">
     </div>
     <script>
       //<!--
@@ -40,6 +45,7 @@
       var y;
       var c;
       c = $("mark_1").style.backgroundColor;
+
 			function max(xO,xM){
 				if(xO > xM){
 					return xO;
@@ -54,23 +60,29 @@
 					return xM;
 				}
 			}
-      function move(ev){
-        //以鼠标点击的坐标为中心　增加div的宽高。
-        var ax = ev.clientX;
-        var ay = ev.clientY;
-					var xL = mix (ax,x);
-					var xR = max (ax,x);					
-					var yT = mix (ay,y);
-					var yB = max (ay,y);
-					
-					
+			function move(ev){
+				//以鼠标点击的坐标为中心　增加div的宽高。
+				var ax = ev.clientX;
+				var ay = ev.clientY;
+
+				var xL = mix (ax,x);
+				var xR = max (ax,x);
+				var yT = mix (ay,y);
+				var yB = max (ay,y);
+			
+				$("my").style.width = xR - xL + "px";
+				$("my").style.height = yB - yT + "px";
+				$("my").style.left = xL + "px";
+				$("my").style.top = yT + "px";
+
 					
         //拖动区域经过id为mark_1的DOM
         var mTop = parseInt($("mark_1").style.top);
         var mLeft = parseInt($("mark_1").style.left);
         var mBottom = mTop + parseInt($("mark_1").style.height);
         var mRight = mLeft + parseInt($("mark_1").style.width);
-        if (y < mTop && mBottom < ay && x < mLeft && mRight < ax) {
+        
+				if ( xR > mRight && mLeft > xL && mTop > yT && yB > mBottom) {
           //mark_1 的颜色变成黑色
           $("mark_1").style.backgroundColor = '#000';
         } else {
