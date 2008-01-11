@@ -45,59 +45,60 @@
       var y;
       var c;
       var loopId;
-
-      function max(xO, xM){
-        if (xO > xM) {
-          return xO;
-        } else {
-          return xM;
-        }
-      }
       
-      function mix(xO, xM){
-        if (xO < xM) {
-          return xO;
-        } else {
-          return xM;
+      for (var i = 1; i <= 3; i++) {
+        loopId = "mark_" + i;  //先把mark_ + i;都运行完了再继续往下走的嘛？？？？
+				        
+        c = $(loopId).style.backgroundColor;
+        
+        function max(xO, xM){
+          if (xO > xM) {
+            return xO;
+          } else {
+            return xM;
+          }
         }
-      }
-      
-      function move(ev){
-				//以鼠标点击的坐标为中心　增加div的宽高。
-				var ax = ev.clientX;
-				var ay = ev.clientY;
-				
-				var xL = mix(ax, x);
-				var xR = max(ax, x);
-				var yT = mix(ay, y);
-				var yB = max(ay, y);
-				
-				$("my").style.width = xR - xL + "px";
-				$("my").style.height = yB - yT + "px";
-				$("my").style.left = xL + "px";
-				$("my").style.top = yT + "px";
-				
-				
-				//拖动区域经过id为mark_1的DOM
-				for (var i = 1; i <= 3; i++) {
-					loopId = "mark_" + i;
-					
-		      c = $(loopId).style.backgroundColor;
-
-					var mTop = parseInt($(loopId).style.top);
-					var mLeft = parseInt($(loopId).style.left);
-					var mBottom = mTop + parseInt($(loopId).style.height);
-					var mRight = mLeft + parseInt($(loopId).style.width);
-					
-					
-					if (xR > mRight && mLeft > xL && mTop > yT && yB > mBottom) {
-						//mark_1 的颜色变成黑色
-						$(loopId).style.backgroundColor = '#000';
-					} else {
-						$(loopId).style.backgroundColor = c;
-					}
-				}
-			}    
+        
+        function mix(xO, xM){
+          if (xO < xM) {
+            return xO;
+          } else {
+            return xM;
+          }
+        }
+        
+        function move(ev){
+          //以鼠标点击的坐标为中心　增加div的宽高。
+          var ax = ev.clientX;
+          var ay = ev.clientY;
+          
+          var xL = mix(ax, x);
+          var xR = max(ax, x);
+          var yT = mix(ay, y);
+          var yB = max(ay, y);
+          
+          $("my").style.width = xR - xL + "px";
+          $("my").style.height = yB - yT + "px";
+          $("my").style.left = xL + "px";
+          $("my").style.top = yT + "px";
+          
+          
+          //拖动区域经过id为mark_1的DOM
+          
+          
+          var mTop = parseInt($(loopId).style.top);
+          var mLeft = parseInt($(loopId).style.left);
+          var mBottom = mTop + parseInt($(loopId).style.height);
+          var mRight = mLeft + parseInt($(loopId).style.width);
+          
+          
+          if (xR > mRight && mLeft > xL && mTop > yT && yB > mBottom) {
+            //mark_1 的颜色变成黑色
+            $(loopId).style.backgroundColor = '#000';
+          } else {
+            $(loopId).style.backgroundColor = c;
+          }
+        }
         //鼠标点下，显示dom
         document.onmousedown = function(ev){
           x = ev.clientX;
@@ -115,10 +116,8 @@
           $(loopId).style.backgroundColor = c;
           document.onmousemove = undefined;
         }
-      
-      
+      }
       -->
     </script>
-    增加功能：可以通过鼠标拖拽的选择框选中红点，选中后将红点的颜色变成黑色。
   </body>
 </html>
