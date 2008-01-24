@@ -1,118 +1,111 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
-    <title>关键字_栏目_频道_新浪网</title>
-    <meta http-equiv="Content-type" content="text/html; charset=gb2312">
-    <meta name="keywords" content="关键字1,关键字2,关键字3,">
-    <meta name="description" content="页面说明">
-    <style type="text/css">
-      td, p, li, input, select, div, span {
-          font-size: 12px;
-      }
-      
-      table, td, img, div, span, form {
-          border: none;
-          margin: 0 0 0 0;
-          padding: 0 0 0 0;
-      }
-      
-      #my {
-          border: 1px dashed #ccc;
-          position: absolute;
-      }
-      
-      #mark_1, #mark_2, #mark_3, #mark_4 {
-          position: absolute;
-      }
-    </style>
+	<title>关键字_栏目_频道_新浪网</title>
+	<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+	<meta name="keywords" content="关键字1,关键字2,关键字3,">
+	<meta name="description" content="页面说明">
+	<style type="text/css">
+	  td, p, li, input, select, div, span { font-size: 12px; }
+	  table, td, img, div, span, form { border: none; margin: 0 0 0 0; padding: 0 0 0 0; }
+
+	  #my {
+		border: 1px dashed #ccc;
+		position: absolute;
+	  }
+
+	  #mark_1, #mark_2, #mark_3, #mark_4 {
+		position: absolute;
+	  }
+	</style>
   </head>
   <body>
-    <div id="my" style="width:0px; height:0px; display:none; top:0; left:0;">
-    </div>
-    <div id="mark_1" style="width:50px; height:50px; top:100px; left:100px; background:#f00">
-    </div>
-    <div id="mark_2" style="width:50px; height:50px; top:200px; left:200px; background:#ff0">
-    </div>
-    <div id="mark_3" style="width:50px; height:50px; top:300px; left:300px; background:#0ff">
-    </div>
-    <script>
-      //<!--
-      function $(id){
-        return document.getElementById(id);
-      }
-      
-      var x;
-      var y;
-      var c;
-      var loopId;
-        
-        function max(xO, xM){
-          if (xO > xM) {
-            return xO;
-          } else {
-            return xM;
-          }
-        }
-        
-        function mix(xO, xM){
-          if (xO < xM) {
-            return xO;
-          } else {
-            return xM;
-          }
-        }
-        
-        function move(ev){
-          //以鼠标点击的坐标为中心　增加div的宽高。
-          var ax = ev.clientX;
-          var ay = ev.clientY;
-          
-          var xL = mix(ax, x);
-          var xR = max(ax, x);
-          var yT = mix(ay, y);
-          var yB = max(ay, y);
-          
-          $("my").style.width = xR - xL + "px";
-          $("my").style.height = yB - yT + "px";
-          $("my").style.left = xL + "px";
-          $("my").style.top = yT + "px";
-          
-          //拖动区域经过id为mark_1的DOM
-          for (var i = 1; i <= 3; i++) {
-						loopId = "mark_" + i; //先把mark_ + i;都运行完了再继续往下走的嘛？？？？
-						c = $(loopId).style.backgroundColor;
-						
-						var mTop = parseInt($(loopId).style.top);
-						var mLeft = parseInt($(loopId).style.left);
-						var mBottom = mTop + parseInt($(loopId).style.height);
-						var mRight = mLeft + parseInt($(loopId).style.width);
-						
-						if (xR > mRight && mLeft > xL && mTop > yT && yB > mBottom) {
-							//mark_1 的颜色变成黑色
-							$(loopId).style.backgroundColor = '#000';
-						} else {
-							$(loopId).style.backgroundColor = c;
-						}
-					}
-        }
-        //鼠标点下，显示dom
-        document.onmousedown = function(ev){
-          x = ev.clientX;
-          y = ev.clientY;
-          $("my").style.display = "block";
-          $("my").style.width = "0px";
-          $("my").style.height = "0px";
-          $("my").style.top = y + "px";
-          $("my").style.left = x + "px";
-          document.onmousemove = move;
-        }
-        //鼠标抬起，隐藏dom
-        document.onmouseup = function(){
-          $("my").style.display = "none";
-          $(loopId).style.backgroundColor = c;
-          document.onmousemove = undefined;
-        }
-      -->
-    </script>
+	<div id="my" style="width:0px; height:0px; display:none; top:0; left:0;">
+	</div>
+	<div id="mark_1" style="width:50px; height:50px; top:100px; left:100px; background:#f00">
+	</div>
+	<div id="mark_2" style="width:50px; height:50px; top:200px; left:200px; background:#ff0">
+	</div>
+	<div id="mark_3" style="width:50px; height:50px; top:300px; left:300px; background:#0ff">
+	</div>
+	<script>
+	  //<!--
+	  function $(id){
+		return document.getElementById(id);
+	  }
+
+	  var x;
+	  var y;
+	  var c;
+	  var loopId;
+
+	  function max(xO, xM){
+		if (xO > xM) {
+		  return xO;
+		  } else {
+		  return xM;
+		}
+	  }
+
+	  function mix(xO, xM){
+		if (xO < xM) {
+		  return xO;
+		  } else {
+		  return xM;
+		}
+	  }
+
+	  function move(ev){
+		//以鼠标点击的坐标为中心　增加div的宽高。
+		var ax = ev.clientX;
+		var ay = ev.clientY;
+
+		var xL = mix(ax, x);
+		var xR = max(ax, x);
+		var yT = mix(ay, y);
+		var yB = max(ay, y);
+
+		$("my").style.width = xR - xL + "px";
+		$("my").style.height = yB - yT + "px";
+		$("my").style.left = xL + "px";
+		$("my").style.top = yT + "px";
+
+		//拖动区域经过id为mark_1的DOM
+		for (var i = 1; i <= 3; i++) {
+		  loopId = "mark_" + i;						  /* 先把mark_ + i;都运行完了再继续往下走的嘛？？？？*/
+		  c = $(loopId).style.backgroundColor;		  /* 这里是要记住原来的颜色, 注意这里每次鼠标移动1下，c都是当前的颜色了 */
+
+		  var mTop = parseInt($(loopId).style.top);	  /* 以下4句在3次循环里都是同样的值，可以拿到循环外面 */
+		  var mLeft = parseInt($(loopId).style.left);
+		  var mBottom = mTop + parseInt($(loopId).style.height);
+		  var mRight = mLeft + parseInt($(loopId).style.width);
+
+		  if (xR > mRight && mLeft > xL && mTop > yT && yB > mBottom) {
+			//mark_1 的颜色变成黑色
+			$(loopId).style.backgroundColor = '#000';
+			} else {
+			$(loopId).style.backgroundColor = c;
+		  }
+		}
+	  }
+	  //鼠标点下，显示dom
+	  document.onmousedown = function(ev){
+		x = ev.clientX;
+		y = ev.clientY;
+		$("my").style.display = "block";
+		$("my").style.width = "0px";
+		$("my").style.height = "0px";
+		$("my").style.top = y + "px";
+		$("my").style.left = x + "px";
+		document.onmousemove = move;
+	  }
+	  //鼠标抬起，隐藏dom
+	  document.onmouseup = function(){
+		$("my").style.display = "none";
+		$(loopId).style.backgroundColor = c;
+		document.onmousemove = undefined;
+	  }
+	  -->
+	</script>
   </body>
 </html>
