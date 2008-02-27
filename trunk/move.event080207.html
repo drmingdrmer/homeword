@@ -156,9 +156,9 @@
           //获取点击时鼠标所在DOM中的坐标
           downX = event.clientX - parseInt(Ondom.style.left);
           downY = event.clientY - parseInt(Ondom.style.top);
-          
+
           document.onmousemove = mv;
-  
+					
         }
       }
       
@@ -167,9 +167,18 @@
         for (var j = 1; j <= 3; j++) {
           loopId = "mark_" + j;
           $(loopId).style.backgroundColor = arrMy[j - 1];
+				
         }
+
         document.onmousemove = undefined;
 				
+					var alignX = alignment(parseInt(Ondom.style.left));
+					
+
+  console.log(alignX);
+
+
+		
       }
 			
 			//document.documentElement.clientHeight;
