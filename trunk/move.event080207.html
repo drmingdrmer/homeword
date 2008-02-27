@@ -162,22 +162,20 @@
         }
       }
       
-			document.onmouseup = function(){
+			document.onmouseup = function(event){
         $("my").style.display = "none";
         for (var j = 1; j <= 3; j++) {
           loopId = "mark_" + j;
           $(loopId).style.backgroundColor = arrMy[j - 1];
-					
-						var alignX = alignment(parseInt(Ondom.style.left)) + "px";
-				
-				$(loopId).style.left = alignX;
 				
         }
 				
 				document.onmousemove = undefined;
+
 				
-			
-					
+				Ondom = event.target;
+				
+				Ondom.style.left = alignment(parseInt(Ondom.style.left)) + "px";
 
   console.log(alignX);
 
