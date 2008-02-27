@@ -169,10 +169,12 @@
           $(loopId).style.backgroundColor = arrMy[j - 1];
 				
         }
-
-        document.onmousemove = undefined;
 				
-					var alignX = alignment(parseInt(Ondom.style.left));
+				document.onmousemove = undefined;
+				
+				var alignX = alignment(parseInt(Ondom.style.left));
+				
+				$("my").style.left = alignX;
 					
 
   console.log(alignX);
