@@ -167,14 +167,16 @@
         for (var j = 1; j <= 3; j++) {
           loopId = "mark_" + j;
           $(loopId).style.backgroundColor = arrMy[j - 1];
+					
+						var alignX = alignment(parseInt(Ondom.style.left)) + "px";
+				
+				$(loopId).style.left = alignX;
 				
         }
 				
 				document.onmousemove = undefined;
 				
-				var alignX = alignment(parseInt(Ondom.style.left)) + "px";
-				
-				$(loopId).style.left = alignX;
+			
 					
 
   console.log(alignX);
