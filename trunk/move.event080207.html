@@ -1,170 +1,168 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-  <head>
-    <title>move.eventؼ���momomove slmmmlskdfjmove</title>
-    <meta http-equiv="Content-type" content="text/html; charset=gb2312">
-    <meta name="keywords" content="�ؼ���1,�ؼ���2,�ؼ���3,">
-    <meta name="description" content="ҳ��˵��">
-    <style type="text/css">
-      td, p, li, input, select, div, span {
-          font-size: 12px;
-      }
-      
-      table, td, img, div, span, form {
-          border: none;
-          margin: 0 0 0 0;
-          padding: 0 0 0 0;
-      }
-      
-      #my {
-          border: 1px dashed #ccc;
-          position: absolute;
-      }
-      
-      #mark_1, #mark_2, #mark_3, #mark_4 {
-          position: absolute;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="my" style="width:0px; height:0px; display:none; top:0; left:0;">
-    </div>
-    <div id="mark_1" style="width:50px; height:50px; top:100px; left:100px; background:#f00">
-    </div>
-    <div id="mark_2" style="width:50px; height:50px; top:200px; left:100px; background:#ff0">
-    </div>
-    <div id="mark_3" style="width:50px; height:50px; top:300px; left:100px; background:#0ff">
-    </div>
-    <script>
-      //<!--
-			
-      function $(id){
-        return document.getElementById(id);
-      }
-			//定义全局变量     
-      var x;
-      var y;
-      var loopId;
-      var Ondom;
-      var downX;
-      var downY;
-			var divX;
-			var divY;
-			var alignLeft;
-			var alignRight;
-      
-			
-      function max(xO, xM){
-        if (xO > xM) {
-          return xO;
-        } else {
-          return xM;
-        }
-      }
-      
-      function mix(xO, xM){
-        if (xO < xM) {
-          return xO;
-        } else {
-          return xM;
-        }
-      }
-      
-      //DOM 背景颜色赋初值
-      var arrBgcolor = [];
-      for (k = 1; k <= 3; k++) {
-        loopId = "mark_" + k;
-        arrBgcolor.push($(loopId).style.backgroundColor);
-      }
-      
-      function moveLine(event){
-        var ax = event.clientX;
-        var ay = event.clientY;
-        
-        var xLeft = mix(ax, x);
-        var xRight = max(ax, x);
-        var yTop = mix(ay, y);
-        var yBottom = max(ay, y);
-        
-        $("my").style.width = xRight - xLeft + "px";
-        $("my").style.height = yBottom - yTop + "px";
-        $("my").style.left = xLeft + "px";
-        $("my").style.top = yTop + "px";
-        
-        for (var i = 1; i <= 3; i++) {
-          loopId = "mark_" + i;
-          //if (i == 2) console.log(loopId, " ", c);		  /*�£�c���ǵ�ǰ����ɫ�� */
-          var mTop = parseInt($(loopId).style.top);
-          var mLeft = parseInt($(loopId).style.left);
-          var mBottom = mTop + parseInt($(loopId).style.height);
-          var mRight = mLeft + parseInt($(loopId).style.width);
-          
-          if (xRight > mRight && mLeft > xLeft && mTop > yTop && yBottom > mBottom) {
-            //mark_1 ����ɫ��ɺ�ɫ
-            $(loopId).style.backgroundColor = '#000';
-          } else {
-            $(loopId).style.backgroundColor = arrBgcolor[i - 1];
-          }
-        }
-      }
-      
-      function move(event){
-        //鼠标的坐标
-        var x = event.clientX;
-        var y = event.clientY;
-        //移动所选择的DOM  （DOM相对于浏览器的位置）
-        Ondom.style.left = x - downX + "px";
-        Ondom.style.top = y - downY + "px";
-      }
-			
-       //���̧������dom自动对齐
-			function alignment(n){
-				divX =  n / 100;
-//			Math.floor(divX);//小的
-//			Math.ceil(divX);//大的
-				alignLeft = Math.floor(divX);
-				alignRight = Math.ceil(divX);
-				if(divX - alignLeft < alignRight - divX){
-					divX = alignLeft;
-				}else{
-					divX = alignRight;
-				}
-				return divX * 100;
-			}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>event.move</title>
+<style type="text/css">
+<!--
+td, p, li, input, select, div, span {
+  font-size: 12px;
+}
 
-      document.onmousedown = function(event){
-				//console.log (event.target);
-        if (event.target == document.documentElement) {
-          x = event.clientX;
-          y = event.clientY;
-          $("my").style.display = "block";
-          $("my").style.width = "0px";
-          $("my").style.height = "0px";
-          $("my").style.top = y + "px";
-          $("my").style.left = x + "px";
-          document.onmousemove = moveLine;			        
-        } else {
-					Ondom = event.target;
-          //获取点击时鼠标所在DOM中的坐标
-          downX = event.clientX - parseInt(Ondom.style.left);
-          downY = event.clientY - parseInt(Ondom.style.top);
-          document.onmousemove = move;
-        }
-      }
-      
-			document.onmouseup = function(event){
-        $("my").style.display = "none";
-        for (var j = 1; j <= 3; j++) {
-          loopId = "mark_" + j;
-          $(loopId).style.backgroundColor = arrBgcolor[j - 1];
-        }
-				document.onmousemove = undefined;
-				Ondom = event.target;
-				Ondom.style.left = alignment(parseInt(Ondom.style.left)) + "px";
-      }
-			//document.documentElement.clientHeight;
-			//document.documentElement.clientWidth;
-      -->
-    </script>
-  </body>
+table, td, img, div, span, form {
+  border: none;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+#my {
+  border: 1px dashed #ccc;
+  position: absolute;
+}
+
+#mark_1, #mark_2, #mark_3, #mark_4 {
+  position: absolute;
+}
+	-->
+</style>
+</head>
+
+<body>
+<div id="my" style="width:0px; height:0px; display:none; top:0; left:0;"></div>
+<div id="mark_1" style="width:50px; height:50px; top:100px; left:100px; background:#f00"></div>
+<div id="mark_2" style="width:50px; height:50px; top:200px; left:100px; background:#ff0"></div>
+<div id="mark_3" style="width:50px; height:50px; top:300px; left:100px; background:#0ff"></div>
+
+<script type="text/javascript" language="JavaScript">
+  //<!--
+  
+  function $(id){
+	return document.getElementById(id);
+  }
+  
+  //定义全局变量     
+  var x;
+  var y;
+  var loopId;
+  var Ondom;
+  var downX;
+  var downY;
+  var divX;
+  var divY;
+  var alignLeft;
+  var alignRight;
+  
+  function max(xO, xM){
+	if (xO > xM) {
+	  return xO;
+	} else {
+	  return xM;
+	}
+  }
+  
+  function mix(xO, xM){
+	if (xO < xM) {
+	  return xO;
+	} else {
+	  return xM;
+	}
+  }
+  
+  //DOM 背景颜色赋初值
+  var arrBgcolor = [];
+  for (k = 1; k <= 3; k++) {
+	loopId = "mark_" + k;
+	arrBgcolor.push($(loopId).style.backgroundColor);
+  }
+  
+  function moveLine(event){
+	var ax = event.clientX;
+	var ay = event.clientY;
+	
+	var xLeft = mix(ax, x);
+	var xRight = max(ax, x);
+	var yTop = mix(ay, y);
+	var yBottom = max(ay, y);
+	
+	$("my").style.width = xRight - xLeft + "px";
+	$("my").style.height = yBottom - yTop + "px";
+	$("my").style.left = xLeft + "px";
+	$("my").style.top = yTop + "px";
+	
+	for (var i = 1; i <= 3; i++) {
+	  loopId = "mark_" + i;
+	  //if (i == 2) console.log(loopId, " ", c);		 
+	  var mTop = parseInt($(loopId).style.top);
+	  var mLeft = parseInt($(loopId).style.left);
+	  var mBottom = mTop + parseInt($(loopId).style.height);
+	  var mRight = mLeft + parseInt($(loopId).style.width);
+	  
+	  if (xRight > mRight && mLeft > xLeft && mTop > yTop && yBottom > mBottom) {
+		//mark_1
+		$(loopId).style.backgroundColor = '#000';
+	  } else {
+		$(loopId).style.backgroundColor = arrBgcolor[i - 1];
+	  }
+	}
+  }
+  
+  function move(event){
+	//鼠标的坐标
+	var x = event.clientX;
+	var y = event.clientY;
+	//移动所选择的DOM  （DOM相对于浏览器的位置）
+	Ondom.style.left = x - downX + "px";
+	Ondom.style.top = y - downY + "px";
+  }
+  
+  //dom自动对齐
+  function alignment(n){
+	divX = n / 100;
+	//			Math.floor(divX);//小的
+	//			Math.ceil(divX);//大的
+	alignLeft = Math.floor(divX);
+	alignRight = Math.ceil(divX);
+	if (divX - alignLeft < alignRight - divX) {
+	  divX = alignLeft;
+	} else {
+	  divX = alignRight;
+	}
+	return divX * 100;
+  }
+  
+  document.onmousedown = function(event){
+	//console.log (event.target);
+	if (event.target == document.documentElement) {
+	  x = event.clientX;
+	  y = event.clientY;
+	  $("my").style.display = "block";
+	  $("my").style.width = "0px";
+	  $("my").style.height = "0px";
+	  $("my").style.top = y + "px";
+	  $("my").style.left = x + "px";
+	  document.onmousemove = moveLine;
+	} else {
+	  Ondom = event.target;
+	  //获取点击时鼠标所在DOM中的坐标
+	  downX = event.clientX - parseInt(Ondom.style.left);
+	  downY = event.clientY - parseInt(Ondom.style.top);
+	  document.onmousemove = move;
+	}
+  }
+  
+  document.onmouseup = function(event){
+	$("my").style.display = "none";
+	for (var j = 1; j <= 3; j++) {
+	  loopId = "mark_" + j;
+	  $(loopId).style.backgroundColor = arrBgcolor[j - 1];
+	}
+	document.onmousemove = undefined;
+	Ondom = event.target;
+	Ondom.style.left = alignment(parseInt(Ondom.style.left)) + "px";
+  }
+  //document.documentElement.clientHeight;
+  //document.documentElement.clientWidth;
+  -->
+</script>
+</body>
 </html>
