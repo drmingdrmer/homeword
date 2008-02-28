@@ -37,17 +37,23 @@
     </div>
     <script>
       //<!--
+			
       function $(id){
         return document.getElementById(id);
       }
-			      
+			//定义全局变量     
       var x;
       var y;
       var loopId;
       var Ondom;
       var downX;
       var downY;
+			var divX;
+			var divY;
+			var alignLeft;
+			var alignRight;
       
+			
       function max(xO, xM){
         if (xO > xM) {
           return xO;
@@ -65,26 +71,25 @@
       }
       
       //DOM 背景颜色赋初值
-      var arrMy = [];
+      var arrBgcolor = [];
       for (k = 1; k <= 3; k++) {
         loopId = "mark_" + k;
-        arrMy.push($(loopId).style.backgroundColor);
+        arrBgcolor.push($(loopId).style.backgroundColor);
       }
       
-      function move(ev){
-        //
-        var ax = ev.clientX;
-        var ay = ev.clientY;
+      function moveLine(event){
+        var ax = event.clientX;
+        var ay = event.clientY;
         
-        var xL = mix(ax, x);
-        var xR = max(ax, x);
-        var yT = mix(ay, y);
-        var yB = max(ay, y);
+        var xLeft = mix(ax, x);
+        var xRight = max(ax, x);
+        var yTop = mix(ay, y);
+        var yBottom = max(ay, y);
         
-        $("my").style.width = xR - xL + "px";
-        $("my").style.height = yB - yT + "px";
-        $("my").style.left = xL + "px";
-        $("my").style.top = yT + "px";
+        $("my").style.width = xRight - xLeft + "px";
+        $("my").style.height = yBottom - yTop + "px";
+        $("my").style.left = xLeft + "px";
+        $("my").style.top = yTop + "px";
         
         for (var i = 1; i <= 3; i++) {
           loopId = "mark_" + i;
@@ -94,39 +99,29 @@
           var mBottom = mTop + parseInt($(loopId).style.height);
           var mRight = mLeft + parseInt($(loopId).style.width);
           
-          if (xR > mRight && mLeft > xL && mTop > yT && yB > mBottom) {
+          if (xRight > mRight && mLeft > xLeft && mTop > yTop && yBottom > mBottom) {
             //mark_1 ����ɫ��ɺ�ɫ
             $(loopId).style.backgroundColor = '#000';
           } else {
-            $(loopId).style.backgroundColor = arrMy[i - 1];
+            $(loopId).style.backgroundColor = arrBgcolor[i - 1];
           }
         }
       }
       
-      function mv(event){
-      
+      function move(event){
         //鼠标的坐标
         var x = event.clientX;
         var y = event.clientY;
-        
         //移动所选择的DOM  （DOM相对于浏览器的位置）
         Ondom.style.left = x - downX + "px";
         Ondom.style.top = y - downY + "px";
       }
+			
        //���̧������dom自动对齐
-//			 var divide;
-			var divX;
-			var divY;
-			
-			var alignLeft;
-			var alignRight;
-			
 			function alignment(n){
 				divX =  n / 30;
-
-//				Math.floor(divX);//小的
-//				Math.ceil(divX);//大的
-				
+//			Math.floor(divX);//小的
+//			Math.ceil(divX);//大的
 				alignLeft = Math.floor(divX);
 				alignRight = Math.ceil(divX);
 				if(divX - alignLeft < alignRight - divX){
@@ -140,25 +135,20 @@
       document.onmousedown = function(event){
 				//console.log (event.target);
         if (event.target == document.documentElement) {
-					        
           x = event.clientX;
           y = event.clientY;
-          
           $("my").style.display = "block";
           $("my").style.width = "0px";
           $("my").style.height = "0px";
           $("my").style.top = y + "px";
           $("my").style.left = x + "px";
-          
-          document.onmousemove = move;			        
+          document.onmousemove = moveLine;			        
         } else {
 					Ondom = event.target;
           //获取点击时鼠标所在DOM中的坐标
           downX = event.clientX - parseInt(Ondom.style.left);
           downY = event.clientY - parseInt(Ondom.style.top);
-
-          document.onmousemove = mv;
-					
+          document.onmousemove = move;
         }
       }
       
@@ -166,22 +156,14 @@
         $("my").style.display = "none";
         for (var j = 1; j <= 3; j++) {
           loopId = "mark_" + j;
-          $(loopId).style.backgroundColor = arrMy[j - 1];
-				
+          $(loopId).style.backgroundColor = arrBgcolor[j - 1];
         }
-				
 				document.onmousemove = undefined;
-				
 				Ondom = event.target;
-				
 				Ondom.style.left = alignment(parseInt(Ondom.style.left)) + "px";
-
-		
       }
-			
 			//document.documentElement.clientHeight;
 			//document.documentElement.clientWidth;
-
       -->
     </script>
   </body>
