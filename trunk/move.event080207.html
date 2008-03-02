@@ -26,7 +26,6 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 	return document.getElementById(id);
   }
   //定义全局变量   
-  var loopId;
   var Ondom;
   var downX;
   var downY;
@@ -50,40 +49,39 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   //DOM 背景颜色赋初值
   var arrBgcolor = [];
   for (k = 1; k <= 3; k++) {
-		//全局变量
-	loopId = "mark_" + k;
-	arrBgcolor.push($(loopId).style.backgroundColor);
+	var loopIdBg = "mark_" + k;
+	arrBgcolor.push($(loopIdBg).style.backgroundColor);
   }
   
   function moveLine(event){
-	var ax = event.clientX;
-	var ay = event.clientY;
+		var ax = event.clientX;
+		var ay = event.clientY;
+		
+		var xLeft = mix(ax, x);
+		var xRight = max(ax, x);
+		var yTop = mix(ay, y);
+		var yBottom = max(ay, y);
 	
-	var xLeft = mix(ax, x);
-	var xRight = max(ax, x);
-	var yTop = mix(ay, y);
-	var yBottom = max(ay, y);
+		$("my").style.width = xRight - xLeft + "px";
+		$("my").style.height = yBottom - yTop + "px";
+		$("my").style.left = xLeft + "px";
+		$("my").style.top = yTop + "px";
 	
-	$("my").style.width = xRight - xLeft + "px";
-	$("my").style.height = yBottom - yTop + "px";
-	$("my").style.left = xLeft + "px";
-	$("my").style.top = yTop + "px";
-	
-	for (var i = 1; i <= 3; i++) {
-	  loopId = "mark_" + i;
-	  //if (i == 2) console.log(loopId, " ", c);		 
-	  var mTop = parseInt($(loopId).style.top);
-	  var mLeft = parseInt($(loopId).style.left);
-	  var mBottom = mTop + parseInt($(loopId).style.height);
-	  var mRight = mLeft + parseInt($(loopId).style.width);
-	  
-	  if (xRight > mRight && mLeft > xLeft && mTop > yTop && yBottom > mBottom) {
-		//mark_1
-		$(loopId).style.backgroundColor = '#000';
-	  } else {
-		$(loopId).style.backgroundColor = arrBgcolor[i - 1];
-	  }
-	}
+		for (var i = 1; i <= 3; i++) {
+		  var loopIdLine = "mark_" + i;
+		  //if (i == 2) console.log(loopId, " ", c);		 
+		  var mTop = parseInt($(loopIdLine).style.top);
+		  var mLeft = parseInt($(loopIdLine).style.left);
+		  var mBottom = mTop + parseInt($(loopIdLine).style.height);
+		  var mRight = mLeft + parseInt($(loopIdLine).style.width);
+		  
+		  if (xRight > mRight && mLeft > xLeft && mTop > yTop && yBottom > mBottom) {
+			//mark_1
+			$(loopIdLine).style.backgroundColor = '#000';
+		  } else {
+			$(loopIdLine).style.backgroundColor = arrBgcolor[i - 1];
+		  }
+		}
   }
   
   function move(event){
@@ -142,8 +140,8 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   document.onmouseup = function(event){
 	$("my").style.display = "none";
 	for (var j = 1; j <= 3; j++) {
-	  loopId = "mark_" + j;
-	  $(loopId).style.backgroundColor = arrBgcolor[j - 1];
+	  var loopIdUp = "mark_" + j;
+	  $(loopIdUp).style.backgroundColor = arrBgcolor[j - 1];
 	}
 	document.onmousemove = undefined;
 	Ondom = event.target;
@@ -152,6 +150,12 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   }
   //document.documentElement.clientHeight;
   //document.documentElement.clientWidth;
+	
+	
+	
+	//全局变量，局部变量。
+	//全局变量就是需要在函数间共享数据是才用的
+	//局部变馹。只在函数内部使用
   -->
 </script>
 </body>
