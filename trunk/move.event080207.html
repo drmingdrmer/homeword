@@ -33,12 +33,9 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   var Ondom;
   var downX;
   var downY;
-  var divX;
-  var divY;
-  var alignLeft;
-  var alignRight;
-	var valignTop;
-	var valignBottom;
+  var divAuto;
+  var alignMix;
+  var alignMax;
   
   function max(xO, xM){
 	if (xO > xM) {
@@ -104,32 +101,21 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   }
   
   //dom自动对齐
-  function alignmentX(n){
-	divX = n / 100;
-	//Math.floor(divX);//小的
-	//Math.ceil(divX);//大的
-	alignLeft = Math.floor(divX);
-	alignRight = Math.ceil(divX);
-	if (divX - alignLeft < alignRight - divX) {
-	  divX = alignLeft;
+	
+  function alignment(n){
+	divAuto = n / 100;
+	//Math.floor(divAuto);//小的
+	//Math.ceil(divAuto);//大的
+	alignMix = Math.floor(divAuto);
+	alignMax = Math.ceil(divAuto);
+	if (divAuto - alignMix < alignMax - divAuto) {
+	  divAuto = alignMix;
 	} else {
-	  divX = alignRight;
+	  divAuto = alignMax;
 	}
-	return divX * 100;
+	return divAuto * 100;
   }
 	
-	function alignmentY(n){
-	divY = n / 100;
-	valignTop = Math.floor(divY);
-	valignBottom = Math.ceil(divY);
-	if (divY - valignTop < valignBottom - divY) {
-	  divY = valignTop;
-	} else {
-	  divY = valignBottom;
-	}
-	return divY * 100;
-  }
-  
   document.onmousedown = function(event){
 	//console.log (event.target);
 	if (event.target == document.documentElement) {
@@ -158,8 +144,8 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 	}
 	document.onmousemove = undefined;
 	Ondom = event.target;
-	Ondom.style.left = alignmentX(parseInt(Ondom.style.left)) + "px";
-	Ondom.style.top = alignmentY(parseInt(Ondom.style.top)) + "px";
+	Ondom.style.left = alignment(parseInt(Ondom.style.left)) + "px";
+	Ondom.style.top = alignment(parseInt(Ondom.style.top)) + "px";
   }
   //document.documentElement.clientHeight;
   //document.documentElement.clientWidth;
