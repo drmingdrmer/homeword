@@ -25,17 +25,11 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   function $(id){
 	return document.getElementById(id);
   }
-  
-  //定义全局变量     
-  var x;
-  var y;
+  //定义全局变量   
   var loopId;
   var Ondom;
   var downX;
   var downY;
-  var divAuto;
-  var alignMix;
-  var alignMax;
   
   function max(xO, xM){
 	if (xO > xM) {
@@ -56,6 +50,7 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   //DOM 背景颜色赋初值
   var arrBgcolor = [];
   for (k = 1; k <= 3; k++) {
+		//全局变量
 	loopId = "mark_" + k;
 	arrBgcolor.push($(loopId).style.backgroundColor);
   }
@@ -95,6 +90,7 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 	//鼠标的坐标
 	var x = event.clientX;
 	var y = event.clientY;
+	
 	//移动所选择的DOM  （DOM相对于浏览器的位置）
 	Ondom.style.left = x - downX + "px";
 	Ondom.style.top = y - downY + "px";
@@ -103,9 +99,16 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   //dom自动对齐
 	
   function alignment(n){
+		//局部变量
+	
+  var divAuto;
+  var alignMix;
+  var alignMax;
 	divAuto = n / 100;
 	//Math.floor(divAuto);//小的
 	//Math.ceil(divAuto);//大的
+	
+	//局部变量
 	alignMix = Math.floor(divAuto);
 	alignMax = Math.ceil(divAuto);
 	if (divAuto - alignMix < alignMax - divAuto) {
