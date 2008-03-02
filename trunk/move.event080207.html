@@ -29,6 +29,7 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   var Ondom;
   var downX;
   var downY;
+	var loopIdBg;
   
   function max(xO, xM){
 	if (xO > xM) {
@@ -49,11 +50,16 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   //DOM 背景颜色赋初值
   var arrBgcolor = [];
   for (k = 1; k <= 3; k++) {
-	var loopIdBg = "mark_" + k;
+	loopIdBg = "mark_" + k;
 	arrBgcolor.push($(loopIdBg).style.backgroundColor);
   }
   
   function moveLine(event){
+		var loopIdLine;
+		var mTop;
+		var mLeft;
+		var mBottom;
+		var mRight;
 		var ax = event.clientX;
 		var ay = event.clientY;
 		
@@ -68,12 +74,12 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 		$("my").style.top = yTop + "px";
 	
 		for (var i = 1; i <= 3; i++) {
-		  var loopIdLine = "mark_" + i;
+		  loopIdLine = "mark_" + i;
 		  //if (i == 2) console.log(loopId, " ", c);		 
-		  var mTop = parseInt($(loopIdLine).style.top);
-		  var mLeft = parseInt($(loopIdLine).style.left);
-		  var mBottom = mTop + parseInt($(loopIdLine).style.height);
-		  var mRight = mLeft + parseInt($(loopIdLine).style.width);
+		  mTop = parseInt($(loopIdLine).style.top);
+		  mLeft = parseInt($(loopIdLine).style.left);
+		  mBottom = mTop + parseInt($(loopIdLine).style.height);
+		  mRight = mLeft + parseInt($(loopIdLine).style.width);
 		  
 		  if (xRight > mRight && mLeft > xLeft && mTop > yTop && yBottom > mBottom) {
 			//mark_1
@@ -98,7 +104,6 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 	
   function alignment(n){
 		//局部变量
-	
   var divAuto;
   var alignMix;
   var alignMax;
@@ -138,9 +143,10 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   }
   
   document.onmouseup = function(event){
+		var loopIdUp;
 	$("my").style.display = "none";
 	for (var j = 1; j <= 3; j++) {
-	  var loopIdUp = "mark_" + j;
+	 	loopIdUp = "mark_" + j;
 	  $(loopIdUp).style.backgroundColor = arrBgcolor[j - 1];
 	}
 	document.onmousemove = undefined;
@@ -155,7 +161,7 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 	
 	//全局变量，局部变量。
 	//全局变量就是需要在函数间共享数据是才用的
-	//局部变馹。只在函数内部使用
+	//局部变量。只在函数内部使用
   -->
 </script>
 </body>
