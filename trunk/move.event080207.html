@@ -29,7 +29,8 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   var Ondom;
   var downX;
   var downY;
-	var loopIdBg;
+  var loopIdBg;
+  var my = $("my");
   
   function max(xO, xM){
 	if (xO > xM) {
@@ -68,10 +69,10 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 		var yTop = mix(ay, y);
 		var yBottom = max(ay, y);
 	
-		$("my").style.width = xRight - xLeft + "px";
-		$("my").style.height = yBottom - yTop + "px";
-		$("my").style.left = xLeft + "px";
-		$("my").style.top = yTop + "px";
+		my.style.width = xRight - xLeft + "px";
+		my.style.height = yBottom - yTop + "px";
+		my.style.left = xLeft + "px";
+		my.style.top = yTop + "px";
 	
 		for (var i = 1; i <= 3; i++) {
 		  loopIdLine = "mark_" + i;
@@ -125,11 +126,11 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 	if (event.target == document.documentElement) {
 	  x = event.clientX;
 	  y = event.clientY;
-	  $("my").style.display = "block";
-	  $("my").style.width = "0px";
-	  $("my").style.height = "0px";
-	  $("my").style.top = y + "px";
-	  $("my").style.left = x + "px";
+	  my.style.display = "block";
+	  my.style.width = "0px";
+	  my.style.height = "0px";
+	  my.style.top = y + "px";
+	  my.style.left = x + "px";
 	  document.onmousemove = moveLine;
 	} else {
 	  Ondom = event.target;
@@ -142,7 +143,7 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   
   document.onmouseup = function(event){
 	var loopIdUp;
-	$("my").style.display = "none";
+	my.style.display = "none";
 	for (var j = 1; j <= 3; j++) {
 	 	loopIdUp = "mark_" + j;
 	  $(loopIdUp).style.backgroundColor = arrBgcolor[j - 1];
