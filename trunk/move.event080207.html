@@ -55,25 +55,42 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 	arrBgcolor.push($(loopIdBg).style.backgroundColor);
   }
   
+	//setBorder
+	//  参数，返回值，函数实现，调用方式，都由你来设计吧。
+	var ax;
+	var ay;
+
+  function setBorder (xL,xR,yT,yB){
+
+	xL = mix(ax, x);
+	xR = max(ax, x);
+	yT = mix(ay, y);
+	yB = max(ay, y);
+
+	my.style.width = xR - xL + "px";
+	my.style.height = yB - yT + "px";
+	my.style.left = xL + "px";
+	my.style.top = yT + "px";
+
+
+  }
+ 
+
+
+
   function moveLine(event){
-		var loopIdLine;
-		var mTop;
-		var mLeft;
-		var mBottom;
-		var mRight;
-		var ax = event.clientX;
-		var ay = event.clientY;
-		
-		var xLeft = mix(ax, x);
-		var xRight = max(ax, x);
-		var yTop = mix(ay, y);
-		var yBottom = max(ay, y);
+	var loopIdLine;
+	var mTop;
+	var mLeft;
+	var mBottom;
+	var mRight;
+	ax = event.clientX;
+	ay = event.clientY;
 	
-		my.style.width = xRight - xLeft + "px";
-		my.style.height = yBottom - yTop + "px";
-		my.style.left = xLeft + "px";
-		my.style.top = yTop + "px";
 	
+	//setBorder
+
+
 		for (var i = 1; i <= 3; i++) {
 		  loopIdLine = "mark_" + i;
 		  //if (i == 2) console.log(loopId, " ", c);		 
@@ -85,9 +102,9 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 		  if (xRight > mRight && mLeft > xLeft && mTop > yTop && yBottom > mBottom) {
 			//mark_1
 			$(loopIdLine).style.backgroundColor = '#000';
-		  } else {
+			 } else {
 			$(loopIdLine).style.backgroundColor = arrBgcolor[i - 1];
-		  }
+			 }
 		}
   }
   
@@ -124,6 +141,7 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
   document.onmousedown = function(event){
 	//console.log (event.target);
 	if (event.target == document.documentElement) {
+	//documentElement是整个文档的节点，对应<html>
 	  x = event.clientX;
 	  y = event.clientY;
 	  my.style.display = "block";
@@ -145,7 +163,7 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 	var loopIdUp;
 	my.style.display = "none";
 	for (var j = 1; j <= 3; j++) {
-	 	loopIdUp = "mark_" + j;
+		loopIdUp = "mark_" + j;
 	  $(loopIdUp).style.backgroundColor = arrBgcolor[j - 1];
 	}
 	document.onmousemove = undefined;
@@ -161,6 +179,11 @@ table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
 	//全局变量，局部变量。
 	//全局变量就是需要在函数间共享数据是才用的
 	//局部变量。只在函数内部使用
+
+
+//1个大函数可能调用了几个小函数，小函数的名字起的好，就相当于整个程序有了个目录。
+//首先是用函数将程序分成小的单元，然后是让这些小单元容易辨认它的功能。
+//写注释也是1种方法，但是没有函数将逻辑也管理起来的功能。
   -->
 </script>
 </body>
