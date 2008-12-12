@@ -1,0 +1,58 @@
+}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+	<!--
+	body,ul,li,p{ margin:0; padding:0; border:0; font-size:14px;}
+	ul,li { list-style:none; line-height:20px; width:100px;}
+	li { margin-bottom:1px; background:#636; color:#fff;}
+	p { padding:3em;}
+	-->
+</style>
+<title>无标题文档</title>
+</head>
+
+<body>
+<script type="text/javascript" language="javascript">
+<!--//--><![CDATA[//><!--
+	var num = prompt("how many : ", 5);
+		num = parseInt(num);
+	for (var i=1; i<=num; i++){
+		if(i==1){
+		document.write('<ul><li>' + i  + '</ul></li>');
+		}
+		if(i==2){
+		document.write('<ul><li>' + '1' + i  + '</ul></li>');
+		}
+		for (var ii=i; ii<=num; ii++) {
+			if(i==3){
+			document.write('<ul><li>' + '1' + '2' + i + '</ul></li>');
+			}
+		}
+	}
+//--><!]]>
+</script>
+<br />
+<br />
+<script type="text/javascript" language="javascript">
+<!--//--><![CDATA[//><!--
+	var num = prompt("how many : ", 5);
+		num = parseInt(num);
+	for (var i=1; i<=num; i++){
+		document.write('<ul><li>');
+		for (var ii=1; ii<=i; ii++) {
+			if(ii==4){
+			break;
+			}
+		document.write( ii );
+		}
+		document.write('</li></ul>');
+	}
+//--><!]]>
+</script>
+<p>
+如果不用break跳出循环，该怎么跳出来？<br />
+</p>
+</body>
+</html>

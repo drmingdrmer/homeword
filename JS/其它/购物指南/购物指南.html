@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>关键词_页面名称</title>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="zhiN.css">
+<meta name="keywords" content="," />
+<meta name="description" content="此页面说明" />
+</head>
+<body>
+<!--头部 start-->
+<div id="top">
+	<div id="Logo"><img src="images/ms_pic_lmy_002.gif" width="104" height="36" /><img src="images/ms_pic_lmy_003.gif" width="99" height="36" /></div>
+	<div id="Tit">
+		<div id="adv"><img src="images/temp03.jpg" width="600" height="65" /></div>
+		<span><a href="url" target="_blank"><img src="images/ms_pic_lmy_006.gif" width="77" height="19" alt="企业版" /></a><br />
+		<a href="url" target="_blank"><img src="images/ms_pic_lmy_007.gif" width="77" height="19" alt="企业版" /></a><br />
+		<a href="url" target="_blank"><img src="images/ms_pic_lmy_008.gif" width="77" height="19" alt="企业版" /></a></span>
+	</div>
+</div>
+<!--头部 end-->
+<!--导航 nav start-->
+<div id="nav"><div id="navRi">
+	<div id="Logo2j"><img src="images/zn_pic_lmy_009.gif" width="170" height="59" alt="生活资讯" /></div>
+	<div id="Title">
+		<ul><li><a href="url" target="_blank">首 页</a></li>
+			<li><a href="url" target="_blank">餐饮专家</a></li>
+			<li><a href="url" target="_blank">购物指南</a></li>
+			<li class="selectd">生活资讯</li>
+			<li><a href="url" target="_blank">娱乐百度</a></li>
+			<li><a href="url" target="_blank">出行参考</a></li>
+			<li><a href="url" target="_blank">求职发展</a></li>
+			<li><a href="url" target="_blank">黄 页</a></li>
+		</ul>
+		<div id="navTwo" class="linkFFF"><a href="url" target="_blank">找工作</a>    |     <a href="url" target="_blank">校园招聘</a>    |     <a href="url" target="_blank">职业指导</a>    |     <a href="url" target="_blank">培训教育</a>    |     <a href="url" target="_blank">个人服务</a>    |     <a href="url" target="_blank">企业服务</a></div>
+	</div>
+</div></div>
+<!--导航 nav end-->
+<!--搜索 start-->
+<div id="sear"><div id="searLe"><div id="searRi">
+	<div><img src="images/pic_lmy_032.gif" /> 搜索：
+		<select name="" style="margin-bottom:2px;">
+			<option>搜索优惠</option>
+		</select>
+		<input name="" type="text" class="StyBlk" style=" width:315px; background:#F5F5F5; height:18px; border:1px solid #7A95AA; color:#7E7E7E;" value="关键词" />
+		<input name="" type="image" src="images/zn_pic_lmy_008.gif" />
+		<span style="color:#f00;">&nbsp;&nbsp;热门关键词：</span><a href="url" target="_blank">代金券</a> <a href="url" target="_blank">免费</a> <a href="url" target="_blank">香水</a> <a href="url" target="_blank">瑜珈</a> <a href="url" target="_blank">液晶电视</a>	
+	</div>
+</div></div></div>
+<!--搜索 end-->
+<!--第一个横切 开始-->
+<div id="grA"><div class="grBot">
+	<div id="le">
+		<div id="gr-A">
+			<h2 class="sty01"><div class="more"><a href="url" target="_blank">更多&gt;&gt;</a></div><img src="images/zn_pic_lmy_006.gif" width="272" height="26" alt="优惠热点信息" />
+			</h2>
+			<div class="grA-L"><div class="grA-R">
+				<div class="picMov"><!--焦点图开始-->
+					<script>
+					  var config = {
+						first : 1, 
+						fadeTime : 500, 
+						autoSlideInterval : 2000
+					  };
+					</script>
+					<script>
+            function $(id, root){ 
+              if (root == null || root == document){
+                return document.getElementById(id);
+              } else {
+                var ar = root.getElementsByTagName("*");
+                for (var i=0; i<ar.length; i++){
+                  if (ar[i].id == id) return ar[i];
+                }
+              }
+            }
+
+					  function opacity(el, value) {
+              el.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity = " + value + ")";
+              el.style.MozOpacity = value / 100;
+					  }
+					  
+					  
+            var displayer = {};
+
+            function main(mainId){
+
+              var btnHolder, titHolder;
+              var imgs=[];
+              var lastImg;
+
+              prepare(mainId);
+
+              displayer[mainId] = dispImg;
+
+              dispImg(config.first-1);
+              setInterval(function (){
+                var last = lastImg ? lastImg.idx : 0;
+                dispImg((last + 1) % imgs.length);
+              }, config.autoSlideInterval);
+
+
+              function prepare(mid){
+                var rt = $(mid);
+                btnHolder = $("buttonHolder", rt);
+                titHolder = $("titleArea", rt);
+
+                btnHolder.style.top = $("image", rt).style.height;
+
+                var html = "", ptn = "<a href='javascript:displayer."+mainId+"(NUM-1);' >NUM</a>";
+                /* var imms = $("image").getElementsByTagName("img"); */
+                var imms = $("image", rt).getElementsByTagName("a");
+
+                for (var i=0; i<imms.length; ++i){
+                  var e = imms[i];
+                  imgs.push(e);
+                  e.idx = i;
+                  html += ptn.replace(/NUM/g, i+1);
+                }
+                btnHolder.innerHTML = html;
+              }
+          
+              function dispImg(i){
+                var img = imgs[i];
+                if (img == lastImg) return;
+
+                opacity(img, 0);
+                img.opac = 0;
+                img.parentNode.appendChild(img);
+                var t = setInterval(function (){
+                  img.opac += 10;
+                  opacity(img, img.opac);
+                  if (img.opac >= 100){
+                    clearInterval(t);
+                  }
+                }, 50);
+                lastImg && (btnHolder.childNodes[lastImg.idx].className = "");
+                btnHolder.childNodes[img.idx].className = "selected";
+                titHolder.innerHTML = img.getElementsByTagName("img")[0].alt || "";
+                lastImg = img;
+              }
+            }
+				
+					</script>
+					<div id="slide_1" class="slideControl">
+					  <div id="image">
+						<a href="#" ><img alt="image Title 1" src="Sunset.jpg" /></a>
+						<a href="#" ><img alt="image Title 2" src="Water lilies.jpg" /></a>
+						<a href="#" ><img alt="image Title 3" src="Winter.jpg" /></a>
+						<a href="#" ><img alt="image Title 4" src="Blue hills.jpg" /></a>
+					  </div>
+					  <div id="buttonHolder"></div>
+					  <div id="titleArea"></div>
+					</div>
+					<script>main('slide_1'); </script>
+					<!--焦点图结束-->
+				</div>			
+				<div id="Cont01">
+					<ul><li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘友[超自信]</a></li>
+						<li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘友[超自信]</a></li>
+						<li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘</a></li>
+						<li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘友[超自信]</a></li>
+						<li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘友[超自信]</a></li>
+						<li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘友[超自信]</a></li>
+					</ul>
+				</div>
+			</div></div>
+		</div>
+	</div>
+	<div id="ri">
+		<h2 class="sty02"><span>机票预定信息</span></h2>
+		<div class="blk02">
+			<div><a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a></div>
+		</div>
+	</div>
+</div></div>
+<!--第一个横切 结束-->
+<!--第二个横切 开始-->
+<div id="grB"><div class="grBot">
+	<div id="le">
+		<div class="Cont03"><div class="Cont03T"><div class="Cont03B">
+			<div class="lef">
+				<h2 class="sty03"><div class="more linkFFF"><a href="url" target="_blank">更多&gt;&gt;</a></div><span>优惠推荐</span></h2>
+				<ul class="hStyTwo">
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+				</ul>
+			</div>
+			<div class="rig">
+				<h2 class="sty03"><div class="more linkFFF"><a href="url" target="_blank">更多&gt;&gt;</a></div><span>热门点击</span></h2>
+				<ul class="hStyTwo">
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+				</ul>
+			</div>
+		</div></div></div>
+		<div class="hScape8px"></div>
+		<div id="gr-B">
+			<h2 class="sty01"><div class="more"><a href="url" target="_blank">更多&gt;&gt;</a></div><img src="images/zn_pic_lmy_005.gif" width="289" height="19" alt="团购热点信息" style="margin:5px 0 0;" />
+			</h2>
+			<div class="grA-L"><div class="grA-R">
+				<div class="picMov"><!--焦点图开始-->
+					<div id="slide_2" class="slideControl">
+					  <div id="image">
+						<a href="#" ><img alt="image Title 1" src="Sunset.jpg" /></a>
+						<a href="#" ><img alt="image Title 2" src="Water lilies.jpg" /></a>
+						<a href="#" ><img alt="image Title 3" src="Winter.jpg" /></a>
+						<a href="#" ><img alt="image Title 4" src="Blue hills.jpg" /></a>
+					  </div>
+					  <div id="buttonHolder"></div>
+					  <div id="titleArea"></div>
+					</div>
+					<script>main('slide_2'); </script>
+					<!--焦点图结束-->
+				</div>			
+				<div id="Cont02">
+					<ul><li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘友[超自信]</a></li>
+						<li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘友[超自信]</a></li>
+						<li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘</a></li>
+						<li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘友[超自信]</a></li>
+						<li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘友[超自信]</a></li>
+						<li><a href="url" target="_blank">一个半月瘦一个半月瘦了35斤的淘友[超自信]</a></li>
+					</ul>
+				</div>
+			</div></div>
+		</div>
+		<div class="hScape8px"></div>
+		<div class="Cont03"><div class="Cont03T"><div class="Cont03B">
+			<div class="lef">
+				<h2 class="sty04"><div class="more linkFFF"><a href="url" target="_blank">更多&gt;&gt;</a></div><span>团购推荐</span></h2>
+				<ul class="hStyTwo">
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+				</ul>
+			</div>
+			<div class="rig">
+				<h2 class="sty04"><div class="more linkFFF"><a href="url" target="_blank">更多&gt;&gt;</a></div><span>网友推荐</span></h2>
+				<ul class="hStyTwo">
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+					<li><a href="url" target="_blank">必胜客VIP卡享受85折优惠</a></li>
+				</ul>
+			</div>
+		</div></div></div>
+	</div>
+	<div id="ri">
+		<h2 class="sty02"><span>机票预定信息</span></h2>
+		<h3 class="sty01"><span>时尚购物</span></h3>
+		<div class="blk02">
+			<div><a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a></div>
+		</div>
+		<h3 class="sty01"><span>时尚购物</span></h3>
+		<div class="blk02">
+			<div><a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a></div>
+		</div>
+		<h3 class="sty01"><span>时尚购物</span></h3>
+		<div class="blk02">
+			<div><a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a></div>
+		</div>
+		<h3 class="sty01"><span>时尚购物</span></h3>
+		<div class="blk02">
+			<div><a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a></div>
+		</div>
+		<h3 class="sty01"><span>时尚购物</span></h3>
+		<div class="blk02">
+			<div><a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a> <a href="url" target="_blank">上海出发</a><br />
+			<a href="url" target="_blank">北京出发</a> <a href="url" target="_blank">天津出发</a></div>
+		</div>
+	</div>
+</div></div>
+<!--第二个横切 结束-->
+<div id="copyright">
+山西网通114业务导航网站 版权所有：山西网通增值业务中心<br />
+<span style=" font-family:Helvetica; color:#8c8a8b; font-size:10px;">copyright&copy; CNC 1999-2007 ICP:82-20030009 05000576</span><br />
+山西网通 版权所有
+</div>
+</body>
+</html>

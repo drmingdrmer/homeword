@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <style type="text/css">
+      <!--
+      body,ul,li,p{ margin:0; padding:0; border:0; font-size:14px;}
+      ul,li { list-style:none; line-height:20px; width:650px;}
+      li { margin-bottom:1px; background:#636; color:#fff; white-space:pre;}
+      p { padding:3em;}
+      -->
+    </style>
+    <title>无标题文档</title>
+  </head>
+
+  <body>
+<script type="text/javascript" language="javascript">
+<!--//--><![CDATA[//><!--
+function nineTable(a,b) {
+	document.write( a + "*" + b + "=" + a*b + " ");
+}
+document.write ("<ul>");
+	for (var i=0; i<9; i++) {
+		document.write ("<li>");
+			for (var j=0; j<(i+1); j++) {
+			nineTable(i+1,j+1,((i+1)*(j+1)));
+			}
+		document.write ("</li>");
+	}
+document.write ("</ul>");
+//--><!]]>
+</script>
+
+
+<br />
+<br />
+
+先写1个函数，输入a和b，输出a*b=xx的字符串。<br />
+函数负责格式化等工作。。<br />
+然后把原来的99表部分的输出部分用函数来代替
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+<!--
+td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
+table,td,img,div,span,form{border: none;margin:0;padding:0;}
+
+ul,li { list-style:none; margin:0; padding:0;}
+.menuStyle ul { background:#069; line-height:25px; height:25px; width:300px;}
+.menuStyle li { border:#666 1px solid; border-bottom:none; width:50px; text-align:center; background:#fff; cursor:pointer; line-height:25px; float:left; margin-right:4px;}
+.menuStyle li.selectd { background:#ff0;}
+.Cont { border:1px solid #666; width:300px; clear:both; padding:1em;}
+-->
+</style>
+<title>无标题文档</title>
+</head>
+<!--舌签 start-->
+<script language="javascript" type="text/javascript">
+<!--//--><![CDATA[//><!--
+function $(id){
+	return document.getElementById(id);
+}
+function Show_Sub(id_num,num){
+	for(var i = 0; i < 3; i++){
+		var Menu = $("S_Menu_" + id_num + i);
+		var Cont = $("S_Cont_" + id_num + i);
+		if (i == num) {
+			Menu.className = "selectd"
+			Cont.style.display = "block"
+		}else{
+			Menu.className = ""
+			Cont.style.display = "none"
+		}
+	}
+}
+//--><!]]>
+</script> 
+<!--舌签 end-->
+<body>
+<ul class="menuStyle">
+	<li id="S_Menu_a0" onClick="Show_Sub('a',0)" class="selectd">中低档</li>
+	<li id="S_Menu_a1" onClick="Show_Sub('a',1)">中高档</li>
+	<li id="S_Menu_a2" onClick="Show_Sub('a',2)">超高档</li>
+</ul>
+<!-- 日 begin -->
+<div class="Cont" id="S_Cont_a0">
+	1
+</div>
+<!-- 日 end -->
+<!-- 周 begin -->
+<div class="Cont" id="S_Cont_a1" style="display:none">
+	2
+</div>
+<!-- 周 end -->
+<!-- 月 begin -->
+<div class="Cont" id="S_Cont_a2" style="display:none">
+	3
+</div>
+<!-- 月 end -->
+
+<br />
+
+<ul class="menuStyle">
+	<li id="S_Menu_b0" onClick="Show_Sub('b',0)" class="selectd">中低档</li>
+	<li id="S_Menu_b1" onClick="Show_Sub('b',1)">中高档</li>
+	<li id="S_Menu_b2" onClick="Show_Sub('b',2)">超高档</li>
+</ul>
+<!-- 日 begin -->
+<div class="Cont" id="S_Cont_b0">
+	1
+</div>
+<!-- 日 end -->
+<!-- 周 begin -->
+<div class="Cont" id="S_Cont_b1" style="display:none">
+	2
+</div>
+<!-- 周 end -->
+<!-- 月 begin -->
+<div class="Cont" id="S_Cont_b2" style="display:none">
+	3
+</div>
+<!-- 月 end -->
+</body>
+</html>

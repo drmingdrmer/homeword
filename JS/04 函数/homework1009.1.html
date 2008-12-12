@@ -1,0 +1,93 @@
+<html><head>
+<title>关键字</title>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+<meta name="keywords" content="关键字1,关键字2,关键字3,">
+<meta name="description" content="页面说明">
+<style type="text/css">
+td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
+table,td,img,div,span,form{border: none;margin:0;padding:0;}
+</style>
+</head>
+<body>
+<script type="text/javascript" language="javascript">
+function fruita (){
+	var a1 = this.showName + this.showSize + this.showSize;
+	return a1;
+}
+//function setName_xp(my){
+//	this.showName = my;
+//}
+//function replaceName_xp(oth){
+//	this.showName = oth.showName;
+	//传递进来的水果对象的名称，赋给当前对象的名字
+	//}
+function mix_xp(my){
+	var a2 = this.showName + my.showName;
+	var a3 = this.showSize + my.showSize;
+	var a4 = this.showColor + my.showColor;
+	var a5 = a2 + a3 + a4;
+	//合并后的属性值保存在当前对象里面
+	this.showName = a2;
+	this.showSize = a3;
+	this.showColor = a4;
+	return a5;
+}
+	
+
+function fruit(name,size,color){
+	if ( name != "apple" && name != "orange" && name != "banana" || size < 5 || color == "black") {
+		return ;
+	}else return{
+		showName:name,
+		showSize:size,
+		showColor:color,
+		disp:fruita,
+		mix:mix_xp
+		//setName:setName_xp,
+		//replaceName:replaceName_xp
+	}
+}
+var shuig = fruit("apple",20,"red");
+var shuig1 = fruit("banana",30,"yellow");
+/*var other = fruit("banana",10,"yellow");
+shuig.setName("xp");
+document.write (shuig.showName);
+document.write ("<br />================<br />");
+shuig.replaceName(other);
+document.write(shuig.showName);*/
+var hh = shuig.mix(shuig1);
+document.write (hh);
+document.write("<br />");
+document.write(shuig.showName);
+</script>
+<pre>
+再写1个方法，名叫mix。
+接受1个参数，是另外1个水果的对象的引用。
+mix方法将传递进来的水果的名字与当前水果的名字合并成1个字符串。
+大小相加合并。
+颜色合并成1个字符串。
+最后返回1个字符串，表示这个新合成的水果的信息。
+以上是mix方法的功能。。
+</pre>
+
+<div style="display:none;">
+var s1 = {
+  showName : "abc", 
+  showSize:30, 
+  showColor:"red", 
+  mix:function (another){}
+}
+var s2 = {
+  showName : "123", 
+  showSize:10, 
+  showColor:"blue" 
+}
+
+s1.mix(s2);*/
+
+//执行之之后s1应该是这样：
+// s1.showname = "abc123"
+// s1.showSize = 40
+// s1.showcolor="redblue"
+</div>
+</body></html>

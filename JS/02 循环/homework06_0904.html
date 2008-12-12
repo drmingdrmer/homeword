@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+	<!--
+	body,ul,li,p{ margin:0; padding:0; border:0; font-size:14px;}
+	ul,li { list-style:none; line-height:20px; width:100px;}
+	li { margin-bottom:1px; background:#636; color:#fff;}
+	p { padding:3em;}
+	-->
+</style>
+<title>无标题文档</title>
+</head>
+
+<body>
+<script type="text/javascript" language="javascript">
+<!--//--><![CDATA[//><!--
+	var num = prompt("how many : ", 6);
+		num = parseInt(num);
+	
+		for (var i=1; i<=num; i++){
+			document.write ('<ul><li>');
+				if( i<num/2 ){
+					for ( var ii=i; ii>=1; ii--) {
+					document.write(i);
+					}
+				}			
+				else if ( i>num/2 ){
+					for (var i=num/2; i<=num; i++){
+						document.write ('<ul><li>');
+						for ( var ii=num; ii>=i; ii--) {
+						document.write(i);
+						}
+					}
+				}
+		}
+//--><!]]>
+</script>
+
+
+</body>
+</html>
