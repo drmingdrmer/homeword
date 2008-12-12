@@ -7,11 +7,9 @@
 
 <body>
 <?php
-	$i = 1;
-	while ($i <=10) {
-		print $i++;
-		echo "this is".$i."<br />";
-		
+	for ($i=1;$i<=10;$i++) {
+
+		echo $i."this is".$i."<br />";		
 	}
 ?>
 <p>
