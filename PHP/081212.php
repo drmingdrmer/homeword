@@ -8,8 +8,7 @@
 <body>
 <?php
 	for ($i=1;$i<=10;$i++) {
-
-		echo $i."this is".$i."<br />";		
+		echo $i."--this is".$i."<br />";		
 	}
 ?>
 <p>
