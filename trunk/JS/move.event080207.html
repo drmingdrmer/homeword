@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>event.move</title>
+<style type="text/css">
+<!--
+td, p, li, input, select, div, span {font-size: 12px;}
+table, td, img, div, span, form {border: none; margin: ０; padding: 0;}
+#my {border: 1px dashed #ccc; position: absolute;}
+#mark_1, #mark_2, #mark_3, #mark_4 { position: absolute;}
+-->
+</style>
+</head>
+
+<body>
+<div id="my" style="width:0px; height:0px; display:none; top:0; left:0;"></div>
+<div id="mark_1" style="width:50px; height:50px; top:100px; left:100px; background:#f00"></div>
+<div id="mark_2" style="width:50px; height:50px; top:200px; left:100px; background:#ff0"></div>
+<div id="mark_3" style="width:50px; height:50px; top:300px; left:100px; background:#0ff"></div>
+
+<script type="text/javascript" language="JavaScript">
+  //<!--
+  
+  function $(id){
+	return document.getElementById(id);
+  }
+  //定义全局变量   
+  var Ondom;
+  var downX;
+  var downY;
+  var loopIdBg;
+  var my = $("my");
+  
+  function max(xO, xM){
+	if (xO > xM) {
+	  return xO;
+	} else {
+	  return xM;
+	}
+  }
+  
+  function mix(xO, xM){
+	if (xO < xM) {
+	  return xO;
+	} else {
+	  return xM;
+	}
+  }
+  
+  //DOM 背景颜色赋初值
+  var arrBgcolor = [];
+  for (k = 1; k <= 3; k++) {
+	loopIdBg = "mark_" + k;
+	arrBgcolor.push($(loopIdBg).style.backgroundColor);
+  }
+  
+	//setBorder
+	//  参数，返回值，函数实现，调用方式，都由你来设计吧。
+	var ax;
+	var ay;
+
+  function setBorder (xL,xR,yT,yB){
+
+	xL = mix(ax, x);
+	xR = max(ax, x);
+	yT = mix(ay, y);
+	yB = max(ay, y);
+
+	my.style.width = xR - xL + "px";
+	my.style.height = yB - yT + "px";
+	my.style.left = xL + "px";
+	my.style.top = yT + "px";
+
+
+  }
+ 
+
+
+
+  function moveLine(event){
+	var loopIdLine;
+	var mTop;
+	var mLeft;
+	var mBottom;
+	var mRight;
+	ax = event.clientX;
+	ay = event.clientY;
+	
+	
+	//setBorder
+
+
+		for (var i = 1; i <= 3; i++) {
+		  loopIdLine = "mark_" + i;
+		  //if (i == 2) console.log(loopId, " ", c);		 
+		  mTop = parseInt($(loopIdLine).style.top);
+		  mLeft = parseInt($(loopIdLine).style.left);
+		  mBottom = mTop + parseInt($(loopIdLine).style.height);
+		  mRight = mLeft + parseInt($(loopIdLine).style.width);
+		  
+		  if (xRight > mRight && mLeft > xLeft && mTop > yTop && yBottom > mBottom) {
+			//mark_1
+			$(loopIdLine).style.backgroundColor = '#000';
+			 } else {
+			$(loopIdLine).style.backgroundColor = arrBgcolor[i - 1];
+			 }
+		}
+  }
+  
+  function move(event){
+	//鼠标的坐标
+	var x = event.clientX;
+	var y = event.clientY;
+	
+	//移动所选择的DOM  （DOM相对于浏览器的位置）
+	Ondom.style.left = x - downX + "px";
+	Ondom.style.top = y - downY + "px";
+  }
+  
+  //dom自动对齐
+	
+  function alignment(n){
+  var divAuto;
+  var alignMix;
+  var alignMax;
+	divAuto = n / 100;
+	//Math.floor(divAuto);//小的
+	//Math.ceil(divAuto);//大的
+	
+	alignMix = Math.floor(divAuto);
+	alignMax = Math.ceil(divAuto);
+	if (divAuto - alignMix < alignMax - divAuto) {
+	  divAuto = alignMix;
+	} else {
+	  divAuto = alignMax;
+	}
+	return divAuto * 100;
+  }
+	
+  document.onmousedown = function(event){
+	//console.log (event.target);
+	if (event.target == document.documentElement) {
+	//documentElement是整个文档的节点，对应<html>
+	  x = event.clientX;
+	  y = event.clientY;
+	  my.style.display = "block";
+	  my.style.width = "0px";
+	  my.style.height = "0px";
+	  my.style.top = y + "px";
+	  my.style.left = x + "px";
+	  document.onmousemove = moveLine;
+	} else {
+	  Ondom = event.target;
+	  //获取点击时鼠标所在DOM中的坐标
+	  downX = event.clientX - parseInt(Ondom.style.left);
+	  downY = event.clientY - parseInt(Ondom.style.top);
+	  document.onmousemove = move;
+	}
+  }
+  
+  document.onmouseup = function(event){
+	var loopIdUp;
+	my.style.display = "none";
+	for (var j = 1; j <= 3; j++) {
+		loopIdUp = "mark_" + j;
+	  $(loopIdUp).style.backgroundColor = arrBgcolor[j - 1];
+	}
+	document.onmousemove = undefined;
+	Ondom = event.target;
+	Ondom.style.left = alignment(parseInt(Ondom.style.left)) + "px";
+	Ondom.style.top = alignment(parseInt(Ondom.style.top)) + "px";
+  }
+  //document.documentElement.clientHeight;
+  //document.documentElement.clientWidth;
+	
+	
+	
+	//全局变量，局部变量。
+	//全局变量就是需要在函数间共享数据是才用的
+	//局部变量。只在函数内部使用
+
+
+//1个大函数可能调用了几个小函数，小函数的名字起的好，就相当于整个程序有了个目录。
+//首先是用函数将程序分成小的单元，然后是让这些小单元容易辨认它的功能。
+//写注释也是1种方法，但是没有函数将逻辑也管理起来的功能。
+  -->
+</script>
+</body>
+</html>

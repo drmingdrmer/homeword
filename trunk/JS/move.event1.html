@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title>关键字_栏目_频道_新浪网</title>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+<meta name="keywords" content="关键字1,关键字2,关键字3,">
+<meta name="description" content="页面说明">
+<style type="text/css">
+td,p,li,input,select,div,span {font-size:12px;}
+table,td,img,div,span,form{border: none;margin: 0 0 0 0;padding: 0 0 0 0;}
+
+#my { border:1px dashed #ccc; position:absolute;}
+#mark_1 { position:absolute;}
+
+</style>
+</head>
+<body>
+<div id="my" style="width:0px; height:0px; display:none; top:0; left:0;"></div>
+<div id="mark_1" style="width:67px; height:62px; top:100px; left:100px;"><img src="969.gif"></div>
+
+<script type="text/javaScript" language="JavaScript">
+<!--
+function $(id) { return document.getElementById(id); }
+
+var x;
+var y;
+var c;
+c = $("mark_1").style.backgroundColor;
+function move(ev) {
+	
+	//以鼠标点击的坐标为中心　增加div的宽高。
+	var ax = ev.clientX;
+	var ay = ev.clientY;
+
+	$("my").style.width = ax - x + "px";
+	$("my").style.height = ay - y + "px";
+
+	//拖动区域经过id为mark_1的DOM
+	
+	var mTop = parseInt($("mark_1").style.top);
+	var mLeft = parseInt($("mark_1").style.left);
+
+	var mBottom = mTop + parseInt($("mark_1").style.height);
+	var mRight = mLeft + parseInt($("mark_1").style.width);
+
+
+	if ( y < mTop && mBottom < ay && x < mLeft && mRight < ax ) {
+		//mark_1 的颜色变成黑色	
+		$("mark_1").style.backgroundColor = '#000';
+	} else {
+		$("mark_1").style.backgroundColor = c;
+	}
+
+}
+
+//鼠标点下，显示dom
+document.onmousedown = function (ev){
+
+	x = ev.clientX;
+	y = ev.clientY;
+	
+	$("my").style.display = "block";
+	$("my").style.width = "0px";
+	$("my").style.height = "0px";
+	$("my").style.top = y + "px";
+	$("my").style.left = x + "px";	
+
+	document.onmousemove = move;
+}
+
+
+//鼠标抬起，隐藏dom
+document.onmouseup = function (){
+	$("my").style.display = "none";
+	$("mark_1").style.backgroundColor = c;
+	document.onmousemove = undefined;
+}
+
+-->
+</script>
+增加功能：可以通过鼠标拖拽的选择框选中红点，选中后将红点的颜色变成黑色。
+</body></html>
