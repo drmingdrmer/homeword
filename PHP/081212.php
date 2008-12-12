@@ -11,12 +11,13 @@
 		echo $i."--this is".$i."<br />";		
 	}
 ?>
+
+
 <p>
-
 循环，用php输出1个列表 <br />
-
 1 －－ this is 1<br />
 2 －－ this is 2
 </p>
+
 </body>
 </html>
