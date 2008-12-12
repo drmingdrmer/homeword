@@ -1,0 +1,45 @@
+<html><head>
+<title>关键字_栏目_频道_新浪网</title>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+<meta name="keywords" content="关键字1,关键字2,关键字3,">
+<meta name="description" content="页面说明">
+
+</head>
+<body>
+<script type="text/javascript" language="javascript">
+<!--//--><![CDATA[//><!--
+//打印
+function xunhuan(a){
+  for ( var i=0; i<4; i++) {
+    if (a.length==5){ 
+      document.write(a+(i+1));
+      document.write("<br />");
+    } else {
+      xunhuan(a + (i+1));
+    }
+  }
+}
+document.write("输出最后1位")
+xunhuan("ab");
+
+document.write("输出最后2位")
+xunhuan("a");
+
+//--><!]]>
+</script>
+
+<br />
+写个函数，1个参数，接受字符串的值<br />
+
+然后打印出这个字符串后面跟1～5的数字的字符串。<br />
+
+比如输入参数为"123"，打印<br />
+
+1231<br />
+1232<br />
+1233<br />
+1234<br />
+1235<br />
+给这个函数加1个功能，如果参数给出的字符串长度大于等于5，就直接返回，否则正常打印。
+
+</body></html>

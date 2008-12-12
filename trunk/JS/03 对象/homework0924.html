@@ -1,0 +1,61 @@
+<html><head>
+<title>关键字</title>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+<meta name="keywords" content="关键字1,关键字2,关键字3,">
+<meta name="description" content="页面说明">
+<style type="text/css">
+td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
+table,td,img,div,span,form{border: none;margin:0;padding:0;}
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript" language="javascript">
+<!--//--><![CDATA[//><!--
+
+var meiyi = {};
+meiyi.age = {};
+meiyi.standing = {};
+
+meiyi.name = "刘梅怡";
+meiyi.age.year = 1982;
+meiyi.age.month = 4;
+meiyi.standing.val = 163;
+meiyi.standing.units = "cm";
+meiyi.zhengzmianm = "团员";
+meiyi.qualifications = "初中";
+meiyi.school = "横道河子铁路中学";
+
+
+function file(msg) {
+	document.write(msg + "<br />");
+}
+
+file("姓名：" + meiyi.name);
+file("年龄：" + meiyi.age.year + "年" + meiyi.age.month + "月");
+file("身高：" + meiyi.standing.val + meiyi.standing.units );
+file("学历：" + meiyi.qualifications);
+file("毕业学校：" + meiyi.school);
+file("政治面貌：" + meiyi.zhengzmianm);
+
+//--><!]]>
+</script>
+
+<br />
+作业~~：建1个对象管理自己的信息，如果需要的话，创建子对象用来分类相关的信息。<br />
+还有对象属性的值是用来提供数据的。<br />
+数据尽量都是纯数据。能让计算机读懂的数据<br />
+像姓名，‘姓名：’这个东西如果在Name属性里的话，处理的时候如果只需要名字，<br />
+就得通过程序来解析Meiyi.Name这个字符串。<br />
+尽量用最简单的形式表示属性的值<br />
+如Meiyi.Name="刘梅怡"。<br />
+不带冗余的东西。<br />
+如果1个属性里带有比较复杂的数据，<br />
+就用子对象的方式来设计对象的结构。<br />
+document.write("xingming:"+meiyi.name)这样。<br />
+比如有时需要单独处理生日的年和月，<br />
+就把生日设计成1个子对象的形式。<br />
+身高这种同时有数字和单位的，也可以设计成子对象的形式。<br />
+
+</body></html>

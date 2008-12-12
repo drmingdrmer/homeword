@@ -1,0 +1,71 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+	<!--
+	body,ul,li,p{ margin:0; padding:0; border:0; font-size:14px;}
+	ul,li { list-style:none; line-height:20px; width:650px;}
+	li { margin-bottom:1px; background:#636; color:#fff; white-space:pre;}
+	p { padding:3em;}
+	-->
+</style>
+<title>无标题文档</title>
+</head>
+
+<body>
+<script type="text/javascript" language="javascript">
+<!--//--><![CDATA[//><!--
+document.write ("<ul>");
+	for ( var i = 0; i < 9; i++) {
+	document.write ("<li>");
+		for ( var j = 0; j < (i+1); j++) {
+		var a = j+1;
+			b = i+1;
+			c = (i+1)*(j+1)
+		if ( a<10 && b<10 && c<10){
+		document.write ( "0" + a + "*" + "0" + b +  "=" + "0" + c + " " );
+		}else if ( a<10 && b<10) {
+		document.write ( "0" + a + "*" + "0" + b + "=" + c + " ");
+		}else{
+		document.write (  a + "*" +  b + "=" + c + " ");
+		}
+	}
+	document.write ("</li>");
+
+	}
+document.write ("</ul>");
+//--><!]]>
+</script>
+
+
+ <script type="text/javascript" language="javascript">
+    <!--//--><![CDATA[//><!--
+    document.write ("<ul>");
+    for ( var i = 0; i < 9; i++) {
+      document.write ("<li>");
+      for ( var j = 0; j < (i+1); j++) {
+        var a = j+1;
+        b = i+1;
+        c = (i+1)*(j+1);
+        if (a < 10) a = " " + a; 
+        if (b < 10) b = " " + b; 
+        if (c < 10) c = " " + c; 
+        document.write ( a + "*" + b +  "=" + c + " " );
+      }
+      document.write ("</li>");
+
+    }
+document.write ("</ul>");
+//--><!]]>
+</script>
+
+在打印之前，将要打印的3个数字(j+1),(i+1),(i+1)*(j+1)<br />
+设置成单独的3个变量。然后在打印出来。<br />
+然后对这3个变量进行宽度的控制。<br />
+让每个数字都占2个字符宽 <br /><br />
+<br />
+<strong style="color:#636; white-space:pre;">    我怎么感觉这么做起来反倒是麻烦了很多？？？？</strong>
+
+</body>
+</html>

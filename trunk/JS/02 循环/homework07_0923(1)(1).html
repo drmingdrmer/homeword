@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <style type="text/css">
+      <!--
+      body,ul,li,p{ margin:0; padding:0; border:0; font-size:14px;}
+      ul,li { list-style:none; line-height:20px; width:650px;}
+      li { margin-bottom:1px; background:#636; color:#fff; white-space:pre;}
+      p { padding:3em;}
+      -->
+    </style>
+    <title>无标题文档</title>
+  </head>
+
+  <body>
+    <script type="text/javascript" language="javascript">
+      <!--//--><![CDATA[//><!--
+
+//写在前面, 函数的声明部分function xxx不会执行任何操作, 
+//执行是在后面函数调用时启动的.
+
+
+//这个函数应该没有问题了.
+function nineTable(a,b) {
+  document.write( a + "*" + b + "=" + a*b + " ");
+}
+
+//打印1行用的函数, 根据参数c, 打印出1行的99表.
+//所以里面的循环要根据参数c的值来确定循环执行的次数.
+//去掉ul和li..影响思路的东西.
+function nineLine(c) {
+  for (var i=0; i<9; i++) {
+
+  }
+}
+
+
+//前面的代码只做定义函数, 没有真正打印任何东西.从这里开始, 打印整个乘法表.
+//
+//但现在先把它注释掉, 先调试nineLine函数, 使它能正常工作.
+//之后是让下面的代码调用nineLine打印出整个表.
+/*
+document.write ("<li>");
+for (var j=0; j<(i+1); j++) {
+  nineTable(i+1,j+1,((i+1)*(j+1)));
+}
+document.write ("</li>");
+*/
+
+
+//测试nineLine在给出1~9的值的时候都能正确输出结果:
+nineLine(3);
+
+
+//--><!]]>
+</script>
+
+
+
+</body>
+</html>

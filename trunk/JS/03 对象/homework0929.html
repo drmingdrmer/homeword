@@ -1,0 +1,53 @@
+<html><head>
+<title>关键字</title>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312">
+<meta name="keywords" content="关键字1,关键字2,关键字3,">
+<meta name="description" content="页面说明">
+<style type="text/css">
+td,p,li,input,select,div,span,body {font-size:12px; line-height:20px;}
+table,td,img,div,span,form{border: none;margin:0;padding:0;}
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript" language="javascript">
+<!--//--><![CDATA[//><!--
+var sanjiao = {
+	size:4,
+	symbols:"->",
+	printAll:fuc
+	}
+
+function fuc() {
+	for ( var i=0; i<this.size; i++) {
+		for ( var j=1; j<=(i+1); j++){
+			document.write (this.symbols);
+		}
+		document.write ("<br />");
+	}
+}
+
+sanjiao.printAll();
+
+//--><!]]>
+</script>
+<br />
+设计1个对象，用它来打印三角形。<br />
+对象中维护2个用于打印三角形的数据：三角形的大小，是数值；组成三角形的符号，是字符串。<br />
+对象中有1个方法，用于根据对象中的数据打印三角形。<br />
+<br />
+例如对象中设置大小为3，符号是"*"，则打印：<br />
+*<br />
+**<br />
+***<br />
+<br />
+如果对象中设置大小为4，符号是"->"，则打印：<br />
+-><br />
+->-><br />
+->->-><br />
+->->->-><br />
+<br />
+打印的那个for循环要定义成对象的方法。。<br />
+定义在方法里面啊。然后调用方法就打印了。。。<br />
+</body></html>
