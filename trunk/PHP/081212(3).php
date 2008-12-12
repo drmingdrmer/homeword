@@ -9,11 +9,18 @@
 <?php
 	for ($i=1; $i<=10; $i++){				
 		if ($_REQUEST["xp"] == $i) {
-			echo "<strong>this is".$i."</strong><br />";
-		} else {
+			echo "<strong>";
+			echo "this is".$i;
+		} 
+		
+		if ($_REQUEST["xp"] == $i) {
+			echo "</strong><br />";
+		} 
+		
+		else {
 			echo "this is".$i."<br />";
 		}		
-	}	
+	}
 ?>
 </body>
 </html>
